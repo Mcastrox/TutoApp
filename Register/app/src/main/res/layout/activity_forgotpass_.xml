@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Forgotpass_Activity">
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone"
+        />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginBottom="32dp"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:onClick="send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar passw"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        />
+
+
+</LinearLayout>
