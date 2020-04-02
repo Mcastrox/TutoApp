@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
-import com.example.register.R.id.progressBar2
+import com.example.register.R.id.*
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login_.*
 import kotlinx.android.synthetic.main.activity_register.*
@@ -22,7 +22,7 @@ class Login_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_)
         txtUser=findViewById(R.id.txtUser)
-        txtPassword=findViewById(R.id.txt_password)
+        txtPassword=findViewById(R.id.txtPassword)
         progressBar= findViewById(R.id.progressBar2)
         auth= FirebaseAuth.getInstance()
 
