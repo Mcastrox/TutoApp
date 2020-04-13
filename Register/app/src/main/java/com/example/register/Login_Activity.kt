@@ -54,6 +54,6 @@ class Login_Activity : AppCompatActivity() {
         }
     }
     private fun action(){
-        startActivity(Intent(this,MainActivity::class.java))
+        startActivity(Intent(this,HomeActivity::class.java))
     }
 }
