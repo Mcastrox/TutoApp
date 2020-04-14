@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "584237024967",
-    "firebase_url": "https://login2-ffd9f.firebaseio.com",
-    "project_id": "login2-ffd9f",
-    "storage_bucket": "login2-ffd9f.appspot.com"
+    "project_number": "737190387802",
+    "firebase_url": "https://tutoapp-86bf0.firebaseio.com",
+    "project_id": "tutoapp-86bf0",
+    "storage_bucket": "tutoapp-86bf0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:584237024967:android:3e4975f978efd9b69060e2",
+        "mobilesdk_app_id": "1:737190387802:android:c29963cfd6b514264ef863",
         "android_client_info": {
           "package_name": "com.example.register"
         }
       },
       "oauth_client": [
         {
-          "client_id": "584237024967-4g2kstehigc255m9auj1v5o5ndrntgbb.apps.googleusercontent.com",
+          "client_id": "737190387802-fnu8jgvgqm5bjsn0kuhoaen8vt8jd231.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.register",
+            "certificate_hash": "db5e394554d549dd21f306e68ef97970c5ca2766"
+          }
+        },
+        {
+          "client_id": "737190387802-67eue5udcnf8e714l27ahqtkr3oakt7r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC0VUktlFue1OGobnDD8xPi5YC1SkwKFj8"
+          "current_key": "AIzaSyCZUESofTG7gqFdADzRY_esPIWYXkAb6jw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "584237024967-4g2kstehigc255m9auj1v5o5ndrntgbb.apps.googleusercontent.com",
+              "client_id": "737190387802-67eue5udcnf8e714l27ahqtkr3oakt7r.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
