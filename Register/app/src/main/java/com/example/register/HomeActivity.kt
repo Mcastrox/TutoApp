@@ -16,12 +16,7 @@ class HomeActivity : AppCompatActivity() {
         profile.setOnClickListener {
             startActivity(Intent(this,MperfilActivity::class.java))
         }
-       search.setOnClickListener {
-           startActivity(Intent(this,AtributesActivity::class.java))
-       }
-        new_tutor.setOnClickListener {
-            startActivity(Intent(this,TutorActivity::class.java))
-        }
+
     }
 
 }

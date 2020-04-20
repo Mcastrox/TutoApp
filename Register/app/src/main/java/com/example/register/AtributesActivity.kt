@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
@@ -15,132 +16,128 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_atributes.*
 
 class AtributesActivity : AppCompatActivity() {
-    private lateinit var auth : FirebaseAuth
-    private lateinit var educacion_tutor: EditText
-    private lateinit var ocupacion_tutor: EditText
-    private lateinit var descripcion_tutor:EditText
-    private lateinit var disciplinas_tutor: ArrayList<Disciplina>
-    private lateinit var dbReference: DatabaseReference
-    private lateinit var database: FirebaseDatabase
-    lateinit var uid: String
+
+    lateinit var txtEducacion:EditText
+    lateinit var txtOcupacion:EditText
+    lateinit var txtDescripcion:EditText
+    lateinit var  listaDisciplina:ArrayList<Disciplina>
+    lateinit var  btnGuardar: Button
+
+    //check box
+    lateinit var  cbdis1 : CheckBox
+    lateinit var  cbdis2 : CheckBox
+    lateinit var  cbdis3 : CheckBox
+    lateinit var  cbdis4 : CheckBox
+
+    lateinit var uid:String
+    lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atributes)
+
         initialize()
-        initDisciplinas()
-        disciplina_cocinar.setOnCheckedChangeListener{ _, _ ->
+
+
+
+        initArrayDisciplina()
+        cbdis1.setOnCheckedChangeListener{ _, _ ->
             when {
-                disciplina_cocinar.isChecked -> {
-                    this.disciplinas_tutor[0].seleccionado = true
+                cbdis1.isChecked -> {
+                    this.listaDisciplina[0].seleccionado = true
                 }
                 else -> {
-                    this.disciplinas_tutor[0].seleccionado = false
+                    this.listaDisciplina[0].seleccionado = false
                 }
             }
         }
 
-        disciplina_math.setOnCheckedChangeListener{ _, _ ->
+        cbdis2.setOnCheckedChangeListener{ _, _ ->
             when {
-                disciplina_math.isChecked -> {
-                    this.disciplinas_tutor[1].seleccionado = true
+                cbdis2.isChecked -> {
+                    this.listaDisciplina[1].seleccionado = true
                 }
                 else -> {
-                    this.disciplinas_tutor[1].seleccionado = false
+                    this.listaDisciplina[1].seleccionado = false
                 }
             }
         }
 
-        disciplina_ciencias.setOnCheckedChangeListener{ _, _ ->
+        cbdis3.setOnCheckedChangeListener{ _, _ ->
             when {
-                disciplina_ciencias.isChecked -> {
-                    this.disciplinas_tutor[2].seleccionado = true
+                cbdis3.isChecked -> {
+                    this.listaDisciplina[2].seleccionado = true
                 }
                 else -> {
-                    this.disciplinas_tutor[2].seleccionado = false
+                    this.listaDisciplina[2].seleccionado = false
                 }
             }
         }
 
-        disciplina_arte.setOnCheckedChangeListener{ _, _ ->
+        cbdis4.setOnCheckedChangeListener{ _, _ ->
             when {
-                disciplina_arte.isChecked -> {
-                    this.disciplinas_tutor[3].seleccionado = true
+                cbdis4.isChecked -> {
+                    this.listaDisciplina[3].seleccionado = true
                 }
                 else -> {
-                    this.disciplinas_tutor[3].seleccionado = false
+                    this.listaDisciplina[3].seleccionado = false
                 }
             }
         }
+
 
         guardar_tutor.setOnClickListener {
-            guardarDatos()
-            //startActivity(Intent(this,MperfilActivity::class.java))
-        }
-
-    }
-
-
-    fun onCheckboxClicked(view: View) {
-        if (view is CheckBox) {
-            val checked: Boolean = view.isChecked
-
-            when (view.id) {
-                R.id.disciplina_cocinar -> {
-                    if (checked) {
-                        this.disciplinas_tutor[0].seleccionado = true
-                    } else {
-                        this.disciplinas_tutor[0].seleccionado = false
-                    }
-                }
-                R.id.disciplina_math -> {
-                    if (checked) {
-                        this.disciplinas_tutor[1].seleccionado = true
-                    } else {
-                        this.disciplinas_tutor[1].seleccionado = false
-                    }
-                }
-                R.id.disciplina_ciencias -> {
-                    if (checked) {
-                        this.disciplinas_tutor[2].seleccionado = true
-                    } else {
-                        this.disciplinas_tutor[2].seleccionado = false
-                    }
-                }
-                R.id.disciplina_arte -> {
-                    if (checked) {
-                        this.disciplinas_tutor[3].seleccionado = true
-                    } else {
-                        this.disciplinas_tutor[3].seleccionado = false
-                    }
-                }
-                // TODO: Veggie sandwich
-            }
+            // startActivity(Intent(this,MperfilActivity::class.java))
+            guardar()
         }
     }
+
+
+    private fun initArrayDisciplina()
+    {
+        this.listaDisciplina = ArrayList();
+        this.listaDisciplina.add(Disciplina("1","cocina","",false))
+        this.listaDisciplina.add(Disciplina("2","math","",false))
+        this.listaDisciplina.add(Disciplina("3","ciencias","",false))
+        this.listaDisciplina.add(Disciplina("4","arte","",false))
+    }
+
     private fun initialize(){
-        auth= FirebaseAuth.getInstance()
-        educacion_tutor=findViewById(R.id.educacion_tutor)
-        ocupacion_tutor=findViewById(R.id.ocupacion_tutor)
-        descripcion_tutor=findViewById(R.id.descripcion_tutor)
-        dbReference=database.reference.child("Users")
+        this.txtEducacion = findViewById(R.id.educacion_tutor)
+        this.txtOcupacion = findViewById(R.id.ocupacion_tutor)
+        this.txtDescripcion = findViewById(R.id.descripcion_tutor)
+        this.cbdis1 = findViewById(R.id.disciplina_cocinar)
+        this.cbdis2 = findViewById(R.id.disciplina_math)
+        this.cbdis3 = findViewById(R.id.disciplina_ciencias)
+        this.cbdis4 = findViewById(R.id.disciplina_arte)
+        this.btnGuardar = findViewById(R.id.guardar_tutor)
+
+        auth=FirebaseAuth.getInstance()
         val user: FirebaseUser?=auth.currentUser
-        uid=user?.uid!!
-        Log.d("Uid Usuario", uid.toString())
+        uid = user?.uid!!
+
+        Log.d("Uid-Usuario", uid.toString())
+        //this.txtEducacion.text = uid.toString()
+    }
+
+
+    private fun guardar()
+    {
+        val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+        referencia.child("nivel").setValue(txtEducacion.text.toString())
+        referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
+        referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
+        referencia.child("disciplinas").setValue(listaDisciplina)
+
+        Toast.makeText(this,"Guardado con exito",Toast.LENGTH_LONG).show()
 
     }
-    private fun initDisciplinas(){
-        this.disciplinas_tutor=arrayListOf()
-        this.disciplinas_tutor.add(Disciplina("1","Cocina","Saber cocinar como negro"))
-        this.disciplinas_tutor.add(Disciplina("2","Mate","saber sumar "))
-        this.disciplinas_tutor.add(Disciplina("3","Ciencias","yeah science bitch"))
-        this.disciplinas_tutor.add(Disciplina("4","Arte","no ser daltonico"))
-    }
-    private fun guardarDatos(){
-        val referencia= FirebaseDatabase.getInstance().getReference("User").child(uid)
-        referencia.child("nivel").setValue(educacion_tutor.text.toString())
-        referencia.child("ocupacion").setValue(ocupacion_tutor.text.toString())
-        referencia.child("descripcion").setValue(descripcion_tutor.text.toString())
-        referencia.child("disciplinas").setValue(disciplinas_tutor)
-        Toast.makeText(this,"Guardado con exito",Toast.LENGTH_LONG).show()
-    }
+
+
+
+
+
+
+
+
 }

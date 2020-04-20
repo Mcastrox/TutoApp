@@ -24,7 +24,6 @@
                 android:layout_height="match_parent"
                 android:background="@color/redBrick"
                 android:layout_marginTop="16dp"
-                android:id="@+id/new_tutor"
                 android:gravity="center"
                 android:text="Home"
                 android:textSize="16dp"
