@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".AtributesActivity">
 
     <ImageView
+        android:id="@+id/back_action"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_undo"
-        android:id="@+id/back_action"
-        />
+        android:src="@drawable/ic_undo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,53 +23,53 @@
         android:textAllCaps="true"
         android:textColor="@color/redBrick"
         android:textSize="16dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Educacion"
         android:textAllCaps="true"
-        android:textSize="16dp"
         android:textColor="@color/redBrick"
-        android:layout_marginLeft="16dp"
-        />
+        android:textSize="16dp" />
+
     <EditText
         android:id="@+id/educacion_tutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingresa tu grado academico"
         android:layout_marginBottom="16dp"
-        />
+        android:hint="Ingresa tu grado academico" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="ocupacion"
         android:textAllCaps="true"
-        android:textSize="16dp"
         android:textColor="@color/redBrick"
-        android:layout_marginLeft="16dp"
-        />
+        android:textSize="16dp" />
+
     <EditText
         android:id="@+id/ocupacion_tutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Ingresa tu ocupacion"
         android:layout_marginBottom="16dp"
-        />
+        android:hint="Ingresa tu ocupacion" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Descripcion Personal"
         android:textAllCaps="true"
-        android:textSize="16dp"
         android:textColor="@color/redBrick"
-        android:layout_marginLeft="16dp"
-        />
+        android:textSize="16dp" />
 
     <EditText
         android:id="@+id/descripcion_tutor"
@@ -80,59 +79,74 @@
         android:hint="Ingresa una breve descripcion"
 
         />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Disciplinas"
         android:textAllCaps="true"
-        android:textSize="16dp"
         android:textColor="@color/redBrick"
-        android:layout_marginLeft="16dp"
-        />
-    <CheckBox
-        android:id="@+id/disciplina_cocinar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:textSize="16dp" />
 
-        android:text="Cocinar"/>
-    <CheckBox
-        android:id="@+id/disciplina_math"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        android:text="Matematicas"/>
-    <CheckBox
-        android:id="@+id/disciplina_ciencias"
-        android:layout_width="wrap_content"
+        <CheckBox
+            android:id="@+id/disciplina_cocinar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+
+            android:text="Cocinar" />
+
+        <CheckBox
+            android:id="@+id/disciplina_math"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+
+            android:text="Matematicas" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        android:text="Science bitch"/>
-    <CheckBox
-        android:id="@+id/disciplina_arte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        <CheckBox
+            android:id="@+id/disciplina_ciencias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
 
-        android:text="Arte"/>
+            android:text="Science bitch" />
+
+        <CheckBox
+            android:id="@+id/disciplina_arte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+
+            android:text="Arte" />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/guardar_tutor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginTop="32dp"
         android:background="@color/redBrick"
+        android:fontFamily="sans-serif-black"
         android:text="Guardar"
-        android:textColor="@color/white"/>
-
-
-
-
+        android:textColor="@color/white" />
 
 
 </LinearLayout>
