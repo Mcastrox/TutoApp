@@ -34,16 +34,16 @@ class Register_Activity : AppCompatActivity() {
         txtEmail=findViewById(R.id.txt_email)
         txtPassword=findViewById(R.id.txt_password)
 
-        progressBar= findViewById(R.id.progressBar)
+        progressBar= this.findViewById(R.id.progressBar)
 
         database= FirebaseDatabase.getInstance()
         auth=FirebaseAuth.getInstance()
-        dbReference=database.reference.child("User")
+        dbReference=database.reference.child("Users")
 
     }
     fun register(view:View){
         createNewUser()
-        startActivity(Intent(this,MainActivity::class.java))
+        // startActivity(Intent(this,MainActivity::class.java))
 
     }
     private fun createNewUser(){

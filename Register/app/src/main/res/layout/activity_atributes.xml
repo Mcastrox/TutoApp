@@ -71,12 +71,13 @@
         android:textColor="@color/redBrick"
         android:layout_marginLeft="16dp"
         />
+
     <EditText
         android:id="@+id/descripcion_tutor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingresa una breve descripcion"
+        android:layout_height="59dp"
         android:layout_marginBottom="16dp"
+        android:hint="Ingresa una breve descripcion"
 
         />
     <TextView
@@ -91,25 +92,33 @@
         android:layout_marginLeft="16dp"
         />
     <CheckBox
+        android:id="@+id/disciplina_cocinar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="disciplina 1"/>
+
+        android:text="Cocinar"/>
     <CheckBox
+        android:id="@+id/disciplina_math"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="disciplina 2"/>
+
+        android:text="Matematicas"/>
     <CheckBox
+        android:id="@+id/disciplina_ciencias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="disciplina 3"/>
+
+        android:text="Science bitch"/>
     <CheckBox
+        android:id="@+id/disciplina_arte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="disciplina 4"/>
+
+        android:text="Arte"/>
     <Button
         android:id="@+id/guardar_tutor"
         android:layout_width="match_parent"
