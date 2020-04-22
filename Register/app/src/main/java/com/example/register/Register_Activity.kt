@@ -18,7 +18,9 @@ class Register_Activity : AppCompatActivity() {
     private lateinit var txtName: EditText
     private lateinit var txtLastname: EditText
     private lateinit var txtEmail: EditText
+    private lateinit var txtTelefono: EditText
     private lateinit var txtPassword: EditText
+    private lateinit var txtDireccion:EditText
     private lateinit var progressBar: ProgressBar
     private lateinit var dbReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
@@ -33,7 +35,8 @@ class Register_Activity : AppCompatActivity() {
         txtLastname=findViewById(R.id.txt_lastname)
         txtEmail=findViewById(R.id.txt_email)
         txtPassword=findViewById(R.id.txt_password)
-
+        txtTelefono=findViewById(R.id.txt_telefono)
+        txtDireccion=findViewById(R.id.txt_direccion)
         progressBar= this.findViewById(R.id.progressBar)
 
         database= FirebaseDatabase.getInstance()
@@ -51,6 +54,8 @@ class Register_Activity : AppCompatActivity() {
         val lastName: String = txt_lastname.text.toString()
         val email: String = txt_email.text.toString()
         val pass: String = txt_password.text.toString()
+        val tel: String =txt_telefono.text.toString()
+        val direccion: String=txt_direccion.text.toString()
 
         if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(lastName)&&!TextUtils.isEmpty(email)&&!TextUtils.isEmpty(pass)){
             progressBar.visibility=View.VISIBLE
@@ -65,6 +70,8 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("Name").setValue(name)
                         userBD.child("lastName").setValue(lastName)
                         userBD.child("pass").setValue(pass)
+                        userBD.child("telefono").setValue(tel)
+                        userBD.child("direccion").setValue(direccion)
                         action()
                     }
                 }

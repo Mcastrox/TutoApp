@@ -14,12 +14,14 @@ import kotlinx.android.synthetic.main.activity_mperfil.*
 
 class MperfilActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var tvname : TextView
-    private lateinit var tvemail : TextView
+    private lateinit var username : TextView
+    private lateinit var usermail : TextView
+    private lateinit var userTel: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mperfil)
+        initialise()
 
         new_tutor.setOnClickListener {
             startActivity(Intent(this,TutorActivity::class.java))
@@ -27,6 +29,40 @@ class MperfilActivity : AppCompatActivity() {
         miPerfil.setOnClickListener {
             startActivity(Intent(this,ProfileActivity::class.java))
         }
+
+    }
+    private fun initialise()
+    {
+        auth = FirebaseAuth.getInstance()
+        val user:FirebaseUser?=auth.currentUser
+        //para los textos
+        username = findViewById(R.id.username)
+        usermail = findViewById(R.id.usermail)
+        userTel=findViewById(R.id.mperfil_telefono)
+
+
+        usermail.text = user?.email!!.toString()
+
+
+        //buscando el nombre
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val userRef = ref.child(user?.uid!!)
+
+        // tvname.text = user?.uid!!.toString()
+        userRef.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // sustituir nombre por "Name"
+                username.text = dataSnapshot.child("Name").value as String
+                userTel.text=dataSnapshot.child("telefono").value as String
+
+
+            }
+
+        })
 
     }
 }

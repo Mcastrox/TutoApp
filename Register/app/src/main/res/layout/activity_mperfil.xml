@@ -37,6 +37,7 @@
             android:layout_below="@+id/img_user"
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-black"
+            android:id="@+id/username"
             android:text="Username"
             android:textColor="@color/white"
             android:textSize="32dp" />
@@ -71,12 +72,15 @@
                     android:textColor="@color/redBrick"
                     android:fontFamily="sans-serif-black"
                     android:textSize="16dp"
-                    android:text="75658023"/>
+                    android:id="@+id/mperfil_telefono"
+                    android:text="tel:"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/redBrick"
                     android:fontFamily="sans-serif-black"
+                    android:id="@+id/usermail"
                     android:textSize="16dp"
                     android:text="ejemplo@gmail.com"/>
 
