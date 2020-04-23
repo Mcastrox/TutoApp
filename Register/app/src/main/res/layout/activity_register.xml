@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/blackMate"
     android:orientation="vertical"
+    android:padding="@dimen/big_padding"
+    android:gravity="center"
     tools:context=".Register_Activity">
 
     <ProgressBar
@@ -13,83 +14,127 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:indeterminate="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="@dimen/medium_margin"
         android:visibility="gone"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu"
+        android:text="@string/register_text"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin" />
 
     <EditText
         android:id="@+id/txt_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="@dimen/et_small_height"
+        android:padding="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:background="@color/light_grayish"
         android:ems="10"
-        android:hint="nombre"
-        android:layout_marginBottom="32dp"
+        android:hint="Favor ingrese su nombre"
+        android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
         />
 
     <EditText
         android:id="@+id/txt_lastname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="@dimen/et_small_height"
+        android:padding="@dimen/small_margin"
+        android:background="@color/light_grayish"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
-        android:hint="apellido"
-        android:layout_marginBottom="32dp"
+        android:hint="Favor ingrese su apellido"
+        android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
         />
 
     <EditText
         android:id="@+id/txt_email"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="@dimen/et_small_height"
+        android:padding="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:background="@color/light_grayish"
         android:ems="10"
-        android:layout_marginBottom="32dp"
-        android:hint="correo"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:hint="Favor ingrese su correo"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/txt_password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:padding="@dimen/small_margin"
+        android:layout_height="@dimen/et_small_height"
         android:ems="10"
-        android:layout_marginBottom="32dp"
-        android:hint="password"
+        android:background="@color/light_grayish"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:hint="Favor ingrese su contraseña"
         android:inputType="textPassword" />
     <EditText
         android:id="@+id/txt_telefono"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="@dimen/et_small_height"
+        android:background="@color/light_grayish"
+        android:padding="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
-        android:layout_marginBottom="32dp"
-        android:hint="telefono"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:hint="Favor ingrese un numero de teléfono"
         />
     <EditText
         android:id="@+id/txt_direccion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_height="@dimen/et_small_height"
+        android:padding="@dimen/small_margin"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:background="@color/light_grayish"
         android:ems="10"
-        android:layout_marginBottom="32dp"
-        android:hint="direccion"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:hint="Favor ingrese una dirección"
          />
+
+    <!--No tiene ninguna funcionalidad aun -->
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:textColor="@color/light_grayish"
+        android:buttonTint="@color/light_grayish"
+        android:text="Al registrarme acepto los términos y políticas de privacidad"
+        />
 
     <Button
         android:onClick="register"
         android:layout_width="match_parent"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@color/redBrick"
+        android:background="@color/soft_cyan"
         android:textColor="#FFFFFf"
+        android:textSize="16sp"
         android:text="Crear cuenta" />
 
 

@@ -44,9 +44,10 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginLeft="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/medium_margin"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="@dimen/big_padding"
+        android:layout_marginRight="@dimen/big_padding"
         android:layout_marginBottom="@dimen/small_margin" />
 
     <LinearLayout
@@ -95,9 +96,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/medium_margin"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@color/redBrick"
+            android:background="@color/soft_cyan"
             android:onClick="login"
             android:text="INICIAR SESION"
+            android:textSize="16sp"
             android:textColor="#ffffff" />
 
         <TextView
