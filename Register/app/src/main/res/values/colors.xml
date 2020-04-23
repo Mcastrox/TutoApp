@@ -7,4 +7,6 @@
     <color name="blackMate">#1E1E20</color>
     <color name="white">#ffffff</color>
     <color name="grey">#BBC3C6</color>
+    <color name="soft_cyan">#4fdab9</color>
+    <color name="light_grayish">#dcdbd9</color>
 </resources>

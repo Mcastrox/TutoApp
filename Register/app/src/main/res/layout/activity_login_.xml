@@ -1,62 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/blackMate"
     android:orientation="vertical"
     tools:context=".Login_Activity">
+
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:visibility="gone"
+        android:layout_height="wrap_content"
         android:indeterminate="true"
-        android:layout_height="wrap_content" />
+        android:visibility="gone" />
 
-    <EditText
-        android:id="@+id/txtUser"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:hint="Ingresa tu correo"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/txtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:background="@color/redBrick"
-        android:onClick="login"
-        android:text="INICIAR SESION"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:onClick="forgotPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
+        android:layout_weight="4"
         android:gravity="center"
-        android:text="Olvidaste tu password?" />
+        android:orientation="vertical"
+        android:paddingTop="@dimen/medium_margin">
 
-    <TextView
-        android:onClick="register"
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:src="@drawable/ic_login_icon"
+            android:tint="@color/soft_cyan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/login_text"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </LinearLayout>
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
-        android:text="Registrar" />
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/medium_margin"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/small_margin" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/big_padding"
+        android:paddingRight="@dimen/big_padding">
+
+        <EditText
+            android:id="@+id/txtUser"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/et_small_height"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/light_grayish"
+            android:ems="10"
+            android:hint="Ingresa tu correo"
+            android:inputType="textEmailAddress"
+            android:padding="@dimen/small_margin" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/et_small_height"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/light_grayish"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="@dimen/small_margin" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:gravity="center"
+            android:onClick="forgotPassword"
+            android:text="¿Olvidaste tu contraseña?"
+            android:textColor="@android:color/darker_gray" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:background="@color/redBrick"
+            android:onClick="login"
+            android:text="INICIAR SESION"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="register"
+            android:text="Registrate ahora"
+            android:textColor="@android:color/darker_gray" />
+
+
+    </LinearLayout>
 
 </LinearLayout>
