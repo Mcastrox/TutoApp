@@ -1,10 +1,12 @@
 package com.example.register
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -38,15 +40,18 @@ class Register_Activity : AppCompatActivity() {
         txtTelefono=findViewById(R.id.txt_telefono)
         txtDireccion=findViewById(R.id.txt_direccion)
         progressBar= this.findViewById(R.id.progressBar)
-
         database= FirebaseDatabase.getInstance()
         auth=FirebaseAuth.getInstance()
         dbReference=database.reference.child("Users")
 
     }
     fun register(view:View){
-        createNewUser()
-        // startActivity(Intent(this,MainActivity::class.java))
+        if(cbx_politics.isChecked) {
+            createNewUser()
+        }
+        else {
+            Toast.makeText(this,"Por favor acepta los terminos de politica sale pete",Toast.LENGTH_LONG).show()
+        }
 
     }
     private fun createNewUser(){
@@ -57,7 +62,7 @@ class Register_Activity : AppCompatActivity() {
         val tel: String =txt_telefono.text.toString()
         val direccion: String=txt_direccion.text.toString()
 
-        if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(lastName)&&!TextUtils.isEmpty(email)&&!TextUtils.isEmpty(pass)){
+        if(!TextUtils.isEmpty(name)&&!TextUtils.isEmpty(lastName)&&!TextUtils.isEmpty(email)&&!TextUtils.isEmpty(pass)&&!TextUtils.isEmpty(tel)&&!TextUtils.isEmpty(direccion)){
             progressBar.visibility=View.VISIBLE
             auth.createUserWithEmailAndPassword(email,pass)
                 .addOnCompleteListener(this){
@@ -74,14 +79,17 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("direccion").setValue(direccion)
                         action()
                     }
+                    else{
+                        Toast.makeText(this,"Por favor rellene todos los campos",Toast.LENGTH_LONG).show()
+                    }
                 }
         }
     }
+
     private fun action (){
         startActivity(Intent(this,MainActivity::class.java))
 
     }
-
 
     private fun verifyEmail(user:FirebaseUser?){
         user?.sendEmailVerification()

@@ -45,7 +45,7 @@
         android:layout_marginRight="@dimen/medium_margin"
         android:background="@color/light_grayish"
         android:ems="10"
-        android:hint="Favor ingrese su nombre"
+        android:hint="Ingrese su nombre"
         android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
         />
@@ -59,7 +59,7 @@
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
-        android:hint="Favor ingrese su apellido"
+        android:hint="Ingrese su apellido"
         android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
         />
@@ -74,7 +74,7 @@
         android:background="@color/light_grayish"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
-        android:hint="Favor ingrese su correo"
+        android:hint="Ingrese su correo"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -87,7 +87,7 @@
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:layout_marginBottom="@dimen/medium_margin"
-        android:hint="Favor ingrese su contraseña"
+        android:hint="Ingrese su contraseña"
         android:inputType="textPassword" />
     <EditText
         android:id="@+id/txt_telefono"
@@ -99,7 +99,7 @@
         android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
-        android:hint="Favor ingrese un numero de teléfono"
+        android:hint="Ingrese un numero de teléfono"
         />
     <EditText
         android:id="@+id/txt_direccion"
@@ -111,11 +111,12 @@
         android:background="@color/light_grayish"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
-        android:hint="Favor ingrese una dirección"
+        android:hint="Ingrese una dirección"
          />
 
-    <!--No tiene ninguna funcionalidad aun -->
+
     <CheckBox
+        android:id="@+id/cbx_politics"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/medium_margin"
