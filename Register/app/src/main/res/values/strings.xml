@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Register</string>
-    <string name="login_text">incia sesión</string>
+    <string name="login_text">Inicia sesión</string>
     <string name="register_text">Registro</string>
+    <string name="AppName">TutoApp</string>
+    <string name="txt_register">Registrarse</string>
+    <string name="txt_Login">Iniciar Sesion</string>
 </resources>

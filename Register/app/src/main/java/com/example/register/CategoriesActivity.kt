@@ -1,5 +1,7 @@
 package com.example.register
 
+import android.app.ActionBar
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blackMate"
+    android:background="@mipmap/ic_fondo"
     android:orientation="vertical"
     android:padding="@dimen/big_padding"
     android:gravity="center"
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
         android:text="@string/register_text"
+        android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textSize="18sp" />
@@ -40,28 +41,33 @@
         android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:background="@color/light_grayish"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
         android:ems="10"
         android:hint="Ingrese su nombre"
-        android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
-        />
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txt_lastname"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
         android:padding="@dimen/small_margin"
-        android:background="@color/light_grayish"
+        android:background="#A3131313"
+        android:textColorHint="#A3FFFFFF"
+        android:textColor="#FFFFFF"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
         android:hint="Ingrese su apellido"
         android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
+        android:textStyle="bold"
         />
 
     <EditText
@@ -71,11 +77,14 @@
         android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:background="@color/light_grayish"
+        android:background="#A3131313"
+        android:textColorHint="#A3FFFFFF"
+        android:textColor="#FFFFFF"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
         android:hint="Ingrese su correo"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/txt_password"
@@ -83,23 +92,29 @@
         android:padding="@dimen/small_margin"
         android:layout_height="@dimen/et_small_height"
         android:ems="10"
-        android:background="@color/light_grayish"
+        android:background="#A3131313"
+        android:textColorHint="#A3FFFFFF"
+        android:textColor="#FFFFFF"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:layout_marginBottom="@dimen/medium_margin"
         android:hint="Ingrese su contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textStyle="bold"/>
     <EditText
         android:id="@+id/txt_telefono"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:background="@color/light_grayish"
+        android:background="#A3131313"
+        android:textColorHint="#A3FFFFFF"
+        android:textColor="#FFFFFF"
         android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
         android:hint="Ingrese un numero de teléfono"
+        android:textStyle="bold"
         />
     <EditText
         android:id="@+id/txt_direccion"
@@ -108,10 +123,13 @@
         android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:background="@color/light_grayish"
+        android:background="#A3131313"
+        android:textColorHint="#A3FFFFFF"
+        android:textColor="#FFFFFF"
         android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
         android:hint="Ingrese una dirección"
+        android:textStyle="bold"
          />
 
 
@@ -121,22 +139,23 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:textColor="@color/light_grayish"
+        android:textColor="@color/blackMate"
         android:buttonTint="@color/light_grayish"
         android:text="Al registrarme acepto los términos y políticas de privacidad"
-        />
+        android:textStyle="bold"/>
 
     <Button
-        android:onClick="register"
         android:layout_width="match_parent"
-        android:layout_marginLeft="@dimen/medium_margin"
-        android:layout_marginRight="@dimen/medium_margin"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginTop="32dp"
-        android:background="@color/soft_cyan"
+        android:layout_marginRight="@dimen/medium_margin"
+        android:background="#D34FDAB9"
+        android:onClick="register"
+        android:text="Crear cuenta"
         android:textColor="#FFFFFf"
         android:textSize="16sp"
-        android:text="Crear cuenta" />
+        android:textStyle="bold" />
 
 
 
