@@ -14,22 +14,23 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_atributes.*
+import kotlinx.android.synthetic.main.activity_mostrar.*
 
 class AtributesActivity : AppCompatActivity() {
 
-    lateinit var txtEducacion:EditText
-    lateinit var txtOcupacion:EditText
-    lateinit var txtDescripcion:EditText
-    lateinit var  listaDisciplina:ArrayList<Disciplina>
-    lateinit var  btnGuardar: Button
+    lateinit var txtEducacion: EditText
+    lateinit var txtOcupacion: EditText
+    lateinit var txtDescripcion: EditText
+    lateinit var listaDisciplina: ArrayList<Disciplina>
+    lateinit var btnGuardar: Button
 
     //check box
-    lateinit var  cbdis1 : CheckBox
-    lateinit var  cbdis2 : CheckBox
-    lateinit var  cbdis3 : CheckBox
-    lateinit var  cbdis4 : CheckBox
+    lateinit var cbdis1: CheckBox
+    lateinit var cbdis2: CheckBox
+    lateinit var cbdis3: CheckBox
+    lateinit var cbdis4: CheckBox
 
-    lateinit var uid:String
+    lateinit var uid: String
     lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,10 +39,8 @@ class AtributesActivity : AppCompatActivity() {
 
         initialize()
 
-
-
         initArrayDisciplina()
-        cbdis1.setOnCheckedChangeListener{ _, _ ->
+        cbdis1.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis1.isChecked -> {
                     this.listaDisciplina[0].seleccionado = true
@@ -52,7 +51,7 @@ class AtributesActivity : AppCompatActivity() {
             }
         }
 
-        cbdis2.setOnCheckedChangeListener{ _, _ ->
+        cbdis2.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis2.isChecked -> {
                     this.listaDisciplina[1].seleccionado = true
@@ -63,7 +62,7 @@ class AtributesActivity : AppCompatActivity() {
             }
         }
 
-        cbdis3.setOnCheckedChangeListener{ _, _ ->
+        cbdis3.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis3.isChecked -> {
                     this.listaDisciplina[2].seleccionado = true
@@ -74,7 +73,7 @@ class AtributesActivity : AppCompatActivity() {
             }
         }
 
-        cbdis4.setOnCheckedChangeListener{ _, _ ->
+        cbdis4.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis4.isChecked -> {
                     this.listaDisciplina[3].seleccionado = true
@@ -93,16 +92,15 @@ class AtributesActivity : AppCompatActivity() {
     }
 
 
-    private fun initArrayDisciplina()
-    {
+    private fun initArrayDisciplina() {
         this.listaDisciplina = ArrayList();
-        this.listaDisciplina.add(Disciplina("1","cocina","",false))
-        this.listaDisciplina.add(Disciplina("2","math","",false))
-        this.listaDisciplina.add(Disciplina("3","ciencias","",false))
-        this.listaDisciplina.add(Disciplina("4","arte","",false))
+        this.listaDisciplina.add(Disciplina("1", "cocina", "", false))
+        this.listaDisciplina.add(Disciplina("2", "math", "", false))
+        this.listaDisciplina.add(Disciplina("3", "ciencias", "", false))
+        this.listaDisciplina.add(Disciplina("4", "arte", "", false))
     }
 
-    private fun initialize(){
+    private fun initialize() {
         this.txtEducacion = findViewById(R.id.educacion_tutor)
         this.txtOcupacion = findViewById(R.id.ocupacion_tutor)
         this.txtDescripcion = findViewById(R.id.descripcion_tutor)
@@ -112,8 +110,8 @@ class AtributesActivity : AppCompatActivity() {
         this.cbdis4 = findViewById(R.id.disciplina_arte)
         this.btnGuardar = findViewById(R.id.guardar_tutor)
 
-        auth=FirebaseAuth.getInstance()
-        val user: FirebaseUser?=auth.currentUser
+        auth = FirebaseAuth.getInstance()
+        val user: FirebaseUser? = auth.currentUser
         uid = user?.uid!!
 
         Log.d("Uid-Usuario", uid.toString())
@@ -121,23 +119,14 @@ class AtributesActivity : AppCompatActivity() {
     }
 
 
-    private fun guardar()
-    {
+    private fun guardar() {
         val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
         referencia.child("nivel").setValue(txtEducacion.text.toString())
         referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
         referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
         referencia.child("disciplinas").setValue(listaDisciplina)
+        Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
 
-        Toast.makeText(this,"Guardado con exito",Toast.LENGTH_LONG).show()
 
     }
-
-
-
-
-
-
-
-
 }

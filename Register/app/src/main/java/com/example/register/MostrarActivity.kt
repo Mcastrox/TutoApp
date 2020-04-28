@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
 
@@ -12,19 +11,45 @@ class MostrarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_mostrar)
 
-        var tutores :ArrayList<Model> = ArrayList()
-        tutores.add(Model("John","Pija corta",R.drawable.ic_chef))
-        tutores.add(Model("Wick","Pija corta",R.drawable.ic_chef))
-        tutores.add(Model("Roland","Pija corta",R.drawable.ic_chef))
+        var listview = findViewById<ListView>(R.id.list)
 
-        val lista = findViewById<ListView>(R.id.lista)
+        //otra lista por separado de tutores
+        var list = mutableListOf<Model>()
 
-        val adaptador = AdapterTutores(this,tutores)
+        list.add(Model("Facebook", "Social Network", R.drawable.ic_laptop))
+        list.add(Model("WhatsApp", "Social Network", R.drawable.ic_laptop))
+        list.add(Model("Instagram", "Social Network", R.drawable.ic_laptop))
+        list.add(Model("PornHub", "Social Network", R.drawable.ic_laptop))
+        list.add(Model("Xvideos", "Social Network", R.drawable.ic_laptop))
 
-        lista.adapter=adaptador
-        lista.onItemClickListener= AdapterView.OnItemClickListener { parent, view, position, id ->
-            Toast.makeText(this,tutores.get(position).tittle,Toast.LENGTH_SHORT).show()
+        listview.adapter=MyAdapter(this,R.layout.row,list)
+
+
+        listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
+            if (position == 0) {
+                Toast.makeText(this@MostrarActivity, "Ha seleccionado Facebook", Toast.LENGTH_LONG)
+                    .show()
+            }
+            if (position == 1) {
+                Toast.makeText(this@MostrarActivity, "Ha seleccionado WhatsAAPP", Toast.LENGTH_LONG)
+                    .show()
+            }
+            if (position == 2) {
+                Toast.makeText(this@MostrarActivity, "Ha seleccionado Instagram", Toast.LENGTH_LONG)
+                    .show()
+            }
+            if (position == 3) {
+                Toast.makeText(this@MostrarActivity, "Ha seleccionado PornHub", Toast.LENGTH_LONG)
+                    .show()
+            }
+            if (position == 4) {
+                Toast.makeText(this@MostrarActivity, "Ha seleccionado Xvideos", Toast.LENGTH_LONG)
+                    .show()
+            }
         }
+
     }
+
 }
