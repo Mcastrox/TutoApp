@@ -73,6 +73,7 @@ class Register_Activity : AppCompatActivity() {
 
                         val userBD=dbReference.child(user?.uid!!)
                         userBD.child("Name").setValue(name)
+                        userBD.child("correo").setValue(email)
                         userBD.child("lastName").setValue(lastName)
                         userBD.child("pass").setValue(pass)
                         userBD.child("telefono").setValue(tel)
@@ -80,10 +81,11 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("Rol").setValue(1)
                         action()
                     }
-                    else{
-                        Toast.makeText(this,"Por favor rellene todos los campos",Toast.LENGTH_LONG).show()
-                    }
+
                 }
+        }
+        else{
+            Toast.makeText(this,"Por favor rellene todos los campos",Toast.LENGTH_LONG).show()
         }
     }
 

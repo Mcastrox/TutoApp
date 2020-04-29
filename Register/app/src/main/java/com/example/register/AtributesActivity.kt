@@ -86,7 +86,7 @@ class AtributesActivity : AppCompatActivity() {
 
 
         guardar_tutor.setOnClickListener {
-            // startActivity(Intent(this,MperfilActivity::class.java))
+
             guardar()
         }
     }
@@ -126,6 +126,8 @@ class AtributesActivity : AppCompatActivity() {
         referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
         referencia.child("disciplinas").setValue(listaDisciplina)
         Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
+
+
 
 
     }

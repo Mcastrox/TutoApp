@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_tutor.*
 
@@ -19,7 +20,8 @@ class TutorActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser?=auth.currentUser
         uid = user?.uid!!
-        val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+        val referencia = FirebaseDatabase.getInstance().getReference("Users")
+        referencia.orderByChild("Rol").equalTo(2.0)
         nuevo_tutor_action.setOnClickListener {
             referencia.child("Rol").setValue(2)
             startActivity(Intent(this,AtributesActivity::class.java))

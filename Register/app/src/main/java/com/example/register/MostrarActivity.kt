@@ -1,55 +1,31 @@
 package com.example.register
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ListView
-import android.widget.Toast
+import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_mostrar.*
 
 class MostrarActivity : AppCompatActivity() {
-
+    private lateinit var uid:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar)
+        var tutor = Model("Facebook", "Red social", R.drawable.ic_chef)
+        var tutor1 = Model("WhatsApp", "Red social", R.drawable.ic_laptop)
+        var tutor2 = Model("Instagram", "Red social", R.drawable.ic_art)
 
-        var listview = findViewById<ListView>(R.id.list)
+        var listaTutores = listOf(tutor,tutor1,tutor2)
 
-        //otra lista por separado de tutores
-        var list = mutableListOf<Model>()
+        var adapter = TutorAdapter(this, listaTutores)
+        list.adapter = adapter
 
-        list.add(Model("Facebook", "Social Network", R.drawable.ic_laptop))
-        list.add(Model("WhatsApp", "Social Network", R.drawable.ic_laptop))
-        list.add(Model("Instagram", "Social Network", R.drawable.ic_laptop))
-        list.add(Model("PornHub", "Social Network", R.drawable.ic_laptop))
-        list.add(Model("Xvideos", "Social Network", R.drawable.ic_laptop))
-
-        listview.adapter=MyAdapter(this,R.layout.row,list)
-
-
-        listview.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
-            if (position == 0) {
-                Toast.makeText(this@MostrarActivity, "Ha seleccionado Facebook", Toast.LENGTH_LONG)
-                    .show()
-            }
-            if (position == 1) {
-                Toast.makeText(this@MostrarActivity, "Ha seleccionado WhatsAAPP", Toast.LENGTH_LONG)
-                    .show()
-            }
-            if (position == 2) {
-                Toast.makeText(this@MostrarActivity, "Ha seleccionado Instagram", Toast.LENGTH_LONG)
-                    .show()
-            }
-            if (position == 3) {
-                Toast.makeText(this@MostrarActivity, "Ha seleccionado PornHub", Toast.LENGTH_LONG)
-                    .show()
-            }
-            if (position == 4) {
-                Toast.makeText(this@MostrarActivity, "Ha seleccionado Xvideos", Toast.LENGTH_LONG)
-                    .show()
-            }
+        list.setOnItemClickListener { parent, view, position, id ->
+            val intent = Intent(this, PseleccionadoActivity::class.java)
+            intent.putExtra("tutor", listaTutores[position])
+            startActivity(intent)
         }
-
     }
-
 }
+
+

@@ -3,39 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/ic_fondo"
+    android:background="@drawable/fondo"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="@dimen/big_padding"
-    android:gravity="center"
     tools:context=".Register_Activity">
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
-        android:indeterminate="true"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/medium_margin"
-        android:visibility="gone"
-        android:layout_height="wrap_content" />
+        android:indeterminate="true"
+        android:visibility="gone" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/ubuntu"
         android:text="@string/register_text"
-        android:textStyle="bold"
         android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@android:color/darker_gray"
         android:layout_marginLeft="@dimen/big_padding"
-        android:layout_marginRight="@dimen/big_padding"
         android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginBottom="@dimen/small_margin" />
+        android:layout_marginRight="@dimen/big_padding"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:background="@android:color/darker_gray" />
 
     <EditText
         android:id="@+id/txt_name"
@@ -57,80 +57,79 @@
         android:id="@+id/txt_lastname"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:padding="@dimen/small_margin"
-        android:background="#A3131313"
-        android:textColorHint="#A3FFFFFF"
-        android:textColor="#FFFFFF"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
         android:ems="10"
         android:hint="Ingrese su apellido"
-        android:layout_marginBottom="@dimen/medium_margin"
         android:inputType="textPersonName"
-        android:textStyle="bold"
-        />
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txt_email"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:background="#A3131313"
-        android:textColorHint="#A3FFFFFF"
-        android:textColor="#FFFFFF"
-        android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
+        android:ems="10"
         android:hint="Ingrese su correo"
         android:inputType="textEmailAddress"
-        android:textStyle="bold"/>
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txt_password"
         android:layout_width="match_parent"
-        android:padding="@dimen/small_margin"
         android:layout_height="@dimen/et_small_height"
-        android:ems="10"
-        android:background="#A3131313"
-        android:textColorHint="#A3FFFFFF"
-        android:textColor="#FFFFFF"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
         android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
+        android:ems="10"
         android:hint="Ingrese su contraseña"
         android:inputType="textPassword"
-        android:textStyle="bold"/>
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/txt_telefono"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:background="#A3131313"
-        android:textColorHint="#A3FFFFFF"
-        android:textColor="#FFFFFF"
-        android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
+        android:ems="10"
         android:hint="Ingrese un numero de teléfono"
-        android:textStyle="bold"
-        />
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/txt_direccion"
         android:layout_width="match_parent"
         android:layout_height="@dimen/et_small_height"
-        android:padding="@dimen/small_margin"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:background="#A3131313"
-        android:textColorHint="#A3FFFFFF"
-        android:textColor="#FFFFFF"
-        android:ems="10"
         android:layout_marginBottom="@dimen/medium_margin"
+        android:background="#A3131313"
+        android:ems="10"
         android:hint="Ingrese una dirección"
-        android:textStyle="bold"
-         />
+        android:padding="@dimen/small_margin"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#A3FFFFFF"
+        android:textStyle="bold" />
 
 
     <CheckBox
@@ -139,10 +138,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/medium_margin"
         android:layout_marginRight="@dimen/medium_margin"
-        android:textColor="@color/blackMate"
         android:buttonTint="@color/light_grayish"
         android:text="Al registrarme acepto los términos y políticas de privacidad"
-        android:textStyle="bold"/>
+        android:textColor="@color/blackMate"
+        android:textStyle="bold" />
 
     <Button
         android:layout_width="match_parent"
@@ -156,7 +155,6 @@
         android:textColor="#FFFFFf"
         android:textSize="16sp"
         android:textStyle="bold" />
-
 
 
 </LinearLayout>
