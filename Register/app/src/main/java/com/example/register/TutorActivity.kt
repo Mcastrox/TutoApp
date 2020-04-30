@@ -20,8 +20,7 @@ class TutorActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser?=auth.currentUser
         uid = user?.uid!!
-        val referencia = FirebaseDatabase.getInstance().getReference("Users")
-        referencia.orderByChild("Rol").equalTo(2.0)
+        val referencia =  FirebaseDatabase .getInstance (). getReference ( "Users" ) .child (uid)
         nuevo_tutor_action.setOnClickListener {
             referencia.child("Rol").setValue(2)
             startActivity(Intent(this,AtributesActivity::class.java))
