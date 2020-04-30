@@ -15,6 +15,7 @@ class CategoriesActivity : AppCompatActivity() {
         home_return.setOnClickListener {
             startActivity(Intent(this,HomeActivity::class.java))
         }
+
     }
 
 }

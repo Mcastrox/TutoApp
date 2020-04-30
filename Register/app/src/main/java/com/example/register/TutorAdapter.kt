@@ -16,6 +16,7 @@ class TutorAdapter(private val mContext: Context , private val listaTutores : Li
         layout.textView2.text=tutor.description
         layout.image.setImageResource(tutor.img)
 
+
         return layout
     }
 }
