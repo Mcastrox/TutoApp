@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
         <activity android:name=".PseleccionadoActivity"></activity>
-        <activity android:name=".MostrarActivity" />
+        <activity android:name=".MostrarActivity"
+            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".TutorActivity" />
         <activity android:name=".MperfilActivity" />
         <activity android:name=".ProfileActivity" />
