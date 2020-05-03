@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:737190387802:android:c29963cfd6b514264ef863",
         "android_client_info": {
-          "package_name": "com.example.register"
+          "package_name": "com.example.tutoapp"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "737190387802-fnu8jgvgqm5bjsn0kuhoaen8vt8jd231.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.register",
+            "package_name": "com.example.tutoapp",
             "certificate_hash": "db5e394554d549dd21f306e68ef97970c5ca2766"
           }
         },
