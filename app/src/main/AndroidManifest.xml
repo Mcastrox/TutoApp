@@ -26,8 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Forgotpass_Activity" />
-        <activity android:name=".Login_Activity" android:windowSoftInputMode="adjustResize"/>
-        <activity android:name=".Register_Activity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".Login_Activity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Register_Activity" android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>
