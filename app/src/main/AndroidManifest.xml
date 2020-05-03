@@ -9,25 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name="com.example.tutoapp.PseleccionadoActivity"></activity>
-        <activity android:name="com.example.tutoapp.MostrarActivity"
-            android:parentActivityName="com.example.tutoapp.HomeActivity"/>
-        <activity android:name="com.example.tutoapp.TutorActivity" />
-        <activity android:name="com.example.tutoapp.MperfilActivity" />
-        <activity android:name="com.example.tutoapp.ProfileActivity" />
-        <activity android:name="com.example.tutoapp.AtributesActivity" />
-        <activity android:name="com.example.tutoapp.HomeActivity" />
-        <activity android:name="com.example.tutoapp.CategoriesActivity" />
-        <activity android:name="com.example.tutoapp.MainActivity">
+        <activity android:name=".CentralActivity"></activity>
+        <activity android:name=".PseleccionadoActivity" />
+        <activity
+            android:name=".MostrarActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".TutorActivity" />
+        <activity android:name=".MperfilActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".AtributesActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".CategoriesActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.tutoapp.Forgotpass_Activity" />
-        <activity android:name="com.example.tutoapp.Login_Activity" android:windowSoftInputMode="adjustPan"/>
-        <activity android:name="com.example.tutoapp.Register_Activity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Forgotpass_Activity" />
+        <activity
+            android:name=".Login_Activity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Register_Activity"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>
