@@ -13,7 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:text="Grado academico"
         android:textColor="#9FFF0000"
@@ -48,7 +47,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Grado academico"
@@ -65,7 +63,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Ocupacion"
         android:textColor="#9FFF0000"
@@ -81,7 +78,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Ocupacion"
@@ -98,7 +94,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Descripcion"
         android:textColor="#9FFF0000"
@@ -115,7 +110,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Descripcion"
@@ -132,7 +126,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Selecciona tus categorias"
         android:textColor="#9FFF0000"
@@ -149,7 +142,6 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
@@ -170,62 +162,71 @@
                 android:id="@+id/categoria_arte"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Arte" />
+                android:text="Arte"
+                android:textStyle="bold" />
 
             <CheckBox
                 android:id="@+id/categoria_idiomas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Idiomas" />
+                android:text="Idiomas"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_matematicas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Matematicas" />
+                android:text="Matematicas"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_cocina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cocina" />
+                android:text="Cocina"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_economia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Economia" />
+                android:text="Economia"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_habilidadesSociales"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Habilidades Sociales" />
+                android:text="Habilidades Sociales"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_fisica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fisica" />
+                android:text="Fisica"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_computacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Computacion" />
+                android:text="Computacion"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_quimica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quimica" />
+                android:text="Quimica"
+                android:textStyle="bold"/>
 
             <CheckBox
                 android:id="@+id/categoria_deportes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deportes" />
+                android:text="Deportes"
+                android:textStyle="bold"/>
 
         </LinearLayout>
     </ScrollView>

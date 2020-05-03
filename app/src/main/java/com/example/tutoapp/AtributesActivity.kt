@@ -25,6 +25,13 @@ class AtributesActivity : AppCompatActivity() {
     lateinit var cbdis2: CheckBox
     lateinit var cbdis3: CheckBox
     lateinit var cbdis4: CheckBox
+    lateinit var cbdis5: CheckBox
+    lateinit var cbdis6: CheckBox
+    lateinit var cbdis7: CheckBox
+    lateinit var cbdis8: CheckBox
+    lateinit var cbdis9: CheckBox
+    lateinit var cbdis10: CheckBox
+
 
     lateinit var uid: String
     lateinit var auth: FirebaseAuth
@@ -79,7 +86,66 @@ class AtributesActivity : AppCompatActivity() {
                 }
             }
         }
-
+        cbdis5.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis5.isChecked -> {
+                    this.listaDisciplina[4].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[4].seleccionado = false
+                }
+            }
+        }
+        cbdis6.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis6.isChecked -> {
+                    this.listaDisciplina[5].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[5].seleccionado = false
+                }
+            }
+        }
+        cbdis7.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis7.isChecked -> {
+                    this.listaDisciplina[6].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[6].seleccionado = false
+                }
+            }
+        }
+        cbdis8.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis8.isChecked -> {
+                    this.listaDisciplina[7].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[7].seleccionado = false
+                }
+            }
+        }
+        cbdis9.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis9.isChecked -> {
+                    this.listaDisciplina[8].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[8].seleccionado = false
+                }
+            }
+        }
+        cbdis10.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis10.isChecked -> {
+                    this.listaDisciplina[9].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[9].seleccionado = false
+                }
+            }
+        }
 
         guardar_tutor.setOnClickListener {
 
@@ -90,20 +156,33 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun initArrayDisciplina() {
         this.listaDisciplina = ArrayList();
-        this.listaDisciplina.add(Disciplina("1", "cocina", "", false))
-        this.listaDisciplina.add(Disciplina("2", "math", "", false))
-        this.listaDisciplina.add(Disciplina("3", "ciencias", "", false))
-        this.listaDisciplina.add(Disciplina("4", "arte", "", false))
+        this.listaDisciplina.add(Disciplina("1", "Arte", "", false))
+        this.listaDisciplina.add(Disciplina("2", "Idiomas", "", false))
+        this.listaDisciplina.add(Disciplina("3", "Matematicas", "", false))
+        this.listaDisciplina.add(Disciplina("4", "Cocina", "", false))
+        this.listaDisciplina.add(Disciplina("5", "Economia", "", false))
+        this.listaDisciplina.add(Disciplina("6", "Habilidades Sociales", "", false))
+        this.listaDisciplina.add(Disciplina("7", "Fisica", "", false))
+        this.listaDisciplina.add(Disciplina("8", "Computacion", "", false))
+        this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
+        this.listaDisciplina.add(Disciplina("10", "Deportes", "", false))
     }
 
     private fun initialize() {
         this.txtEducacion = findViewById(R.id.educacion_tutor)
         this.txtOcupacion = findViewById(R.id.ocupacion_tutor)
         this.txtDescripcion = findViewById(R.id.descripcion_tutor)
-        this.cbdis1 = findViewById(R.id.disciplina_cocinar)
-        this.cbdis2 = findViewById(R.id.disciplina_math)
-        this.cbdis3 = findViewById(R.id.disciplina_ciencias)
-        this.cbdis4 = findViewById(R.id.disciplina_arte)
+        this.cbdis1 = findViewById(R.id.categoria_arte)
+        this.cbdis2 = findViewById(R.id.categoria_idiomas)
+        this.cbdis3 = findViewById(R.id.categoria_matematicas)
+        this.cbdis4 = findViewById(R.id.categoria_cocina)
+        this.cbdis5 = findViewById(R.id.categoria_economia)
+        this.cbdis6 = findViewById(R.id.categoria_habilidadesSociales)
+        this.cbdis7 = findViewById(R.id.categoria_fisica)
+        this.cbdis8 = findViewById(R.id.categoria_computacion)
+        this.cbdis9 = findViewById(R.id.categoria_quimica)
+        this.cbdis10 = findViewById(R.id.categoria_deportes)
+
         this.btnGuardar = findViewById(R.id.guardar_tutor)
 
         auth = FirebaseAuth.getInstance()
