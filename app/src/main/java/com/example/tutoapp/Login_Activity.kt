@@ -27,7 +27,7 @@ class Login_Activity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
 
         miLinearLayout = findViewById(R.id.miLinearLayout)
-        miLinearLayout.setBackgroundColor(Color.argb(175,0,0,0))
+        miLinearLayout.setBackgroundColor(Color.argb(200,0,0,0))
 
     }
     fun forgotPassword(view:View){
