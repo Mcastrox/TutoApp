@@ -7,4 +7,5 @@
     <string name="txt_Login">Iniciar Sesion</string>
     <string name="ToolBarTitle">Tutores</string>
     <string name="TituloFav">Favorito</string>
+    <string name="welcome_text">Bienvenido</string>
 </resources>
