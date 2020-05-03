@@ -20,7 +20,7 @@ class TutorActivity : AppCompatActivity() {
         uid = user?.uid!!
         val referencia =  FirebaseDatabase .getInstance (). getReference ( "Users" ) .child (uid)
         nuevo_tutor_action.setOnClickListener {
-            referencia.child("Rol").setValue(2)
+            referencia.child("Rol").setValue("Tutor")
             startActivity(Intent(this,AtributesActivity::class.java))
 
         }

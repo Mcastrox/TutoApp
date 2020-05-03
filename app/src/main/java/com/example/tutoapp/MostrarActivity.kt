@@ -47,14 +47,20 @@ class MostrarActivity : AppCompatActivity() {
                 for (e in p0.children) {
                     var lastName: String = ""
                     var direccion: String = ""
+                    var rol : String=""
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
                     }
                     if (e.child("direccion").value != null) {
                         direccion = e.child("direccion").value as String
                     }
-
-                    listaTutores.add(Model(lastName, direccion, R.drawable.ic_laptop))
+                    if(e.child("Rol").value != null){
+                        rol=e.child("Rol").value as String
+                    }
+                    if(rol == "Tutor" )
+                    {
+                        listaTutores.add(Model(lastName, direccion, R.drawable.ic_laptop))
+                    }
 
                 }
                 var adapter = TutorAdapter(me, listaTutores)
