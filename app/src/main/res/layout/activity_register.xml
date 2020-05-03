@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/fondo"
     tools:context=".Register_Activity">
 
@@ -50,99 +51,143 @@
                 android:layout_marginBottom="@dimen/small_margin"
                 android:background="@android:color/darker_gray" />
 
-            <EditText
-                android:id="@+id/txt_name"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese su nombre"
-                android:inputType="textPersonName"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
 
-            <EditText
-                android:id="@+id/txt_lastname"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese su apellido"
-                android:inputType="textPersonName"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/txt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese su nombre"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/txt_email"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese su correo"
-                android:inputType="textEmailAddress"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/txt_password"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese su contraseña"
-                android:inputType="textPassword"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
 
-            <EditText
-                android:id="@+id/txt_telefono"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese un numero de teléfono"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/txt_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese su apellido"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/txt_direccion"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/et_small_height"
-                android:layout_marginLeft="@dimen/medium_margin"
-                android:layout_marginRight="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="#A3131313"
-                android:ems="10"
-                android:hint="Ingrese una dirección"
-                android:padding="@dimen/small_margin"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#A3FFFFFF"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
+
+                <EditText
+                    android:id="@+id/txt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese su correo"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
+
+                <EditText
+                    android:id="@+id/txt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese su contraseña"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#A3FFFFFF"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
+
+                <EditText
+                    android:id="@+id/txt_telefono"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese un numero de teléfono"
+                    android:padding="@dimen/small_margin"
+                    android:textStyle="bold" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/hint_color"
+                android:textColorHint="@color/hint_color">
+
+                <EditText
+                    android:id="@+id/txt_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/et_small_height"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:background="#A3131313"
+                    android:ems="10"
+                    android:hint="Ingrese una dirección"
+                    android:padding="@dimen/small_margin"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
             <CheckBox
