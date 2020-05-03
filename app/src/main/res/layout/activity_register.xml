@@ -14,14 +14,14 @@
         android:fillViewport="true">
 
         <LinearLayout
-            android:id="@+id/miLinearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingLeft="@dimen/big_padding"
-            android:paddingRight="@dimen/big_padding">
+            android:paddingRight="@dimen/big_padding"
+            android:background="@color/background_blackAlpha">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -54,7 +54,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -63,7 +63,6 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese su nombre"
@@ -77,7 +76,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -86,7 +85,6 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese su apellido"
@@ -100,7 +98,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -109,7 +107,6 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese su correo"
@@ -124,7 +121,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -133,7 +130,6 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese su contraseña"
@@ -148,7 +144,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -157,7 +153,6 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese un numero de teléfono"
@@ -170,7 +165,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:hintTextColor="@color/hint_color"
+                app:hintTextColor="@color/soft_cyan"
                 android:textColorHint="@color/hint_color">
 
                 <EditText
@@ -179,7 +174,7 @@
                     android:layout_height="@dimen/et_small_height"
                     android:layout_marginLeft="@dimen/medium_margin"
                     android:layout_marginRight="@dimen/medium_margin"
-                    android:layout_marginBottom="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/small_margin"
                     android:background="#A3131313"
                     android:ems="10"
                     android:hint="Ingrese una dirección"
@@ -199,7 +194,7 @@
                 android:layout_marginBottom="@dimen/medium_margin"
                 android:buttonTint="@color/light_grayish"
                 android:text="Al registrarme acepto los términos y políticas de privacidad"
-                android:textColor="@color/blackMate"
+                android:textColor="@color/grey"
                 android:textStyle="bold" />
 
             <Button
@@ -207,7 +202,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/medium_margin"
                 android:layout_marginRight="@dimen/medium_margin"
-                android:background="#D34FDAB9"
+                android:background="#CD4FDAB9"
                 android:onClick="register"
                 android:text="Crear cuenta"
                 android:textColor="#FFFFFf"
@@ -217,6 +212,5 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

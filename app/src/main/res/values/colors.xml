@@ -10,4 +10,5 @@
     <color name="soft_cyan">#4fdab9</color>
     <color name="light_grayish">#dcdbd9</color>
     <color name="hint_color">#A3FFFFFF</color>
+    <color name="background_blackAlpha">#D9131313</color>
 </resources>

@@ -26,7 +26,7 @@ class Register_Activity : AppCompatActivity() {
     private lateinit var dbReference: DatabaseReference
     private lateinit var database: FirebaseDatabase
     private lateinit var auth: FirebaseAuth
-    private lateinit var miLinearLayout: View
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,10 +43,6 @@ class Register_Activity : AppCompatActivity() {
         database= FirebaseDatabase.getInstance()
         auth=FirebaseAuth.getInstance()
         dbReference=database.reference.child("Users")
-
-
-        miLinearLayout = findViewById(R.id.miLinearLayout)
-        miLinearLayout.setBackgroundColor(Color.argb(200,0,0,0))
 
     }
     fun register(view:View){

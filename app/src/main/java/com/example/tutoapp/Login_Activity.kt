@@ -16,7 +16,6 @@ class Login_Activity : AppCompatActivity() {
     private lateinit var txtPassword:EditText
     private lateinit var progressBar: ProgressBar
     private lateinit var auth: FirebaseAuth
-    private lateinit var miLinearLayout: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +25,6 @@ class Login_Activity : AppCompatActivity() {
         progressBar= findViewById(R.id.progressBar2)
         auth= FirebaseAuth.getInstance()
 
-        miLinearLayout = findViewById(R.id.miLinearLayout)
-        miLinearLayout.setBackgroundColor(Color.argb(200,0,0,0))
 
     }
     fun forgotPassword(view:View){
