@@ -1,17 +1,13 @@
-package com.example.register
+package com.example.tutoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.activity_register.*
-import org.w3c.dom.Text
-import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
 

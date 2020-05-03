@@ -1,14 +1,12 @@
-package com.example.register
+package com.example.tutoapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.ActionProvider
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
-import android.widget.ShareActionProvider
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat

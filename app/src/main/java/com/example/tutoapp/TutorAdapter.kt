@@ -1,4 +1,4 @@
-package com.example.register
+package com.example.tutoapp
 
 import android.content.Context
 import android.view.LayoutInflater

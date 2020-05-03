@@ -1,4 +1,4 @@
-package com.example.register
+package com.example.tutoapp
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

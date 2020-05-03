@@ -1,13 +1,11 @@
-package com.example.register
+package com.example.tutoapp
 
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -46,11 +44,9 @@ class Register_Activity : AppCompatActivity() {
         auth=FirebaseAuth.getInstance()
         dbReference=database.reference.child("Users")
 
-        
+
         miLinearLayout = findViewById(R.id.miLinearLayout)
-        miLinearLayout.setBackgroundColor(Color.argb(150,0,0,0))
-
-
+        miLinearLayout.setBackgroundColor(Color.argb(175,0,0,0))
 
     }
     fun register(view:View){

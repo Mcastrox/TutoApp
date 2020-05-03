@@ -1,4 +1,4 @@
-package com.example.register
+package com.example.tutoapp
 
 import java.io.Serializable
 

@@ -1,9 +1,8 @@
-package com.example.register
+package com.example.tutoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_pseleccionado.*
-import kotlinx.android.synthetic.main.row.*
 
 class PseleccionadoActivity : AppCompatActivity() {
 
