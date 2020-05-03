@@ -46,7 +46,7 @@ class Register_Activity : AppCompatActivity() {
 
 
         miLinearLayout = findViewById(R.id.miLinearLayout)
-        miLinearLayout.setBackgroundColor(Color.argb(175,0,0,0))
+        miLinearLayout.setBackgroundColor(Color.argb(200,0,0,0))
 
     }
     fun register(view:View){
