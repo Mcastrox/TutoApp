@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -43,6 +44,8 @@ class Register_Activity : AppCompatActivity() {
         database= FirebaseDatabase.getInstance()
         auth=FirebaseAuth.getInstance()
         dbReference=database.reference.child("Users")
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
     }
     fun register(view:View){

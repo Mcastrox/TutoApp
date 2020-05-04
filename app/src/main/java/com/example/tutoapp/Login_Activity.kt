@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -25,7 +26,7 @@ class Login_Activity : AppCompatActivity() {
         progressBar= findViewById(R.id.progressBar2)
         auth= FirebaseAuth.getInstance()
 
-
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
     }
     fun forgotPassword(view:View){
         startActivity(Intent(this,Forgotpass_Activity::class.java))
