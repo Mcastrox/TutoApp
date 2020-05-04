@@ -48,7 +48,7 @@
                     <ImageView
                         android:layout_width="112dp"
                         android:layout_height="140dp"
-                        android:src="@drawable/ic_login_icon"
+                        app:srcCompat="@drawable/ic_login_icon"
                         android:tint="@color/soft_cyan" />
 
                     <TextView
@@ -61,6 +61,16 @@
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/medium_margin"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="@string/login_text"
+                        android:textAllCaps="true"
+                        android:textColor="@color/grey"
+                        android:textSize="15sp" />
+
 
                 </LinearLayout>
 
@@ -72,24 +82,15 @@
                     android:layout_marginBottom="@dimen/medium_margin"
                     android:background="@android:color/darker_gray" />
 
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/medium_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
                     android:layout_weight="3"
                     android:gravity="center"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:fontFamily="@font/ubuntu"
-                        android:text="@string/login_text"
-                        android:textAllCaps="true"
-                        android:textColor="@color/grey"
-                        android:textSize="15sp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -101,9 +102,7 @@
                             android:id="@+id/txtUser"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/et_small_height"
-                            android:layout_marginLeft="@dimen/medium_margin"
                             android:layout_marginTop="@dimen/medium_margin"
-                            android:layout_marginRight="@dimen/medium_margin"
                             android:background="#A3131313"
                             android:ems="10"
                             android:hint="Correo"
@@ -124,8 +123,6 @@
                             android:id="@+id/txtPassword"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/et_small_height"
-                            android:layout_marginLeft="@dimen/medium_margin"
-                            android:layout_marginRight="@dimen/medium_margin"
                             android:layout_marginBottom="@dimen/small_margin"
                             android:background="#A3131313"
                             android:ems="10"
@@ -140,29 +137,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/medium_margin"
-                        android:layout_marginRight="@dimen/medium_margin"
+                        android:layout_gravity="right"
                         android:layout_marginBottom="@dimen/medium_margin"
                         android:gravity="center"
                         android:onClick="forgotPassword"
                         android:text="¿Olvidaste tu contraseña?"
                         android:textColor="@color/grey"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/small_text"
                         android:textStyle="bold" />
 
 
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/medium_margin"
                         android:layout_marginTop="@dimen/medium_margin"
-                        android:layout_marginRight="@dimen/medium_margin"
-                        android:layout_marginBottom="@dimen/medium_margin"
-                        android:background="#CD4FDAB9"
+                        android:layout_marginBottom="@dimen/small_margin"
+                        android:background="@color/soft_cyan"
                         android:onClick="login"
                         android:text="INICIAR SESION"
-                        android:textColor="#ffffff"
-                        android:textSize="16sp" />
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/button_size_text"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,8 +166,8 @@
                         android:onClick="register"
                         android:text="Registrate ahora"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold|italic" />
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
 
 
                 </LinearLayout>
