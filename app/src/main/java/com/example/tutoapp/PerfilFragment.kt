@@ -36,6 +36,13 @@ class PerfilFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentPerfilBinding>(inflater,R.layout.fragment_perfil,container,false)
 
         bindingView(binding)
+        initialize()
+        binding.miPerfil.setOnClickListener {
+            startActivity(Intent(activity,ProfileActivity::class.java))
+        }
+        binding.newTutor.setOnClickListener {
+            startActivity(Intent(activity,TutorActivity::class.java))
+        }
 
         return binding.root
 
@@ -46,6 +53,29 @@ class PerfilFragment : Fragment() {
         username = binding.username
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
+
     }
+    fun initialize(){
+        auth = FirebaseAuth.getInstance()
+        val user:FirebaseUser?=auth.currentUser
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val userRef = ref.child(user?.uid!!)
+        usermail.text = user?.email!!.toString()
+        userRef.addValueEventListener(object: ValueEventListener{
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // sustituir nombre por "Name"
+                username.text = dataSnapshot.child("Name").value as String
+                userTel.text=dataSnapshot.child("telefono").value as String
+
+
+            }
+
+        })
+    }
+
 
 }
