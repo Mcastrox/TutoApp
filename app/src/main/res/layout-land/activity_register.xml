@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_blackAlpha"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -23,47 +23,11 @@
             android:indeterminate="true"
             android:visibility="gone" />
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:gravity="center"
+                android:padding="@dimen/big_padding"
                 android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
-                    android:text="@string/register_text"
-                    android:textAllCaps="true"
-                    android:textColor="@color/white"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/medium_margin"
-                android:background="@android:color/darker_gray" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:orientation="vertical">
-
 
                 <ScrollView
                     android:layout_width="wrap_content"
@@ -76,7 +40,24 @@
                         android:layout_gravity="top"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="@dimen/medium_margin">
+                        android:padding="@dimen/big_padding">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/ubuntu"
+                            android:text="@string/register_text"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:layout_marginBottom="@dimen/medium_margin"
+                            android:background="@android:color/darker_gray" />
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
@@ -88,8 +69,6 @@
                                 android:id="@+id/txt_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Nombre"
@@ -110,8 +89,6 @@
                                 android:id="@+id/txt_lastname"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Apellido"
@@ -132,8 +109,6 @@
                                 android:id="@+id/txt_email"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Correo"
@@ -155,8 +130,6 @@
                                 android:id="@+id/txt_password"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Contraseña"
@@ -177,8 +150,6 @@
                                 android:id="@+id/txt_telefono"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Teléfono"
@@ -199,8 +170,6 @@
                                 android:id="@+id/txt_direccion"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/et_small_height"
-                                android:layout_marginLeft="@dimen/medium_margin"
-                                android:layout_marginRight="@dimen/medium_margin"
                                 android:layout_marginBottom="@dimen/medium_margin"
                                 android:background="#A3131313"
                                 android:ems="10"
@@ -216,19 +185,16 @@
                             android:id="@+id/cbx_politics"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/medium_margin"
-                            android:layout_marginRight="@dimen/medium_margin"
                             android:layout_marginBottom="@dimen/medium_margin"
                             android:buttonTint="@color/light_grayish"
                             android:text="Al registrarme acepto los términos y políticas de privacidad"
                             android:textColor="@color/grey"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                         <Button
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/medium_margin"
-                            android:layout_marginRight="@dimen/medium_margin"
                             android:background="#CD4FDAB9"
                             android:onClick="register"
                             android:text="Crear cuenta"
@@ -243,6 +209,4 @@
             </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
-
 </LinearLayout>
