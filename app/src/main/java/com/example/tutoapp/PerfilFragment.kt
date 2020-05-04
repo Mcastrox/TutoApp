@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
+import com.example.tutoapp.databinding.FragmentPerfilBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -24,16 +26,26 @@ class PerfilFragment : Fragment() {
     private lateinit var username: TextView
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        val binding = DataBindingUtil.inflate<FragmentPerfilBinding>(inflater,R.layout.fragment_perfil,container,false)
+
+        bindingView(binding)
+
+        return binding.root
 
 
     }
 
-}
+    fun bindingView(binding: FragmentPerfilBinding){
+        username = binding.username
+        usermail = binding.usermail
+        userTel = binding.mperfilTelefono
+    }
 
+}
