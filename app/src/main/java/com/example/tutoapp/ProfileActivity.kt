@@ -1,13 +1,25 @@
 package com.example.tutoapp
 
+import android.app.Activity
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_profile.*
+import java.util.*
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -27,6 +39,7 @@ class ProfileActivity : AppCompatActivity() {
         modificar_info.setOnClickListener {
             guardar()
         }
+
         /*val user: FirebaseUser?=mAuth.currentUser
         mDataBaseReference= FirebaseDatabase.getInstance().getReference("Users")
         uid = user?.uid!!
@@ -89,7 +102,4 @@ class ProfileActivity : AppCompatActivity() {
         })
 
     }
-
-
-
 }
