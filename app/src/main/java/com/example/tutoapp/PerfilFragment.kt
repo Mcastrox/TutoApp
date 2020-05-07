@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -26,10 +27,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_central.*
 import kotlinx.android.synthetic.main.activity_mperfil.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_perfil.view.*
+import java.io.File
 import java.util.*
 import java.util.jar.Manifest
 
@@ -41,6 +44,7 @@ class PerfilFragment : Fragment() {
     private lateinit var username: TextView
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
+    private lateinit var cambiarImagen:Button
     var selected : Uri? =null
     private lateinit var imageUser: ImageView
     var mStorageRef : StorageReference? =null
@@ -66,24 +70,29 @@ class PerfilFragment : Fragment() {
             selectImage()
         }
 
+        binding.cambiarImagen.setOnClickListener{updateImage()}
+
 
         return binding.root
 
 
     }
 
-    fun bindingView(binding: FragmentPerfilBinding){
+    private fun bindingView(binding: FragmentPerfilBinding){
         username = binding.username
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
         imageUser= binding.selectImage
+        cambiarImagen = binding.cambiarImagen
 
     }
-    fun initialize(){
+    private fun initialize(){
         auth = FirebaseAuth.getInstance()
         val user:FirebaseUser?=auth.currentUser
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         val userRef = ref.child(user?.uid!!)
+
+
 
         mStorageRef = FirebaseStorage.getInstance().reference
 
@@ -98,13 +107,76 @@ class PerfilFragment : Fragment() {
                 username.text = dataSnapshot.child("Name").value as String
                 userTel.text=dataSnapshot.child("telefono").value as String
 
+               if(dataSnapshot.child("urlImage").exists()){
+
+                    val url = dataSnapshot.child("urlImage").value as String
+
+                    Picasso.get().load(url).into(imageUser);
+                }
 
             }
 
         })
 
     }
-    fun cambiarImagen(){
+
+
+    //para subir la imagen
+    private fun updateImage()
+    {
+        //para cambiar la imagen
+        val uuid = UUID.randomUUID()
+
+        if(selected != null)
+        {
+            var urlString = selected.toString()
+            var ext = urlString.substring(urlString.lastIndexOf(".")+1) //extrellendo la extension
+            val imageName = "images/$uuid.${ext}"
+            var storageReference = mStorageRef!!.child(imageName)
+            storageReference.putFile(selected!!)
+                .addOnSuccessListener {
+
+                    // storing the media URL if upload success
+                    //val downloadURL = taskSnapshot.metadata.toString()
+                    val newReference = FirebaseStorage.getInstance().getReference(imageName)
+                    newReference.downloadUrl
+                        .addOnSuccessListener { uri->
+                            val downloadURL = uri.toString()
+                            println(downloadURL)
+                            //agregaremos el dato al usuario logueado
+                            val user:FirebaseUser?=auth.currentUser
+                            val ref = FirebaseDatabase.getInstance().getReference("Users")
+                            val userRef = ref.child(user?.uid!!)
+
+                            //con esto agremanos la ruta
+                            userRef.child("urlImage").setValue(uri.toString())
+                            //imageUser.setImageURI(uri.)
+                        }
+                }
+                .addOnFailureListener { exception ->
+                    if (exception != null) {
+                        Toast.makeText(activity, exception.localizedMessage, Toast.LENGTH_LONG).show()
+                    }
+                }
+                .addOnCompleteListener { task ->
+                    if (task.isComplete) {
+                        Toast.makeText(activity, "Post Added!", Toast.LENGTH_LONG).show()
+
+                        // intent
+                    }
+                }
+
+        }else{
+            Toast.makeText(activity, "Debe seleccionar una imagen", Toast.LENGTH_LONG).show()
+        }
+
+
+        selected = null
+
+    }
+
+
+    /*fun cambiarImagen(){
         val uuid = UUID.randomUUID()
         val imageName = "images/$uuid.jpg"
         val storageReference = mStorageRef!!.child(imageName)
@@ -122,8 +194,8 @@ class PerfilFragment : Fragment() {
             }
         }
 
-    }
-    fun selectImage(){
+    }*/
+    private fun selectImage(){
         if(ContextCompat.checkSelfPermission(activity!!,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
         }
