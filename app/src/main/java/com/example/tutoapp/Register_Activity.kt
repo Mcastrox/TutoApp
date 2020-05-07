@@ -82,6 +82,7 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("telefono").setValue(tel)
                         userBD.child("direccion").setValue(direccion)
                         userBD.child("Rol").setValue("Estudiante")
+                        userBD.child("urlImage").setValue("0")
                         action()
                     }
 

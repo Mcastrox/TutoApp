@@ -105,15 +105,15 @@ class PerfilFragment : Fragment() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // sustituir nombre por "Name"
                 username.text = dataSnapshot.child("Name").value as String
-                userTel.text=dataSnapshot.child("telefono").value as String
+                userTel.text = dataSnapshot.child("telefono").value as String
 
-               if(dataSnapshot.child("urlImage").exists()){
+                if (dataSnapshot.child("urlImage").exists()) {
 
-                    val url = dataSnapshot.child("urlImage").value as String
+                        val url = dataSnapshot.child("urlImage").value as String
 
-                    Picasso.get().load(url).into(imageUser);
+                        Picasso.get().load(url).into(imageUser);
+
                 }
-
             }
 
         })
@@ -174,26 +174,6 @@ class PerfilFragment : Fragment() {
 
     }
 
-
-    /*fun cambiarImagen(){
-        val uuid = UUID.randomUUID()
-        val imageName = "images/$uuid.jpg"
-        val storageReference = mStorageRef!!.child(imageName)
-
-        storageReference.putFile(selected!!).addOnSuccessListener { taskSnapshot ->
-            val downloadUrl= taskSnapshot.storage.downloadUrl.toString()
-        }.addOnFailureListener { exception ->
-            if(exception!= null){
-                Toast.makeText(activity!!,exception.localizedMessage,Toast.LENGTH_SHORT).show()
-            }
-        }.addOnCompleteListener { task ->
-            if(task.isComplete){
-                Toast.makeText(activity!!,"Imagen subida",Toast.LENGTH_SHORT).show()
-                //intent
-            }
-        }
-
-    }*/
     private fun selectImage(){
         if(ContextCompat.checkSelfPermission(activity!!,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
             requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),1)
