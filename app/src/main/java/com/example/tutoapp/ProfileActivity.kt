@@ -162,7 +162,7 @@ class ProfileActivity : AppCompatActivity() {
 
                 //agregando la imagen  imageSelected
 
-                if(dataSnapshot.child("urlImage") != null){
+                if(dataSnapshot.child("urlImage").exists()){
 
                     val url = dataSnapshot.child("urlImage").value as String
 

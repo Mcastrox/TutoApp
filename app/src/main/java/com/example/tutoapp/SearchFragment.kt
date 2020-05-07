@@ -2,9 +2,11 @@ package com.example.tutoapp
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +19,8 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_mostrar.*
 
 
@@ -25,9 +29,7 @@ import kotlinx.android.synthetic.main.activity_mostrar.*
  */
 class SearchFragment : Fragment() {
 
-    private lateinit var uid: String
     private var toolbar: Toolbar? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
@@ -52,6 +54,7 @@ class SearchFragment : Fragment() {
         var actionBar = activity?.actionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         var me = this // variable para guardar el contexto actual
 
         var listaTutores = mutableListOf<Model>()
@@ -59,6 +62,7 @@ class SearchFragment : Fragment() {
 
         //Aqui se trae todos los valores
         ref.addValueEventListener(object : ValueEventListener {
+
             override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
@@ -82,7 +86,7 @@ class SearchFragment : Fragment() {
                         rol = e.child("Rol").value as String
                     }
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(lastName, direccion, R.drawable.ic_laptop))
+                        listaTutores.add(Model(lastName, direccion, R.drawable.ic_chef))
                     }
 
                 }
