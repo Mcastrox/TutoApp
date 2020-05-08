@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_mostrar.*
 
 
@@ -76,6 +77,8 @@ class SearchFragment : Fragment() {
                     var lastName: String = ""
                     var direccion: String = ""
                     var rol: String = ""
+                    var ruta : String = ""
+
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
                     }
@@ -85,8 +88,12 @@ class SearchFragment : Fragment() {
                     if (e.child("Rol").value != null) {
                         rol = e.child("Rol").value as String
                     }
+                    if(e.child("urlImage").value != null){
+                        ruta=e.child("urlImage").value as String
+                    }
+
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(lastName, direccion, R.drawable.ic_chef))
+                        listaTutores.add(Model(lastName, direccion,R.drawable.ic_chef,ruta))
                     }
 
                 }

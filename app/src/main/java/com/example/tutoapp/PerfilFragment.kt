@@ -130,8 +130,7 @@ class PerfilFragment : Fragment() {
         if(selected != null)
         {
             var urlString = selected.toString()
-            var ext = urlString.substring(urlString.lastIndexOf(".")+1) //extrellendo la extension
-            val imageName = "images/$uuid.${ext}"
+            val imageName = "images/$uuid.${selected!!.lastPathSegment}"
             var storageReference = mStorageRef!!.child(imageName)
             storageReference.putFile(selected!!)
                 .addOnSuccessListener {
