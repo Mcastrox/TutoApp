@@ -66,11 +66,11 @@ class PerfilFragment : Fragment() {
         binding.newTutor.setOnClickListener {
             startActivity(Intent(activity,TutorActivity::class.java))
         }
-        binding.selectImage.setOnClickListener {
+      /*  binding.selectImage.setOnClickListener {
             selectImage()
-        }
+        }*/
 
-        binding.cambiarImagen.setOnClickListener{updateImage()}
+        /*binding.cambiarImagen.setOnClickListener{updateImage()}*/
 
 
         return binding.root
@@ -83,7 +83,7 @@ class PerfilFragment : Fragment() {
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
         imageUser= binding.selectImage
-        cambiarImagen = binding.cambiarImagen
+
 
     }
     private fun initialize(){
@@ -120,7 +120,7 @@ class PerfilFragment : Fragment() {
 
     }
 
-
+/*
     //para subir la imagen
     private fun updateImage()
     {
@@ -173,6 +173,8 @@ class PerfilFragment : Fragment() {
         selected = null
 
     }
+*/
+    /*
 
     private fun selectImage(){
         if(ContextCompat.checkSelfPermission(activity!!,android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
@@ -203,7 +205,7 @@ class PerfilFragment : Fragment() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
-
+*/
 
 
 }
