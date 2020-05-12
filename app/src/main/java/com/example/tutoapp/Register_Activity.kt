@@ -58,6 +58,7 @@ class Register_Activity : AppCompatActivity() {
 
     }
     private fun createNewUser(){
+
         val name: String = txt_name.text.toString()
         val lastName: String = txt_lastname.text.toString()
         val email: String = txt_email.text.toString()

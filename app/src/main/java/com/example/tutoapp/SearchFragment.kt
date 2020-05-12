@@ -1,12 +1,10 @@
 package com.example.tutoapp
 
-import android.content.Context
+
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -19,10 +17,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_mostrar.*
+import kotlinx.android.synthetic.main.fragment_search.*
 
 
 /**
