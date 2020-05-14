@@ -48,7 +48,7 @@ class PerfilFragment : Fragment() {
         binding.miPerfil.setOnClickListener {
             startActivity(Intent(activity,ProfileActivity::class.java))
         }
-        binding.newTutor.setOnClickListener {
+        binding.misTutorias.setOnClickListener {
             startActivity(Intent(activity,TutorActivity::class.java))
         }
 

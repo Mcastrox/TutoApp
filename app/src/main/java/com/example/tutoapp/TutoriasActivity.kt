@@ -3,10 +3,10 @@ package com.example.tutoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class SolicitudActivity : AppCompatActivity() {
+class TutoriasActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_solicitud)
+        setContentView(R.layout.activity_tutorias)
     }
 }
