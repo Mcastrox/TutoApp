@@ -2,22 +2,41 @@ package com.example.tutoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.tutoapp.viewmodel.TutorViewModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_tutorias.*
 
 class TutoriasActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
+    private lateinit var uidTutor: String
+
+    private lateinit var adapter: SolicitudAdapter
+
+    private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorias)
-
-        var listaTutorias = mutableListOf<TutoriaModel>()
-        listaTutorias.add(TutoriaModel("1","holanda","deporte","hola","12:30","hoy","1","2"))
-        listaTutorias.add(TutoriaModel("1","holanda","deporte","hola","12:30","hoy","1","2"))
+        getCurrentUser()
+        observerData()
 
 
-        var adapter = SolicitudAdapter(this, listaTutorias)
+    }
 
-        lista_solicitudes.adapter=adapter
+    private fun getCurrentUser() {
+        auth = FirebaseAuth.getInstance()
+        val user: FirebaseUser? = auth.currentUser
+        uidTutor = user?.uid!!
+    }
 
+    private fun observerData() {
+        viewModel.getUserSolicitud(uidTutor).observe(this, Observer {
+            adapter = SolicitudAdapter(this, it)
+            lista_solicitudes.adapter = adapter
+            //println(it.toString())
+        })
     }
 }
