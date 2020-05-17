@@ -90,7 +90,7 @@ class SearchFragment : Fragment() {
 
 
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(id,lastName, direccion,R.drawable.ic_chef,ruta))
+                        listaTutores.add(Model(id,lastName, direccion,R.drawable.ic_art,ruta))
                     }
 
                 }

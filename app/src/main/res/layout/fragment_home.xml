@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:weightSum="10"
     tools:context=".HomeFragment">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -32,7 +35,7 @@
                     android:background="#DC1E1E20"
 
                     android:gravity="center"
-                    android:text="Eige la categoria que desees"
+                    android:text="@string/choose_category"
                     android:textColor="@color/white"
                     android:textSize="16dp"
                     android:textStyle="bold" />
@@ -43,12 +46,12 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/medium_margin"
                 android:alignmentMode="alignMargins"
-                android:background="#CE020202"
+                android:background="@color/white"
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
-                android:rowCount="3">
+                android:rowCount="6">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -56,14 +59,14 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
-                    app:cardBackgroundColor="#9403F3BA"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
@@ -93,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -102,7 +105,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
@@ -131,7 +134,7 @@
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
@@ -139,19 +142,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            app:srcCompat="@drawable/ic_calculadora" />
+                            app:srcCompat="@drawable/ic_calculadora"
+                            android:tint="@color/redBrick" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="MAtematicas"
+                            android:text="Matematicas"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
                             android:textSize="14sp"
@@ -166,22 +170,22 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                    app:cardCornerRadius="18dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            app:srcCompat="@drawable/ic_chef" />
+                            app:srcCompat="@drawable/ic_design"
+                            android:tint="@color/redBrick" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -202,7 +206,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -211,7 +215,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
@@ -239,7 +243,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -248,13 +252,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            app:srcCompat="@drawable/ic_skills" />
+                            app:srcCompat="@drawable/ic_red"
+                            android:tint="@color/redBrick" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -275,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -284,7 +289,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
@@ -312,7 +317,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -321,13 +326,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            app:srcCompat="@drawable/ic_laptop" />
+                            app:srcCompat="@drawable/ic_laptop"
+                            android:tint="@color/redBrick"/>
 
                         <TextView
                             android:layout_width="match_parent"
@@ -348,7 +354,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
@@ -356,7 +362,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -385,9 +391,8 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="#9403F3BA"
+                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-
                     app:cardCornerRadius="12dp"
                     app:cardElevation="6dp">
 
@@ -395,7 +400,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:background="#DAFFFFFF"
+                        android:background="@color/white"
                         android:orientation="vertical">
 
                         <ImageView
@@ -418,10 +423,83 @@
 
                 </androidx.cardview.widget.CardView>
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:srcCompat="@drawable/ic_calculus"
+                            android:tint="@color/redBrick"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Matematica superior"
+                            android:textAllCaps="true"
+                            android:textColor="@color/blackMate"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardBackgroundColor="@color/white"
+                    android:layout_margin="12dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            app:srcCompat="@drawable/ic_socials"
+                            android:tint="@color/redBrick"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Ciencias sociales"
+                            android:textAllCaps="true"
+                            android:textColor="@color/blackMate"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </GridLayout>
 
         </LinearLayout>
 
     </ScrollView>
-</FrameLayout>
+</LinearLayout>
