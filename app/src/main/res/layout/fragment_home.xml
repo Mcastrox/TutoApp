@@ -9,6 +9,15 @@
     android:weightSum="10"
     tools:context=".HomeFragment">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blackMate"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Categorias" />
+
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -21,27 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
-                    android:background="#DC1E1E20"
-
-                    android:gravity="center"
-                    android:text="@string/choose_category"
-                    android:textColor="@color/white"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
-
-
-            </RelativeLayout>
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -65,15 +53,15 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="100dp"
                         android:background="@color/white"
                         android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_art"
                             android:tint="@color/redBrick"/>
 
@@ -84,7 +72,7 @@
                             android:text="Arte"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -93,7 +81,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -109,8 +97,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             android:tint="@color/redBrick"
                             app:srcCompat="@drawable/ic_languages" />
 
@@ -121,7 +109,7 @@
                             android:text="Idiomas"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -130,7 +118,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
@@ -146,8 +134,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="40dp"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_calculadora"
                             android:tint="@color/redBrick" />
 
@@ -158,7 +146,7 @@
                             android:text="Matematicas"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -167,7 +155,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -182,8 +170,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_design"
                             android:tint="@color/redBrick" />
 
@@ -191,10 +179,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Cocina"
+                            android:text="Diseño"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -203,7 +191,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -219,8 +207,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             android:tint="@color/redBrick"
                             app:srcCompat="@drawable/ic_economy" />
 
@@ -231,7 +219,7 @@
                             android:text="Economia"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -240,7 +228,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -256,8 +244,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="40dp"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_red"
                             android:tint="@color/redBrick" />
 
@@ -268,7 +256,7 @@
                             android:text="Habilidades Sociales"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -277,7 +265,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -293,8 +281,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="40dp"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_physic"
                             android:tint="@color/redBrick"/>
 
@@ -305,7 +293,7 @@
                             android:text="Fisica"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -314,7 +302,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -330,8 +318,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_laptop"
                             android:tint="@color/redBrick"/>
 
@@ -342,7 +330,7 @@
                             android:text="Computacion"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -351,7 +339,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -367,8 +355,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_chemistry"
                             android:tint="@color/redBrick"/>
 
@@ -379,7 +367,7 @@
                             android:text="Quimica"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -388,7 +376,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -404,8 +392,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="40dp"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_music"
                             android:tint="@color/redBrick"/>
 
@@ -416,7 +404,7 @@
                             android:text="Musica"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -425,7 +413,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -441,8 +429,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_width="@dimen/categories_size"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_calculus"
                             android:tint="@color/redBrick"/>
 
@@ -453,7 +441,7 @@
                             android:text="Matematica superior"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -462,7 +450,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100dp"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     app:cardBackgroundColor="@color/white"
@@ -479,7 +467,7 @@
 
                         <ImageView
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
+                            android:layout_height="@dimen/categories_size"
                             app:srcCompat="@drawable/ic_socials"
                             android:tint="@color/redBrick"/>
 
@@ -490,7 +478,7 @@
                             android:text="Ciencias sociales"
                             android:textAllCaps="true"
                             android:textColor="@color/blackMate"
-                            android:textSize="14sp"
+                            android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
                     </LinearLayout>
