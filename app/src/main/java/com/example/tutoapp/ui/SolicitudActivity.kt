@@ -1,5 +1,7 @@
 package com.example.tutoapp.ui
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -30,6 +32,29 @@ class SolicitudActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitud)
         initialize()
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        txt_fecha.setOnClickListener {
+            val dp = DatePickerDialog(this,DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+                txt_fecha.setText("$dayOfMonth/$month/$year")
+            },year,month,day)
+
+            dp.show()
+        }
+
+        txt_hora.setOnClickListener {
+            val tp = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                c.set(Calendar.HOUR_OF_DAY,hourOfDay)
+                c.set(Calendar.MINUTE,minute)
+                txt_hora.setText("$hourOfDay:$minute")
+            }
+            TimePickerDialog(this, tp, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), false).show()
+        }
+
 
         btn_solicitar.setOnClickListener {
            crearSolicitud()
