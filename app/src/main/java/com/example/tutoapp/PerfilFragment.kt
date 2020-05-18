@@ -4,6 +4,7 @@ package com.example.tutoapp
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +33,7 @@ class PerfilFragment : Fragment() {
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
     private lateinit var imageUser: ImageView
+    private lateinit var rol : String
     var mStorageRef : StorageReference? =null
     override fun onCreateView(
 
@@ -49,9 +51,14 @@ class PerfilFragment : Fragment() {
             startActivity(Intent(activity,ProfileActivity::class.java))
         }
         binding.misTutorias.setOnClickListener {
-            startActivity(Intent(activity,TutoriasActivity::class.java))
-        }
 
+            if(rol== "Estudiante"){
+                startActivity(Intent(activity,TutorActivity::class.java))
+            }
+            if (rol== "Tutor") {
+                startActivity(Intent(activity,TutoriasActivity::class.java))
+            }
+        }
         return binding.root
 
 
@@ -62,6 +69,7 @@ class PerfilFragment : Fragment() {
         usermail = binding.usermail
         userTel = binding.mperfilTelefono
         imageUser= binding.selectImage
+        rol = ""
 
 
     }
@@ -70,7 +78,6 @@ class PerfilFragment : Fragment() {
         val user:FirebaseUser?=auth.currentUser
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         val userRef = ref.child(user?.uid!!)
-
 
 
         mStorageRef = FirebaseStorage.getInstance().reference
@@ -85,6 +92,8 @@ class PerfilFragment : Fragment() {
                 // sustituir nombre por "Name"
                 username.text = dataSnapshot.child("Name").value as String
                 userTel.text = dataSnapshot.child("telefono").value as String
+
+                rol = dataSnapshot.child("Rol").value as String
 
                 if (dataSnapshot.child("urlImage").exists()) {
 
