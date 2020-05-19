@@ -1,7 +1,10 @@
 package com.example.tutoapp
 
+import android.content.ClipData
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.viewmodel.TutorViewModel
@@ -23,7 +26,6 @@ class TutoriasActivity : AppCompatActivity() {
         getCurrentUser()
         observerData()
 
-
     }
 
     private fun getCurrentUser() {
@@ -36,7 +38,12 @@ class TutoriasActivity : AppCompatActivity() {
         viewModel.getUserSolicitud(uidTutor).observe(this, Observer {
             adapter = SolicitudAdapter(this, it)
             lista_solicitudes.adapter = adapter
-            //println(it.toString())
+
+
+            /*lista_solicitudes.setOnItemClickListener { parent, view, position, id ->
+                val intent = Intent(this,PseleccionadoActivity::class.java)
+                startActivity(intent)
+            }*/
         })
     }
 }

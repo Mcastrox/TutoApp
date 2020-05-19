@@ -2,6 +2,7 @@ package com.example.tutoapp.ui
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.R
+import com.example.tutoapp.SearchFragment
 import com.example.tutoapp.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
 import java.util.*
@@ -58,6 +60,7 @@ class SolicitudActivity : AppCompatActivity() {
 
         btn_solicitar.setOnClickListener {
            crearSolicitud()
+            startActivity(Intent(this,SearchFragment::class.java))
         }
 
 

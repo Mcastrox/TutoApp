@@ -45,6 +45,20 @@
         app:layout_constraintTop_toBottomOf="@+id/nombre_tutor"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/grado_academico_tutor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/action_contactar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre_tutor"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/action_contactar"
         android:layout_width="0dp"
