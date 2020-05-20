@@ -60,7 +60,7 @@ class SolicitudActivity : AppCompatActivity() {
 
         btn_solicitar.setOnClickListener {
            crearSolicitud()
-            startActivity(Intent(this,SearchFragment::class.java))
+            finish()
         }
 
 

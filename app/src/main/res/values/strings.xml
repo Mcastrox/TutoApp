@@ -21,4 +21,7 @@
     <string name="date_txt">Fecha</string>
     <string name="time_txt">Selecciona la hora</string>
     <string name="notas_tutor_txt">Escribele una nota al tutor</string>
+    <string name="txt_tutor_button">Quiero ser tutor</string>
+    <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aqui</string>
+    <string name="txt_tutor_title">¿Quieres formar parte de nuestros tutores?</string>
 </resources>
