@@ -16,4 +16,9 @@
     <string name="search_txt">Buscar</string>
     <string name="profile_txt">Perfil</string>
     <string name="requests_txt">Solicitudes</string>
+    <string name="ubication_txt">Dirección:</string>
+    <string name="category_txt">Categoria</string>
+    <string name="date_txt">Fecha</string>
+    <string name="time_txt">Selecciona la hora</string>
+    <string name="notas_tutor_txt">Escribele una nota al tutor</string>
 </resources>
