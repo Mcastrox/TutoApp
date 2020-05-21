@@ -28,11 +28,7 @@ class TutoriasActivity : AppCompatActivity() {
         getCurrentUser()
         observerData()
 
-        lista_solicitudes.setOnItemClickListener { parent, view, position, id ->
-            val intent = Intent(this,VerSolicitudActivity::class.java)
-            intent.putExtra("solicitud", lista_solicitudes[position].toString())
-            startActivity(intent)
-        }
+
 
     }
 
@@ -46,6 +42,11 @@ class TutoriasActivity : AppCompatActivity() {
         viewModel.getUserSolicitud(uidTutor).observe(this, Observer {
             adapter = SolicitudAdapter(this, it)
             lista_solicitudes.adapter = adapter
+            lista_solicitudes.setOnItemClickListener { parent, view, position, id ->
+                val intent = Intent(this,VerSolicitudActivity::class.java)
+                intent.putExtra("solicitud", it[position])
+                startActivity(intent)
+            }
         })
     }
 }
