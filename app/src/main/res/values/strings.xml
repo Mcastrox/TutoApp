@@ -24,4 +24,19 @@
     <string name="txt_tutor_button">Quiero ser tutor</string>
     <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aqui</string>
     <string name="txt_tutor_title">¿Quieres formar parte de nuestros tutores?</string>
+    <string name="solicitud_txt">Solicitud de tutoría</string>
+    <string name="education_txt">Grado academico</string>
+    <string name="ocupation_txt">Ocupacion</string>
+    <string name="description_txt">Descripcion</string>
+    <string name="art_txt">Arte</string>
+    <string name="languages_txt">Idiomas</string>
+    <string name="math_txt">Matematicas</string>
+    <string name="cooking_txt">Cocina</string>
+    <string name="economy_txt">Economia</string>
+    <string name="social_abilities_txt">Habilidades Sociales</string>
+    <string name="physics_txt">Fisica</string>
+    <string name="computer_science">Computacion</string>
+    <string name="chemistry_txt">Quimica</string>
+    <string name="sports_txt">Deportes</string>
+    <string name="tutor_profile">Perfil de tutor</string>
 </resources>

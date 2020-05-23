@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blackMate"
+        android:layout_alignParentTop="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/solicitud_txt" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,38 +31,42 @@
             android:id="@+id/foto_estudiante"
             android:layout_width="150dp"
             android:layout_height="150dp"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/nombre_estudiante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/nombre_estudiante"
                 android:text="Main Text"
                 android:textColor="@color/blackMate"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/ubicacion"
-                android:text="SubText"
-                android:textColor="@color/blackMate"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/estado"
-                android:text="SubText"
-                android:textColor="@color/blackMate"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
-        </LinearLayout>
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/ubicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SubText"
+                android:textColor="@color/blackMate"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SubText"
+                android:textColor="@color/blackMate"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

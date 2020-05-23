@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:weightSum="10"
     tools:context=".HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -23,7 +22,6 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         tools:context=".CategoriesActivity">
 
         <LinearLayout
@@ -34,9 +32,7 @@
             <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_margin"
                 android:alignmentMode="alignMargins"
-                android:background="@color/white"
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
                 android:rowCount="6">
@@ -53,7 +49,8 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
                         android:clickable="true"
                         android:gravity="center"
@@ -66,7 +63,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Arte"
@@ -81,19 +78,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -103,7 +102,7 @@
                             app:srcCompat="@drawable/ic_languages" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Idiomas"
@@ -118,19 +117,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
                     android:layout_margin="12dp"
                     app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="12dp"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -140,7 +141,7 @@
                             android:tint="@color/redBrick" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Matematicas"
@@ -155,18 +156,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="18dp">
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -176,7 +180,7 @@
                             android:tint="@color/redBrick" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Diseño"
@@ -191,19 +195,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -213,7 +219,7 @@
                             app:srcCompat="@drawable/ic_economy" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Economia"
@@ -228,19 +234,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -250,7 +258,7 @@
                             android:tint="@color/redBrick" />
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Habilidades Sociales"
@@ -265,19 +273,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -287,7 +297,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Fisica"
@@ -302,19 +312,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -324,7 +336,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Computacion"
@@ -339,18 +351,20 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
                         android:gravity="center"
                         android:orientation="vertical">
 
@@ -361,7 +375,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Quimica"
@@ -376,19 +390,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -398,7 +414,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Musica"
@@ -413,19 +429,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -435,7 +453,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Matematica superior"
@@ -450,19 +468,21 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
-                    app:cardBackgroundColor="@color/white"
                     android:layout_margin="12dp"
-                    app:cardCornerRadius="12dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:gravity="center"
+                        android:padding="@dimen/medium_padding"
                         android:background="@color/white"
+                        android:clickable="true"
+                        android:gravity="center"
                         android:orientation="vertical">
 
                         <ImageView
@@ -472,7 +492,7 @@
                             android:tint="@color/redBrick"/>
 
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="Ciencias sociales"
