@@ -7,39 +7,69 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_central.*
 
 class CentralActivity : AppCompatActivity() {
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
-        when(item.itemId){
-            R.id.home ->{
-                replaceFragment(HomeFragment())
-                return@OnNavigationItemSelectedListener true
+
+    private var selectedFragment: Fragment? = null
+    private val mOnNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    selectedFragment = HomeFragment()
+                    replaceFragment(selectedFragment as HomeFragment)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.perfil -> {
+                    selectedFragment = PerfilFragment()
+                    replaceFragment(selectedFragment as PerfilFragment)
+
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.search -> {
+                    selectedFragment = SearchFragment()
+                    replaceFragment(selectedFragment as SearchFragment)
+                    return@OnNavigationItemSelectedListener true
+                }
+                else -> {
+                    false
+                }
             }
-            R.id.perfil -> {
-                replaceFragment(PerfilFragment())
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.search -> {
-                replaceFragment(SearchFragment())
-                return@OnNavigationItemSelectedListener true
-            }
-            else ->{
-                false
-            }
+
         }
-
-
-    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_central)
-
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        replaceFragment(HomeFragment())
+
+        var selectedItemId = savedInstanceState?.getInt("ID")
+
+        when (selectedItemId) {
+            R.id.home -> {
+                selectedFragment = HomeFragment()
+            }
+            R.id.search -> {
+                selectedFragment = SearchFragment()
+            }
+            R.id.perfil -> {
+                selectedFragment = PerfilFragment()
+            }
+            else -> {
+                selectedFragment = HomeFragment()
+            }
+        }
+
+        replaceFragment(selectedFragment!!)
     }
-    private fun replaceFragment (fragment: Fragment){
-        val fragmentTransaction= supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
+
+    private fun replaceFragment(fragment: Fragment) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer, fragment)
         fragmentTransaction.commit()
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("ID", bottomNavigation.selectedItemId)
+    }
+
 }

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ListView
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -26,9 +27,14 @@ import kotlinx.android.synthetic.main.fragment_search.*
 class SearchFragment : Fragment() {
 
     private var toolbar: Toolbar? = null
+    private var listaTutores = mutableListOf<Model>()
+    private lateinit var adapter : TutorAdapter
+    private lateinit var list : ListView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        adapter = TutorAdapter(requireActivity(), listaTutores)
     }
 
     override fun onCreateView(
@@ -37,7 +43,6 @@ class SearchFragment : Fragment() {
     ): View? {
 
         val binding = DataBindingUtil.inflate<FragmentSearchBinding>(inflater, R.layout.fragment_search, container, false)
-
         search(binding)
 
         return binding.root
@@ -45,16 +50,15 @@ class SearchFragment : Fragment() {
 
     fun search(binding: FragmentSearchBinding){
         toolbar = binding.toolbar
+        list = binding.list
         toolbar?.setTitle(R.string.ToolBarTitle)
         (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar)
         var actionBar = activity?.actionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-
         var me = this // variable para guardar el contexto actual
-
-        var listaTutores = mutableListOf<Model>()
         val ref = FirebaseDatabase.getInstance().getReference("Users") // referencia a la bd
+
 
         //Aqui se trae todos los valores
         ref.addValueEventListener(object : ValueEventListener {
@@ -66,7 +70,6 @@ class SearchFragment : Fragment() {
             override fun onDataChange(p0: DataSnapshot) {
                 if (listaTutores.size > 0) {
                     listaTutores.clear()
-                    list.adapter = null
                 }
                 for (e in p0.children) {
                     var lastName: String = ""
@@ -88,15 +91,12 @@ class SearchFragment : Fragment() {
                         ruta=e.child("urlImage").value as String
                     }
 
-
                     if (rol == "Tutor") {
                         listaTutores.add(Model(id,lastName, direccion,R.drawable.ic_art,ruta))
                     }
 
                 }
 
-
-                var adapter = TutorAdapter(activity!!, listaTutores)
                 list.adapter = adapter
 
                 list.setOnItemClickListener { parent, view, position, id ->
@@ -104,9 +104,11 @@ class SearchFragment : Fragment() {
                     intent.putExtra("tutor", listaTutores[position])
                     startActivity(intent)
                 }
+
             }
 
         })
+
     }
 
 
