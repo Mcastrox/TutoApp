@@ -16,6 +16,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="@string/modify_bar_txt" />
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -48,6 +49,26 @@
                     app:srcCompat="@drawable/ic_usuario"/>
 
             </LinearLayout>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_user"
+                android:id="@+id/tvusername"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/blackMate"
+                android:textSize="32dp"
+                tools:text="@string/AppName"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvusername"
+                android:id="@+id/tvemail"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/blackMate"
+                android:textSize="18dp"
+                tools:text="@string/AppName"/>
 
             <TextView
                 android:id="@+id/username"
@@ -88,7 +109,7 @@
                 android:paddingRight="6dp" />
 
             <TextView
-                android:id="@+id/cellphone"
+                android:id="@+id/user_tel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
