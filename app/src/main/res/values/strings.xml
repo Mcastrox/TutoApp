@@ -39,4 +39,9 @@
     <string name="chemistry_txt">Quimica</string>
     <string name="sports_txt">Deportes</string>
     <string name="tutor_profile">Perfil de tutor</string>
+    <string name="modify_txt">Modificar</string>
+    <string name="modify_bar_txt">Modificar Perfil</string>
+    <string name="cellphone_txt">Telefono</string>
+    <string name="email_txt">Email</string>
+    <string name="username_txt">Nombre</string>
 </resources>
