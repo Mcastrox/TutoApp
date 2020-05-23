@@ -33,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ubication_txt"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -42,6 +43,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="20"
+                android:fontFamily="@font/roboto"
                 android:inputType="textLongMessage"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -52,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/category_txt"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -61,6 +64,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -71,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/date_txt"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -80,6 +85,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:focusable="false"
                 android:inputType="date"
                 android:paddingLeft="6dp"
@@ -91,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/time_txt"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -100,6 +107,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:focusable="false"
                 android:inputType="time"
                 android:paddingLeft="6dp"
@@ -112,6 +120,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/medium_margin"
                 android:text="@string/notas_tutor_txt"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -121,6 +130,7 @@
                 android:gravity="top"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:fontFamily="@font/roboto"
                 android:inputType="textPersonName|textMultiLine"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -132,6 +142,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@color/soft_cyan"
                 android:text="Enviar"
+                android:fontFamily="@font/roboto"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />

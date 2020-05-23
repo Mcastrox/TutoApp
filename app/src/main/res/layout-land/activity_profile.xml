@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/img_user"
                     android:layout_centerVertical="true"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="@font/roboto"
                     android:textColor="@color/white"
                     android:textSize="32dp" />
 
@@ -86,7 +86,7 @@
                                 android:id="@+id/user_tel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-black"
+                                android:fontFamily="@font/roboto"
                                 android:textColor="@color/redBrick"
                                 android:textSize="16dp" />
 
@@ -94,7 +94,7 @@
                                 android:id="@+id/tvemail"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="sans-serif-black"
+                                android:fontFamily="@font/roboto"
                                 android:textColor="@color/redBrick"
                                 android:textSize="16dp" />
 
@@ -134,7 +134,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:hint="Username: "
                         android:textColorHint="#FFFFFF"
                         android:textColor="#FFFFFF"
@@ -145,7 +145,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:hint="Direccion: "
                         android:textColorHint="#FFFFFF"
                         android:textColor="#FFFFFF"
@@ -156,7 +156,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:hint="Telefono: "
                         android:textColorHint="#FFFFFF"
                         android:textColor="#FFFFFF"
@@ -168,7 +168,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
                         android:background="@color/soft_cyan"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:text="Modificar"
                         android:textAllCaps="true"
                         android:textColor="@color/white" />

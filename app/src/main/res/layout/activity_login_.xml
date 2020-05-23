@@ -48,7 +48,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/ubuntu"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/welcome_text"
                     android:textAllCaps="true"
                     android:textColor="@color/soft_cyan"
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/medium_margin"
-                    android:fontFamily="@font/ubuntu"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/login_text"
                     android:textAllCaps="true"
                     android:textColor="@color/grey"
@@ -86,6 +86,7 @@
                         android:background="#A3131313"
                         android:ems="10"
                         android:hint="Correo"
+                        android:fontFamily="@font/roboto"
                         android:inputType="textEmailAddress"
                         android:padding="@dimen/small_margin"
                         android:textColor="#FFFFFF"
@@ -107,6 +108,7 @@
                         android:background="#A3131313"
                         android:ems="10"
                         android:hint="Contraseña"
+                        android:fontFamily="@font/roboto"
                         android:inputType="textPassword"
                         android:padding="@dimen/small_margin"
                         android:textColor="#FFFFFF"
@@ -121,6 +123,7 @@
                     android:layout_marginBottom="@dimen/medium_margin"
                     android:buttonTint="@color/light_grayish"
                     android:text="Mantenerme logeado"
+                    android:fontFamily="@font/roboto"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/small_text"
                     android:textStyle="bold" />
@@ -134,7 +137,8 @@
                     android:text="¿Olvidaste tu contraseña?"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/small_text"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"/>
 
                 <Button
                     android:layout_width="match_parent"
@@ -146,7 +150,8 @@
                     android:text="INICIAR SESION"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="@dimen/button_size_text" />
+                    android:textSize="@dimen/button_size_text"
+                    android:fontFamily="@font/roboto"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,7 +161,8 @@
                     android:text="Registrate ahora"
                     android:textColor="@color/white"
                     android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto"/>
             </LinearLayout>
 
         </ScrollView>

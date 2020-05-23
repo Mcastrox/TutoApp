@@ -3,13 +3,16 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_people"
-        android:title="@string/requests_txt" />
+        android:title="@string/requests_txt"
+        android:fontFamily="@font/roboto"/>
     <item
         android:id="@+id/search"
         android:icon="@drawable/ic_search"
-        android:title="@string/search_txt" />
+        android:title="@string/search_txt"
+        android:fontFamily="@font/roboto"/>
     <item
         android:id="@+id/perfil"
         android:icon="@drawable/ic_person"
-        android:title="@string/profile_txt" />
+        android:title="@string/profile_txt"
+        android:fontFamily="@font/roboto"/>
 </menu>

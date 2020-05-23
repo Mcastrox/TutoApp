@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img_user"
                 android:id="@+id/tvusername"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:textSize="32dp"
                 tools:text="@string/AppName"/>
@@ -65,13 +65,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvusername"
                 android:id="@+id/tvemail"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:textSize="18dp"
                 tools:text="@string/AppName"/>
 
             <TextView
                 android:id="@+id/username"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -80,6 +81,7 @@
 
             <EditText
                 android:id="@+id/user_name"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -91,6 +93,7 @@
 
             <TextView
                 android:id="@+id/string_direccion"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -99,6 +102,7 @@
 
             <EditText
                 android:id="@+id/user_direccion"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -110,6 +114,7 @@
 
             <TextView
                 android:id="@+id/user_tel"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -118,6 +123,7 @@
 
             <EditText
                 android:id="@+id/user_telefono"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -129,6 +135,7 @@
 
             <TextView
                 android:id="@+id/email"
+                android:fontFamily="@font/roboto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -137,6 +144,7 @@
 
             <EditText
                 android:id="@+id/user_email"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -155,7 +163,8 @@
                 android:text="@string/modify_txt"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
         </LinearLayout>
 
     </ScrollView>

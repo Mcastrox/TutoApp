@@ -17,6 +17,7 @@
     <item
         android:id="@+id/share"
         android:title="Compartir"
+        android:fontFamily="@font/roboto"
         app:showAsAction="ifRoom"
         app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider"
         />

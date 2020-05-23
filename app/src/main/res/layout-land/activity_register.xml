@@ -45,7 +45,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/ubuntu"
+                            android:fontFamily="@font/roboto"
                             android:text="@string/register_text"
                             android:textAllCaps="true"
                             android:textColor="@color/white"
@@ -72,6 +72,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Nombre"
+                                android:fontFamily="@font/roboto"
                                 android:inputType="textPersonName"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
@@ -92,6 +93,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Apellido"
+                                android:fontFamily="@font/roboto"
                                 android:inputType="textPersonName"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
@@ -112,6 +114,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Correo"
+                                android:fontFamily="@font/roboto"
                                 android:inputType="textEmailAddress"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
@@ -133,6 +136,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Contraseña"
+                                android:fontFamily="@font/roboto"
                                 android:inputType="textPassword"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
@@ -153,6 +157,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Teléfono"
+                                android:fontFamily="@font/roboto"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
                                 android:textStyle="bold" />
@@ -174,6 +179,7 @@
                                 android:background="#A3131313"
                                 android:ems="10"
                                 android:hint="Dirección"
+                                android:fontFamily="@font/roboto"
                                 android:padding="@dimen/small_margin"
                                 android:textColor="#FFFFFF"
                                 android:textStyle="bold" />
@@ -189,6 +195,7 @@
                             android:buttonTint="@color/light_grayish"
                             android:text="Al registrarme acepto los términos y políticas de privacidad"
                             android:textColor="@color/grey"
+                            android:fontFamily="@font/roboto"
                             android:textSize="@dimen/small_text"
                             android:textStyle="bold" />
 
@@ -198,6 +205,7 @@
                             android:background="#CD4FDAB9"
                             android:onClick="register"
                             android:text="Crear cuenta"
+                            android:fontFamily="@font/roboto"
                             android:textColor="#FFFFFf"
                             android:textSize="16sp"
                             android:textStyle="bold" />

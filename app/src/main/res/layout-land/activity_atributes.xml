@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/roboto"
         android:text="Grado academico"
         android:textColor="#9FFF0000"
         android:textStyle="bold"
@@ -36,6 +36,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:text="Guardar"
+        android:fontFamily="@font/roboto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +51,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Grado academico"
+        android:fontFamily="@font/roboto"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/roboto"
         android:text="Ocupacion"
         android:textColor="#9FFF0000"
         android:textStyle="bold"
@@ -81,6 +83,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Ocupacion"
+        android:fontFamily="@font/roboto"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/roboto"
         android:text="Descripcion"
         android:textColor="#9FFF0000"
         android:textStyle="bold"
@@ -113,6 +116,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Descripcion"
+        android:fontFamily="@font/roboto"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/guardar_tutor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -126,7 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="@font/roboto"
         android:text="Selecciona tus categorias"
         android:textColor="#9FFF0000"
         android:textStyle="bold"
@@ -160,6 +164,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_arte"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Arte"
@@ -167,6 +172,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_idiomas"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Idiomas"
@@ -174,6 +180,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_matematicas"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Matematicas"
@@ -181,6 +188,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_cocina"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cocina"
@@ -188,6 +196,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_economia"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Economia"
@@ -195,6 +204,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_habilidadesSociales"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Habilidades Sociales"
@@ -202,6 +212,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_fisica"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fisica"
@@ -216,6 +227,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_quimica"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Quimica"
@@ -223,6 +235,7 @@
 
             <CheckBox
                 android:id="@+id/categoria_deportes"
+                android:fontFamily="@font/roboto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Deportes"

@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img_user"
                 android:layout_centerHorizontal="true"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="@font/roboto"
                 android:text="Username"
                 android:textColor="@color/white"
                 android:textSize="32dp" />
@@ -70,7 +70,7 @@
                         android:id="@+id/mperfil_telefono"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/redBrick"
                         android:textSize="16dp" />
 
@@ -78,7 +78,7 @@
                         android:id="@+id/usermail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:textColor="@color/redBrick"
                         android:textSize="16dp" />
 
@@ -107,7 +107,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center_horizontal"
                         android:text="Mi perfil "
                         android:textSize="24dp" />
@@ -116,7 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center_horizontal"
                         android:text="Cambiar Password: "
                         android:textSize="24dp" />
@@ -126,7 +126,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center_horizontal"
                         android:text="MIs Tutorias: "
                         android:textSize="24dp" />
@@ -136,7 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="24dp"
-                        android:fontFamily="sans-serif-black"
+                        android:fontFamily="@font/roboto"
                         android:gravity="center_horizontal"
                         android:text="Cerrar Sesion"
                         android:textSize="24sp" />
