@@ -35,6 +35,8 @@ class TutoriasActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_tutorias)
         setSupportActionBar(binding.toolbar)
 
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
         getCurrentUser()
         observerData()
     }
@@ -45,11 +47,17 @@ class TutoriasActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
+       return when (item?.itemId) {
             R.id.next_page -> {
                 startActivity(Intent(this,AtributesActivity::class.java))
                 return true
             }
+
+           android.R.id.home ->{
+               onBackPressed()
+               true
+           }
+
             else -> (return super.onOptionsItemSelected(item))
         }
     }
@@ -72,4 +80,5 @@ class TutoriasActivity : AppCompatActivity() {
             }
         })
     }
+
 }
