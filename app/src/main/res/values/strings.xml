@@ -28,6 +28,19 @@
     <string name="education_txt">Grado academico</string>
     <string name="ocupation_txt">Ocupacion</string>
     <string name="description_txt">Descripcion</string>
+    <string name="tutor_profile">Perfil de tutor</string>
+    <string name="modify_txt">Modificar</string>
+    <string name="modify_bar_txt">Modificar Perfil</string>
+    <string name="cellphone_txt">Telefono</string>
+    <string name="email_txt">Email</string>
+    <string name="username_txt">Nombre</string>
+
+
+    <!-- TODO: CATEGORIES -->
+    <string name="design_txt">Diseño</string>
+    <string name="music_txt">Musica</string>
+    <string name="maths_s_txt">Matematica superior</string>
+    <string name="socials_sciences_txt">Ciencias sociales</string>
     <string name="art_txt">Arte</string>
     <string name="languages_txt">Idiomas</string>
     <string name="math_txt">Matematicas</string>
@@ -38,10 +51,7 @@
     <string name="computer_science">Computacion</string>
     <string name="chemistry_txt">Quimica</string>
     <string name="sports_txt">Deportes</string>
-    <string name="tutor_profile">Perfil de tutor</string>
-    <string name="modify_txt">Modificar</string>
-    <string name="modify_bar_txt">Modificar Perfil</string>
-    <string name="cellphone_txt">Telefono</string>
-    <string name="email_txt">Email</string>
-    <string name="username_txt">Nombre</string>
+
+
+
 </resources>
