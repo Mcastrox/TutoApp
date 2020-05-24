@@ -50,25 +50,31 @@
 
             </LinearLayout>
 
-            <EditText
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/img_user"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+            <TextView
                 android:id="@+id/tvusername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
-                android:textSize="32dp"
+                android:textSize="@dimen/big_text"
                 tools:text="@string/AppName"/>
 
-            <EditText
+            <TextView
+                android:id="@+id/tvemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvusername"
-                android:id="@+id/tvemail"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
-                android:textSize="18dp"
+                android:textSize="@dimen/medium_text"
                 tools:text="@string/AppName"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/username"
@@ -130,27 +136,6 @@
                 android:background="@drawable/edittext_border"
                 android:ems="10"
                 android:inputType="phone"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
-
-            <TextView
-                android:id="@+id/email"
-                android:fontFamily="@font/roboto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:text="@string/email_txt"
-                android:textColor="@color/blackMate" />
-
-            <EditText
-                android:id="@+id/user_email"
-                android:fontFamily="@font/roboto"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:background="@drawable/edittext_border"
-                android:ems="10"
-                android:inputType="textEmailAddress"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
 
