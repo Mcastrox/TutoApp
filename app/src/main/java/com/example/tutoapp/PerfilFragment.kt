@@ -34,7 +34,7 @@ class PerfilFragment : Fragment() {
     private lateinit var usermail: TextView
     private lateinit var userTel: TextView
     private lateinit var imageUser: ImageView
-    private lateinit var logOut : TextView
+    private lateinit var logOut : Button
     private lateinit var rol : String
     var mStorageRef : StorageReference? =null
     override fun onCreateView(
