@@ -51,7 +51,7 @@
     <string name="computer_science">Computacion</string>
     <string name="chemistry_txt">Quimica</string>
     <string name="sports_txt">Deportes</string>
-
+    <string name="password_txt">Contraseña</string>
 
 
 </resources>
