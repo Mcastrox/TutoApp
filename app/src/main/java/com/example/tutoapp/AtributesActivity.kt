@@ -9,7 +9,10 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_atributes.*
 
 class AtributesActivity : AppCompatActivity() {
@@ -42,9 +45,10 @@ class AtributesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_atributes)
 
+        initArrayDisciplina()
+
         initialize()
 
-        initArrayDisciplina()
         cbdis1.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis1.isChecked -> {
@@ -180,15 +184,15 @@ class AtributesActivity : AppCompatActivity() {
         this.listaDisciplina = ArrayList();
         this.listaDisciplina.add(Disciplina("1", "Arte", "", false))
         this.listaDisciplina.add(Disciplina("2", "Idiomas", "", false))
-        this.listaDisciplina.add(Disciplina("3", "Matematicas", "", false))
-        this.listaDisciplina.add(Disciplina("4", "Cocina", "", false))
-        this.listaDisciplina.add(Disciplina("5", "Economia", "", false))
+        this.listaDisciplina.add(Disciplina("3", "Matemáticas", "", false))
+        this.listaDisciplina.add(Disciplina("4", "Diseño", "", false))
+        this.listaDisciplina.add(Disciplina("5", "Economía", "", false))
         this.listaDisciplina.add(Disciplina("6", "Habilidades Sociales", "", false))
-        this.listaDisciplina.add(Disciplina("7", "Fisica", "", false))
-        this.listaDisciplina.add(Disciplina("8", "Computacion", "", false))
+        this.listaDisciplina.add(Disciplina("7", "Física", "", false))
+        this.listaDisciplina.add(Disciplina("8", "Computación", "", false))
         this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
-        this.listaDisciplina.add(Disciplina("10", "Deportes", "", false))
-        this.listaDisciplina.add(Disciplina("11", "Matematicas Superior", "", false))
+        this.listaDisciplina.add(Disciplina("10", "Música", "", false))
+        this.listaDisciplina.add(Disciplina("11", "Matemáticas Superior", "", false))
         this.listaDisciplina.add(Disciplina("12", "Ciencias Sociales", "", false))
 
     }
@@ -200,13 +204,13 @@ class AtributesActivity : AppCompatActivity() {
         this.cbdis1 = findViewById(R.id.categoria_arte)
         this.cbdis2 = findViewById(R.id.categoria_idiomas)
         this.cbdis3 = findViewById(R.id.categoria_matematicas)
-        this.cbdis4 = findViewById(R.id.categoria_cocina)
+        this.cbdis4 = findViewById(R.id.categoria_diseño)
         this.cbdis5 = findViewById(R.id.categoria_economia)
         this.cbdis6 = findViewById(R.id.categoria_habilidadesSociales)
         this.cbdis7 = findViewById(R.id.categoria_fisica)
         this.cbdis8 = findViewById(R.id.categoria_computacion)
         this.cbdis9 = findViewById(R.id.categoria_quimica)
-        this.cbdis10 = findViewById(R.id.categoria_deportes)
+        this.cbdis10 = findViewById(R.id.categoria_musica)
         this.cbdis11 = findViewById(R.id.categoria_matematicasSuperior)
         this.cbdis12 = findViewById(R.id.categoria_cienciasSociales)
         this.btnGuardar = findViewById(R.id.guardar_tutor)
@@ -217,6 +221,75 @@ class AtributesActivity : AppCompatActivity() {
 
         Log.d("Uid-Usuario", uid.toString())
         //this.txtEducacion.text = uid.toString()
+
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val userRef = ref.child(user?.uid!!)
+
+        //Acá se obtendran los datos del tutor de la base de datos y los ubicara en sus respectivos editText y CheckBox
+        userRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(p0: DataSnapshot) {
+                //Obtener informacion de database y ubicarla en sus respectivos campos
+                val nivel = p0.child("nivel").value as String
+                val desc = p0.child("Descripcion").value as String
+                val ocupacion = p0.child("ocupacion").value as String
+
+                txtEducacion.setText(nivel)
+                txtOcupacion.setText(ocupacion)
+                txtDescripcion.setText(desc)
+
+                if (p0.child("disciplinas").exists()) {
+                    for (item in 0..11) {
+                        val isSelected = p0.child("disciplinas").child("${item}")
+                            .child("seleccionado").value as Boolean
+                        listaDisciplina[item].seleccionado = isSelected
+                        when (item) {
+                            0 -> {
+                                cbdis1.isChecked = isSelected
+                            }
+                            1 -> {
+                                cbdis2.isChecked = isSelected
+                            }
+                            2 -> {
+                                cbdis3.isChecked = isSelected
+                            }
+                            3 -> {
+                                cbdis4.isChecked = isSelected
+                            }
+                            4 -> {
+                                cbdis5.isChecked = isSelected
+                            }
+                            5 -> {
+                                cbdis6.isChecked = isSelected
+                            }
+                            6 -> {
+                                cbdis7.isChecked = isSelected
+                            }
+                            7 -> {
+                                cbdis8.isChecked = isSelected
+                            }
+                            8 -> {
+                                cbdis9.isChecked = isSelected
+                            }
+                            9 -> {
+                                cbdis10.isChecked = isSelected
+                            }
+                            10 -> {
+                                cbdis11.isChecked = isSelected
+                            }
+                            11 -> {
+                                cbdis12.isChecked = isSelected
+                            }
+                        }
+
+                    }
+                }
+            }
+        })
+
     }
 
 
@@ -227,9 +300,5 @@ class AtributesActivity : AppCompatActivity() {
         referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
         referencia.child("disciplinas").setValue(listaDisciplina)
         Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
-
-
-
-
     }
 }

@@ -24,7 +24,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:padding="@dimen/medium_padding"
             android:orientation="vertical">
 
@@ -128,11 +128,11 @@
                     android:text="@string/math_txt" />
 
                 <CheckBox
-                    android:id="@+id/categoria_cocina"
+                    android:id="@+id/categoria_diseño"
                     android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cooking_txt" />
+                    android:text="@string/design_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_economia"
@@ -170,11 +170,11 @@
                     android:text="@string/chemistry_txt" />
 
                 <CheckBox
-                    android:id="@+id/categoria_deportes"
+                    android:id="@+id/categoria_musica"
                     android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/sports_txt" />
+                    android:text="@string/music_txt" />
                 <CheckBox
                     android:id="@+id/categoria_matematicasSuperior"
                     android:fontFamily="@font/roboto"
@@ -197,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@color/soft_cyan"
-                android:text="Enviar"
+                android:text="@string/btn_send_attributes"
                 android:fontFamily="@font/roboto"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
