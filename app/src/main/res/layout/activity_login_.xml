@@ -11,8 +11,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:background="@color/background_blackAlpha">
 
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminate="true"
+            android:visibility="gone" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -27,17 +38,6 @@
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/big_padding"
                 android:paddingRight="@dimen/big_padding">
-
-
-                <ProgressBar
-                    android:id="@+id/progressBar2"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:layout_marginBottom="@dimen/medium_margin"
-                    android:indeterminate="true"
-                    android:visibility="gone" />
 
                 <ImageView
                     android:layout_width="112dp"
