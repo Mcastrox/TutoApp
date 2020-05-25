@@ -40,7 +40,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var direccion: String = ""
                     var rol: String = ""
                     var ruta: String = ""
-                    var categoria: String = ""
+                    var categoria: String = eleccion
                     var id: String = e.child("ID").value as String
 
                     if (e.child("lastName").value != null) {
@@ -58,7 +58,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
 
                     if (rol == "Tutor") {
-                        if (e.child("disciplinas").child("2").child("seleccionado").value == true) {
+                        if (e.child("disciplinas").child("${categoria}").child("seleccionado").value == true) {
                             listaTutores.add(
                                 Model(
                                     id,

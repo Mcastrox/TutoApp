@@ -175,6 +175,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sports_txt" />
+                <CheckBox
+                    android:id="@+id/categoria_matematicasSuperior"
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/superiorMath_txt" />
+                <CheckBox
+                    android:id="@+id/categoria_cienciasSociales"
+                    android:fontFamily="@font/roboto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/CienciasSociales_txt" />
 
             </LinearLayout>
 

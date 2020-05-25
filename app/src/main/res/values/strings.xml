@@ -52,6 +52,8 @@
     <string name="chemistry_txt">Quimica</string>
     <string name="sports_txt">Deportes</string>
     <string name="password_txt">Contraseña</string>
+    <string name="superiorMath_txt">Matematicas Superiores</string>
+    <string name="CienciasSociales_txt">Ciencias Sociales</string>
 
 
 </resources>

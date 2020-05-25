@@ -31,6 +31,8 @@ class AtributesActivity : AppCompatActivity() {
     lateinit var cbdis8: CheckBox
     lateinit var cbdis9: CheckBox
     lateinit var cbdis10: CheckBox
+    lateinit var cbdis11: CheckBox
+    lateinit var cbdis12: CheckBox
 
 
     lateinit var uid: String
@@ -146,6 +148,26 @@ class AtributesActivity : AppCompatActivity() {
                 }
             }
         }
+        cbdis11.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis11.isChecked -> {
+                    this.listaDisciplina[10].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[10].seleccionado = false
+                }
+            }
+        }
+        cbdis12.setOnCheckedChangeListener { _, _ ->
+            when {
+                cbdis12.isChecked -> {
+                    this.listaDisciplina[11].seleccionado = true
+                }
+                else -> {
+                    this.listaDisciplina[11].seleccionado = false
+                }
+            }
+        }
 
         guardar_tutor.setOnClickListener {
 
@@ -166,6 +188,9 @@ class AtributesActivity : AppCompatActivity() {
         this.listaDisciplina.add(Disciplina("8", "Computacion", "", false))
         this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
         this.listaDisciplina.add(Disciplina("10", "Deportes", "", false))
+        this.listaDisciplina.add(Disciplina("11", "Matematicas Superior", "", false))
+        this.listaDisciplina.add(Disciplina("12", "Ciencias Sociales", "", false))
+
     }
 
     private fun initialize() {
@@ -182,7 +207,8 @@ class AtributesActivity : AppCompatActivity() {
         this.cbdis8 = findViewById(R.id.categoria_computacion)
         this.cbdis9 = findViewById(R.id.categoria_quimica)
         this.cbdis10 = findViewById(R.id.categoria_deportes)
-
+        this.cbdis11 = findViewById(R.id.categoria_matematicasSuperior)
+        this.cbdis12 = findViewById(R.id.categoria_cienciasSociales)
         this.btnGuardar = findViewById(R.id.guardar_tutor)
 
         auth = FirebaseAuth.getInstance()

@@ -43,6 +43,7 @@
                 android:rowCount="6">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/arte"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
@@ -53,6 +54,7 @@
                     app:cardElevation="6dp">
 
                     <LinearLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:background="@color/white"
@@ -82,6 +84,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/idiomas"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -159,6 +162,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/diseno"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -196,6 +200,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/economia"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -234,6 +239,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/habilidadesSociales"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -272,6 +278,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/fisica"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -310,6 +317,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/computacion"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -348,6 +356,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/quimica"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -386,6 +395,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/musica"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -424,6 +434,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/mateSuperior"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
@@ -462,6 +473,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cienciasSociales"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_rowWeight="1"
