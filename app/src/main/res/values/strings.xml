@@ -9,6 +9,27 @@
     <string name="TituloFav">Favorito</string>
     <string name="welcome_text">Bienvenido</string>
 
+
+    <!-- TODO: CATEGORIES -->
+    <string name="design_txt">Diseño</string>
+    <string name="music_txt">Musica</string>
+    <string name="maths_s_txt">Matematica superior</string>
+    <string name="socials_sciences_txt">Ciencias sociales</string>
+    <string name="art_txt">Arte</string>
+    <string name="languages_txt">Idiomas</string>
+    <string name="math_txt">Matematicas</string>
+    <string name="cooking_txt">Cocina</string>
+    <string name="economy_txt">Economia</string>
+    <string name="social_abilities_txt">Habilidades Sociales</string>
+    <string name="physics_txt">Fisica</string>
+    <string name="computer_science">Computacion</string>
+    <string name="chemistry_txt">Quimica</string>
+    <string name="sports_txt">Deportes</string>
+    <string name="password_txt">Contraseña</string>
+    <string name="superiorMath_txt">Matematicas Superiores</string>
+    <string name="CienciasSociales_txt">Ciencias Sociales</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="forgotten_pass">Para recuperar tu contraseña favor ingresa tu correo</string>
@@ -34,27 +55,6 @@
     <string name="cellphone_txt">Telefono</string>
     <string name="email_txt">Email</string>
     <string name="username_txt">Nombre</string>
-
-
-    <!-- TODO: CATEGORIES -->
-    <string name="design_txt">Diseño</string>
-    <string name="music_txt">Musica</string>
-    <string name="maths_s_txt">Matematica superior</string>
-    <string name="socials_sciences_txt">Ciencias sociales</string>
-    <string name="art_txt">Arte</string>
-    <string name="languages_txt">Idiomas</string>
-    <string name="math_txt">Matematicas</string>
-    <string name="cooking_txt">Cocina</string>
-    <string name="economy_txt">Economia</string>
-    <string name="social_abilities_txt">Habilidades Sociales</string>
-    <string name="physics_txt">Fisica</string>
-    <string name="computer_science">Computacion</string>
-    <string name="chemistry_txt">Quimica</string>
-    <string name="sports_txt">Deportes</string>
-    <string name="password_txt">Contraseña</string>
-    <string name="superiorMath_txt">Matematicas Superiores</string>
-    <string name="CienciasSociales_txt">Ciencias Sociales</string>
-    <string name="btn_send_attributes">Enviar</string>
-
+    <string name="btn_send_attributes">Guardar</string>
 
 </resources>

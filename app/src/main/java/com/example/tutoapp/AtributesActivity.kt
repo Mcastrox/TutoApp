@@ -233,9 +233,9 @@ class AtributesActivity : AppCompatActivity() {
 
             override fun onDataChange(p0: DataSnapshot) {
                 //Obtener informacion de database y ubicarla en sus respectivos campos
-                val nivel = p0.child("nivel").value as String
-                val desc = p0.child("Descripcion").value as String
-                val ocupacion = p0.child("ocupacion").value as String
+                val nivel = p0.child("nivel").value as String?
+                val desc = p0.child("Descripcion").value as String?
+                val ocupacion = p0.child("ocupacion").value as String?
 
                 txtEducacion.setText(nivel)
                 txtOcupacion.setText(ocupacion)
@@ -243,7 +243,7 @@ class AtributesActivity : AppCompatActivity() {
 
                 if (p0.child("disciplinas").exists()) {
                     for (item in 0..11) {
-                        val isSelected = p0.child("disciplinas").child("${item}")
+                        val isSelected = p0.child("disciplinas").child("$item")
                             .child("seleccionado").value as Boolean
                         listaDisciplina[item].seleccionado = isSelected
                         when (item) {

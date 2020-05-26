@@ -10,8 +10,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/blackMate"
         android:layout_alignParentTop="true"
+        android:background="@color/blackMate"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="@string/tutor_profile" />
@@ -25,16 +25,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/medium_padding"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/medium_padding">
 
             <TextView
                 android:id="@+id/textEducacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
                 android:text="@string/education_txt"
-                android:textColor="@color/blackMate"
-                android:fontFamily="@font/roboto"/>
+                android:textColor="@color/blackMate" />
 
             <EditText
                 android:id="@+id/educacion_tutor"
@@ -45,16 +45,16 @@
                 android:ems="20"
                 android:fontFamily="@font/roboto"
                 android:inputType="textPersonName"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp" />
 
             <TextView
                 android:id="@+id/textOcupacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:text="@string/ocupation_txt"
                 android:fontFamily="@font/roboto"
+                android:text="@string/ocupation_txt"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -66,16 +66,16 @@
                 android:ems="10"
                 android:fontFamily="@font/roboto"
                 android:inputType="textPersonName"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp" />
 
             <TextView
                 android:id="@+id/textDescripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:text="@string/description_txt"
                 android:fontFamily="@font/roboto"
+                android:text="@string/description_txt"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -83,13 +83,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:gravity="top"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
                 android:fontFamily="@font/roboto"
+                android:gravity="top"
                 android:inputType="textPersonName|textLongMessage|textMultiLine"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:padding="8dp"/>
 
             <TextView
                 android:id="@+id/textCategorias"
@@ -97,8 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginBottom="@dimen/medium_margin"
-                android:text="@string/category_txt"
                 android:fontFamily="@font/roboto"
+                android:text="@string/category_txt"
                 android:textColor="@color/blackMate" />
 
             <LinearLayout
@@ -108,84 +107,86 @@
 
                 <CheckBox
                     android:id="@+id/categoria_arte"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/art_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_idiomas"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/languages_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_matematicas"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/math_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_diseño"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/design_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_economia"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/economy_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_habilidadesSociales"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/social_abilities_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_fisica"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/physics_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_computacion"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/computer_science" />
 
                 <CheckBox
                     android:id="@+id/categoria_quimica"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/chemistry_txt" />
 
                 <CheckBox
                     android:id="@+id/categoria_musica"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/music_txt" />
+
                 <CheckBox
                     android:id="@+id/categoria_matematicasSuperior"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/superiorMath_txt" />
+
                 <CheckBox
                     android:id="@+id/categoria_cienciasSociales"
-                    android:fontFamily="@font/roboto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
                     android:text="@string/CienciasSociales_txt" />
 
             </LinearLayout>
@@ -197,8 +198,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@color/soft_cyan"
-                android:text="@string/btn_send_attributes"
                 android:fontFamily="@font/roboto"
+                android:text="@string/btn_send_attributes"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 android:textStyle="bold" />
