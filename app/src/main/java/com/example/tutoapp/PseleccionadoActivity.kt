@@ -13,6 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_pseleccionado.*
 
 class PseleccionadoActivity : AppCompatActivity() {
@@ -33,6 +34,11 @@ class PseleccionadoActivity : AppCompatActivity() {
         descripcion_tutor.text=tutor.description
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
+
+        Picasso.get()
+            .load(tutor.ruta)
+            .transform(BlurTransformation(this,25,3))
+            .into(user_tutor)
 
         mStorageRef = FirebaseStorage.getInstance().reference
         val ref = FirebaseDatabase.getInstance().getReference("Users")
