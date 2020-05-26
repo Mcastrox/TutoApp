@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,12 +11,7 @@
         android:layout_width="170dp"
         android:layout_height="170dp"
         android:layout_marginTop="16dp"
-        app:civ_border_width="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:civ_border_width="0dp" />
 
 
     <TextView
@@ -27,12 +22,7 @@
         android:fontFamily="@font/roboto"
         android:text="TextView"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/action_contactar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_tutor"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/descripcion_tutor"
@@ -42,29 +32,18 @@
         android:fontFamily="@font/roboto"
         android:text="TextView"
         android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/action_contactar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_tutor"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textStyle="bold" />
 
 
     <Button
         android:id="@+id/action_contactar"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:background="#6108CF97"
-        android:fontFamily="@font/roboto"
-        android:text="Contactar"
-        android:textAllCaps="true"
+        android:background="@color/soft_cyan"
+        android:text="cerrar sesion"
+        android:layout_margin="@dimen/medium_margin"
+        android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="@dimen/button_size_text"
+        android:fontFamily="@font/roboto"/>
+</LinearLayout>

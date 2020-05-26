@@ -10,7 +10,7 @@
 
     <!-- NoActionBar -->
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/soft_cyan</item>
+        <item name="colorPrimary">@color/blackMate</item>
         <item name="colorPrimaryDark">@color/blackMate</item>
         <item name="colorAccent">@color/soft_cyan</item>
     </style>
