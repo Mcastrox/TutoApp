@@ -13,6 +13,7 @@ import com.example.tutoapp.R
 import com.example.tutoapp.SearchFragment
 import com.example.tutoapp.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
+import java.text.SimpleDateFormat
 import java.util.*
 
 class SolicitudActivity : AppCompatActivity() {
@@ -52,7 +53,7 @@ class SolicitudActivity : AppCompatActivity() {
             val tp = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 c.set(Calendar.HOUR_OF_DAY,hourOfDay)
                 c.set(Calendar.MINUTE,minute)
-                txt_hora.setText("$hourOfDay:$minute")
+                txt_hora.setText(SimpleDateFormat("HH:mm").format(c.time))
             }
             TimePickerDialog(this, tp, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), false).show()
         }
