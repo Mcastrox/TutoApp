@@ -59,5 +59,6 @@
     <string name="lastname_txt">Apellido</string>
     <string name="new_pass">Ingresa nueva contraseña</string>
     <string name="confirm_pass_txt">Confirma tu nueva contraseña</string>
+    <string name="contact">Contactar</string>
 
 </resources>
