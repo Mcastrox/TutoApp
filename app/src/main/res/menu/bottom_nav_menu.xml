@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/search"
+        android:id="@+id/solicitud"
+        android:fontFamily="@font/roboto"
         android:icon="@drawable/ic_people"
-        android:title="@string/requests_txt"
-        android:fontFamily="@font/roboto"/>
+        android:title="@string/requests_txt" />
     <item
         android:id="@+id/home"
+        android:fontFamily="@font/roboto"
         android:icon="@drawable/ic_search"
-        android:title="@string/search_txt"
-        android:fontFamily="@font/roboto"/>
+        android:title="@string/search_txt" />
     <item
         android:id="@+id/perfil"
+        android:fontFamily="@font/roboto"
         android:icon="@drawable/ic_person"
-        android:title="@string/profile_txt"
-        android:fontFamily="@font/roboto"/>
+        android:title="@string/profile_txt" />
 </menu>
