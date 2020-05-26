@@ -32,6 +32,7 @@ class PseleccionadoActivity : AppCompatActivity() {
         nombre_tutor.text= tutor.tittle
         descripcion_tutor.text=tutor.description
         Picasso.get().load(tutor.ruta).into(image_tutor)
+        Picasso.get().load(tutor.ruta).into(user_tutor)
 
         mStorageRef = FirebaseStorage.getInstance().reference
         val ref = FirebaseDatabase.getInstance().getReference("Users")
