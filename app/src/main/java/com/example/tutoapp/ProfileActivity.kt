@@ -26,10 +26,9 @@ import java.util.*
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var tvname : TextView
     private lateinit var tvemail : TextView
-    private lateinit var userTel:TextView
-    private lateinit var modName:TextView
+    private lateinit var modName: TextView
+    private lateinit var modLastName:TextView
     private lateinit var modDireccion:TextView
     private lateinit var imageSelected:ImageView
     private lateinit var modTel:TextView
@@ -114,6 +113,7 @@ class ProfileActivity : AppCompatActivity() {
         referencia.child("direccion").setValue(user_direccion.text.toString())
         referencia.child("telefono").setValue(user_telefono.text.toString())
         referencia.child("Name").setValue(user_name.text.toString())
+        referencia.child("lastName").setValue(user_name.text.toString())
 
        updateImage()
     }
@@ -122,10 +122,9 @@ class ProfileActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user:FirebaseUser?=auth.currentUser
         //para los textos
-        tvname = findViewById(R.id.tvusername)
         tvemail = findViewById(R.id.tvemail)
-        userTel=findViewById(R.id.user_tel)
         modName=findViewById(R.id.user_name)
+        modLastName=findViewById(R.id.user_lastname)
         modDireccion=findViewById(R.id.user_direccion)
         modTel=findViewById(R.id.user_telefono)
         imageSelected=findViewById(R.id.imageSelected)
@@ -154,9 +153,8 @@ class ProfileActivity : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // sustituir nombre por "Name"
-                tvname.text = dataSnapshot.child("Name").value as String
                 modName.text=dataSnapshot.child("Name").value as String
-                userTel.text=dataSnapshot.child("telefono").value as String
+                modLastName.text=dataSnapshot.child("lastName").value as String
                modDireccion.text=dataSnapshot.child("direccion").value as String
                 modTel.text=dataSnapshot.child("telefono").value as String
 

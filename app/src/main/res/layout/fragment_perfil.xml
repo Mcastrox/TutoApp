@@ -112,9 +112,11 @@
                                     android:textSize="@dimen/button_size_text" />
 
                                 <TextView
+                                    android:id="@+id/change_password"
                                     android:layout_width="match_parent"
                                     android:layout_height="@dimen/xx_big_margin"
                                     android:drawableStart="@drawable/ic_lock_open"
+                                    android:drawableEnd="@drawable/ic_keyboard_arrow_right_black"
                                     android:fontFamily="@font/roboto"
                                     android:padding="@dimen/small_margin"
                                     android:gravity="center_vertical"

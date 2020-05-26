@@ -61,6 +61,9 @@ class PerfilFragment : Fragment() {
                 startActivity(Intent(activity,TutoriasActivity::class.java))
             }
         }
+        binding.changePassword.setOnClickListener {
+            startActivity(Intent(activity,Change_password::class.java))
+        }
         binding.logOut.setOnClickListener {
 
             Toast.makeText(activity!!,"Loggin Out... ", Toast.LENGTH_SHORT).show()

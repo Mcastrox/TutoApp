@@ -56,5 +56,8 @@
     <string name="email_txt">Email</string>
     <string name="username_txt">Nombre</string>
     <string name="btn_send_attributes">Guardar</string>
+    <string name="lastname_txt">Apellido</string>
+    <string name="new_pass">Ingresa nueva contraseña</string>
+    <string name="confirm_pass_txt">Confirma tu nueva contraseña</string>
 
 </resources>

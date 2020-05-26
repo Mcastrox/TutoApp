@@ -11,14 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".MainActivity"
+        <activity android:name=".Change_password"></activity>
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TutorFiltradoActivity"></activity>
+        <activity android:name=".TutorFiltradoActivity" />
         <activity android:name=".VerSolicitudActivity" />
         <activity android:name=".TutoriasActivity" />
         <activity android:name=".ui.SolicitudActivity" />
