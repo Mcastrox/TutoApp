@@ -74,6 +74,10 @@ class SearchFragment : Fragment() {
                 for (e in p0.children) {
                     var name: String = ""
                     var lastName: String = ""
+                    var email: String = ""
+                    var nivel: String = ""
+                    var ocupation: String = ""
+                    var cellphone: String = ""
                     var direccion: String = ""
                     var rol: String = ""
                     var ruta : String = ""
@@ -89,6 +93,18 @@ class SearchFragment : Fragment() {
                     if (e.child("direccion").value != null) {
                         direccion = e.child("direccion").value as String
                     }
+                    if (e.child("correo").value != null) {
+                        email = e.child("correo").value as String
+                    }
+                    if (e.child("telefono").value != null) {
+                        cellphone = e.child("telefono").value as String
+                    }
+                    if (e.child("nivel").value != null) {
+                        nivel = e.child("nivel").value as String
+                    }
+                    if (e.child("ocupacion").value != null) {
+                        ocupation = e.child("ocupacion").value as String
+                    }
                     if (e.child("Rol").value != null) {
                         rol = e.child("Rol").value as String
                     }
@@ -97,7 +113,7 @@ class SearchFragment : Fragment() {
                     }
 
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(id,name,lastName, direccion,R.drawable.ic_art,ruta))
+                        listaTutores.add(Model(id,name,lastName, email, cellphone, nivel, ocupation, direccion, R.drawable.ic_art,ruta))
                     }
 
                 }

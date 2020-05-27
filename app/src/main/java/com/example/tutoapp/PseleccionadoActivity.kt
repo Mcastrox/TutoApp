@@ -17,7 +17,7 @@ import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_pseleccionado.*
 
 class PseleccionadoActivity : AppCompatActivity() {
-        private lateinit var auth : FirebaseAuth
+    private lateinit var auth : FirebaseAuth
     private lateinit var nombre_estudiante: String
 
     private lateinit var url: String
@@ -29,9 +29,14 @@ class PseleccionadoActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser?=auth.currentUser
 
-        val tutor=intent.getSerializableExtra("tutor") as Model
-        nombre_tutor.text= tutor.tittle
-        descripcion_tutor.text=tutor.description
+        val tutor = intent.getSerializableExtra("tutor") as Model
+        nombre_tutor.text= tutor.name
+        lastname_tutor.text= tutor.lastname
+        location_tutor.text=tutor.location
+        ocupation_tutor.text= tutor.ocupacion
+        nivel_tutor.text=tutor.nivel
+        correo_tutor.text= tutor.correo
+        telefono_tutor.text= tutor.telefono
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
 
