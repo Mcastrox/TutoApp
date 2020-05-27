@@ -58,7 +58,7 @@ class Register_Activity : AppCompatActivity() {
         } else {
             Toast.makeText(
                 this,
-                "Por favor acepta los terminos de politica sale pete",
+                "Por favor acepta los terminos de politica",
                 Toast.LENGTH_LONG
             ).show()
         }

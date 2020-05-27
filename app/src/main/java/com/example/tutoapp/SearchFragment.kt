@@ -138,9 +138,10 @@ class SearchFragment : Fragment() {
         super.onCreateOptionsMenu(menu,inflater)
         val itemBusqueda =menu?.findItem(R.id.busqueda)
         var vistaBusqueda=itemBusqueda?.actionView as SearchView
-        val itemCompartir=menu?.findItem(R.id.share)
-        val shareActionProvider= MenuItemCompat.getActionProvider(itemCompartir) as androidx.appcompat.widget.ShareActionProvider
-        compartirIntent(shareActionProvider)
+
+//        val itemCompartir=menu?.findItem(R.id.share)
+//        val shareActionProvider= MenuItemCompat.getActionProvider(itemCompartir) as androidx.appcompat.widget.ShareActionProvider
+//        compartirIntent(shareActionProvider)
 
 
         vistaBusqueda.queryHint="Categoria.."
@@ -162,25 +163,25 @@ class SearchFragment : Fragment() {
         })
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
-            R.id.bFav -> {
-                Toast.makeText(activity, "Elemento agregado a favoritos", Toast.LENGTH_SHORT).show()
-                return true
-            }
-            else -> (return super.onOptionsItemSelected(item))
-
-        }
-    }
-    private fun compartirIntent(shareActionProvider:androidx.appcompat.widget.ShareActionProvider){
-        if(shareActionProvider!=null){
-            val intent=Intent(Intent.ACTION_SEND)
-            //aqui se especifica el tipo de dato que se va a compartir
-            intent.type="text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT,"Este es un mensaje compartido")
-            shareActionProvider.setShareIntent(intent)
-        }
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when (item?.itemId) {
+//            R.id.bFav -> {
+//                Toast.makeText(activity, "Elemento agregado a favoritos", Toast.LENGTH_SHORT).show()
+//                return true
+//            }
+//            else -> (return super.onOptionsItemSelected(item))
+//
+//        }
+//    }
+//    private fun compartirIntent(shareActionProvider:androidx.appcompat.widget.ShareActionProvider){
+//        if(shareActionProvider!=null){
+//            val intent=Intent(Intent.ACTION_SEND)
+//            //aqui se especifica el tipo de dato que se va a compartir
+//            intent.type="text/plain"
+//            intent.putExtra(Intent.EXTRA_TEXT,"Este es un mensaje compartido")
+//            shareActionProvider.setShareIntent(intent)
+//        }
+//    }
 
 
 
