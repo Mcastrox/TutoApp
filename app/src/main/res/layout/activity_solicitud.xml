@@ -14,7 +14,8 @@
         android:layout_alignParentTop="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/solicitud_txt" />
+        app:title="@string/solicitud_txt"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
     <ScrollView
         android:layout_width="match_parent"

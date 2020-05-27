@@ -7,6 +7,16 @@
     android:orientation="vertical"
     tools:context=".TutorFiltradoActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blackMate"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="@string/ToolBarTitle"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+
     <ListView
         android:id="@+id/lista_categoriaSeleccionada"
         android:layout_width="match_parent"

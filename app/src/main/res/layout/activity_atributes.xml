@@ -14,7 +14,8 @@
         android:background="@color/blackMate"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/tutor_profile" />
+        app:title="@string/tutor_profile"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
     <ScrollView
         android:layout_width="match_parent"

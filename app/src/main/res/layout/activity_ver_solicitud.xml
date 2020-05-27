@@ -14,7 +14,8 @@
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Solicitud de Tutoria" />
+        app:title="Solicitud de Tutoria"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
