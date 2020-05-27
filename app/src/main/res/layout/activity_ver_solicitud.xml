@@ -17,173 +17,178 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="Solicitud de Tutoria" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/medium_margin">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/foto_estudiante"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="@dimen/small_margin"
-            android:background="@drawable/ic_usuario" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/medium_margin">
 
-        <TextView
-            android:id="@+id/nombre_estudiante"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/foto_estudiante"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto"
-            android:textSize="@dimen/button_size_text"
-            android:textStyle="bold"
-            tools:text="Name" />
-
-        <TextView
-            android:id="@+id/ubicacion_solicitud"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/nombre_estudiante"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
-            android:drawableStart="@drawable/ic_place_grey"
-            android:fontFamily="@font/roboto"
-            android:textColor="@color/soft_grey"
-            android:textSize="@dimen/small_text"
-            tools:text="Ubicacion" />
-
-        <RatingBar
-            android:id="@+id/rating"
-            style="@style/Widget.AppCompat.RatingBar.Indicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ubicacion_solicitud"
-            android:layout_centerHorizontal="true"
-            android:numStars="5"
-            android:rating="3"
-            android:scaleX="0.75"
-            android:scaleY="0.75"
-            android:theme="@style/RatingBar" />
-
-        <TextView
-            android:id="@+id/label_materia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rating"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:fontFamily="@font/roboto"
-            android:text="@string/label_materia_txt"
-            android:textColor="@color/redBrick"
-            android:textSize="@dimen/button_size_text" />
-
-        <TextView
-            android:id="@+id/tv_materia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/label_materia"
-            android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto"
-            android:textSize="@dimen/medium_text"
-            android:text="FALTA IMPLEMENTAR" />
-
-        <TextView
-            android:id="@+id/label_fecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_materia"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:fontFamily="@font/roboto"
-            android:text="@string/label_fecha_txt"
-            android:textColor="@color/redBrick"
-            android:textSize="@dimen/button_size_text" />
-
-        <LinearLayout
-            android:id="@+id/fecha_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_fecha"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/foto_estudiante"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/small_margin"
+                android:background="@drawable/ic_usuario" />
 
             <TextView
-                android:id="@+id/fecha_tutoria"
+                android:id="@+id/nombre_estudiante"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/small_margin"
+                android:layout_below="@id/foto_estudiante"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/roboto"
-                android:textSize="@dimen/medium_text"
-                tools:text="Fecha" />
+                android:textSize="@dimen/button_size_text"
+                android:textStyle="bold"
+                tools:text="Name" />
 
             <TextView
-                android:id="@+id/hora_tutoria"
+                android:id="@+id/ubicacion_solicitud"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/nombre_estudiante"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/small_margin"
+                android:drawableStart="@drawable/ic_place_grey"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/soft_grey"
+                android:textSize="@dimen/small_text"
+                tools:text="Ubicacion" />
+
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ubicacion_solicitud"
+                android:layout_centerHorizontal="true"
+                android:numStars="5"
+                android:rating="3"
+                android:scaleX="0.75"
+                android:scaleY="0.75"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/label_materia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:fontFamily="@font/roboto"
+                android:text="@string/label_materia_txt"
+                android:textColor="@color/redBrick"
+                android:textSize="@dimen/button_size_text" />
+
+            <TextView
+                android:id="@+id/tv_materia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label_materia"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
+                android:text="FALTA IMPLEMENTAR"
+                android:textSize="@dimen/medium_text" />
+
+            <TextView
+                android:id="@+id/label_fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_materia"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:fontFamily="@font/roboto"
+                android:text="@string/label_fecha_txt"
+                android:textColor="@color/redBrick"
+                android:textSize="@dimen/button_size_text" />
+
+            <LinearLayout
+                android:id="@+id/fecha_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_fecha"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fecha_tutoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_margin"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/medium_text"
+                    tools:text="Fecha" />
+
+                <TextView
+                    android:id="@+id/hora_tutoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/medium_text"
+                    tools:text="Hora" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/label_notas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fecha_container"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:fontFamily="@font/roboto"
+                android:text="@string/label_notas_txt"
+                android:textColor="@color/redBrick"
+                android:textSize="@dimen/button_size_text" />
+
+
+            <TextView
+                android:id="@+id/notas_tutoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_notas"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/small_margin"
+                android:background="@drawable/tv_red_border"
+                android:fontFamily="@font/roboto"
+                android:minLines="5"
+                android:padding="@dimen/small_margin"
                 android:textSize="@dimen/medium_text"
-                tools:text="Hora" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/label_notas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/fecha_container"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/medium_margin"
-            android:fontFamily="@font/roboto"
-            android:text="@string/label_notas_txt"
-            android:textColor="@color/redBrick"
-            android:textSize="@dimen/button_size_text" />
+                tools:text="Notas" />
 
 
-        <TextView
-            android:id="@+id/notas_tutoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_notas"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
-            android:background="@drawable/tv_red_border"
-            android:fontFamily="@font/roboto"
-            android:minLines="5"
-            android:padding="@dimen/small_margin"
-            android:textSize="@dimen/medium_text"
-            tools:text="Notas" />
+            <Button
+                android:id="@+id/aceptar_tutoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/notas_tutoria"
+                android:layout_marginTop="@dimen/big_margin"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:background="@color/soft_cyan"
+                android:fontFamily="@font/roboto"
+                android:text="@string/btn_aceptar_sol_txt"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_size_text"
+                android:textStyle="bold" />
 
 
-        <Button
-            android:id="@+id/aceptar_tutoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/notas_tutoria"
-            android:layout_marginTop="@dimen/big_margin"
-            android:layout_marginBottom="@dimen/small_margin"
-            android:background="@color/soft_cyan"
-            android:fontFamily="@font/roboto"
-            android:text="@string/btn_aceptar_sol_txt"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_size_text"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/rechazar_tutoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aceptar_tutoria"
+                android:layout_marginBottom="@dimen/small_margin"
+                android:background="@color/redBrick"
+                android:fontFamily="@font/roboto"
+                android:text="@string/btn_rechazar_sol_txt"
+                android:textColor="@color/white"
+                android:textSize="@dimen/button_size_text"
+                android:textStyle="bold" />
 
-
-        <Button
-            android:id="@+id/rechazar_tutoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/aceptar_tutoria"
-            android:layout_marginBottom="@dimen/small_margin"
-            android:background="@color/redBrick"
-            android:fontFamily="@font/roboto"
-            android:text="@string/btn_rechazar_sol_txt"
-            android:textColor="@color/white"
-            android:textSize="@dimen/button_size_text"
-            android:textStyle="bold" />
-
-    </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>
