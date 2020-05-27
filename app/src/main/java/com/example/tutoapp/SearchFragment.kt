@@ -72,11 +72,16 @@ class SearchFragment : Fragment() {
                     listaTutores.clear()
                 }
                 for (e in p0.children) {
+                    var name: String = ""
                     var lastName: String = ""
                     var direccion: String = ""
                     var rol: String = ""
                     var ruta : String = ""
                     var id : String = e.child("ID").value as String
+
+                    if (e.child("Name").value != null) {
+                        name = e.child("Name").value as String
+                    }
 
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
@@ -92,7 +97,7 @@ class SearchFragment : Fragment() {
                     }
 
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(id,lastName, direccion,R.drawable.ic_art,ruta))
+                        listaTutores.add(Model(id,name,lastName, direccion,R.drawable.ic_art,ruta))
                     }
 
                 }

@@ -39,10 +39,14 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var lastName: String = ""
                     var direccion: String = ""
                     var rol: String = ""
+                    var name: String = ""
                     var ruta: String = ""
                     var categoria: String = eleccion
                     var id: String = e.child("ID").value as String
 
+                    if (e.child("Name").value != null) {
+                        name = e.child("Name").value as String
+                    }
                     if (e.child("lastName").value != null) {
                         lastName = e.child("lastName").value as String
                     }
@@ -62,6 +66,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                             listaTutores.add(
                                 Model(
                                     id,
+                                    name,
                                     lastName,
                                     direccion,
                                     R.drawable.ic_art,

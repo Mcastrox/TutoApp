@@ -60,5 +60,7 @@
     <string name="new_pass">Ingresa nueva contraseña</string>
     <string name="confirm_pass_txt">Confirma tu nueva contraseña</string>
     <string name="contact">Contactar</string>
+    <string name="label_fecha_txt">Fecha y Hora:</string>
+    <string name="label_materia_txt">Materia Solicitada:</string>
 
 </resources>
