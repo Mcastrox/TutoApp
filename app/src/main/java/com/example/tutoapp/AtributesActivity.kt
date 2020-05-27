@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -40,6 +41,8 @@ class AtributesActivity : AppCompatActivity() {
 
     lateinit var uid: String
     lateinit var auth: FirebaseAuth
+
+    var toolbar : Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -177,6 +180,14 @@ class AtributesActivity : AppCompatActivity() {
 
             guardar()
         }
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.tutor_profile)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 
 

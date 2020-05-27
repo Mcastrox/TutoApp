@@ -3,6 +3,7 @@ package com.example.tutoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -14,6 +15,9 @@ class TutorFiltradoActivity : AppCompatActivity() {
     private var listaTutores = mutableListOf<Model>()
     private lateinit var adapter : TutorAdapter
     private lateinit var lista_categoriaSeleccionada : ListView
+
+
+    var toolbar : Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -102,6 +106,15 @@ class TutorFiltradoActivity : AppCompatActivity() {
                 lista_categoriaSeleccionada.adapter = adapter
             }
             })
+
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.ToolBarTitle)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
 }
 

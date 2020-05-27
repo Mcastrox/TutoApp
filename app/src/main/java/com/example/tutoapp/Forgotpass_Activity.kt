@@ -8,18 +8,30 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 
 class Forgotpass_Activity : AppCompatActivity() {
     private lateinit var txtEmail:EditText
     private lateinit var auth:FirebaseAuth
     private lateinit var progressBar: ProgressBar
+
+    var toolbar : Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgotpass_)
         txtEmail=findViewById(R.id.txtEmail)
         auth=FirebaseAuth.getInstance()
         progressBar= findViewById(R.id.progressBar3)
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.change_password)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
     }
     fun send(view:View){
         val email=txtEmail.text.toString()

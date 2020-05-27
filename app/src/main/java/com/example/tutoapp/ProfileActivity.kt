@@ -13,6 +13,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -36,6 +37,8 @@ class ProfileActivity : AppCompatActivity() {
     private var selected: Uri? = null
     private lateinit var mStorageRef: StorageReference
 
+    var toolbar : Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -43,6 +46,13 @@ class ProfileActivity : AppCompatActivity() {
         modificar_info.setOnClickListener {
             guardar()
         }
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.modify_bar_txt)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         /*val user: FirebaseUser?=mAuth.currentUser
         mDataBaseReference= FirebaseDatabase.getInstance().getReference("Users")
