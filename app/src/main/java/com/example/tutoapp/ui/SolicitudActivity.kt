@@ -53,7 +53,7 @@ class SolicitudActivity : AppCompatActivity() {
             val tp = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
                 c.set(Calendar.HOUR_OF_DAY,hourOfDay)
                 c.set(Calendar.MINUTE,minute)
-                txt_hora.setText(SimpleDateFormat("HH:mm a").format(c.time))
+                txt_hora.setText(SimpleDateFormat("hh:mm a").format(c.time))
             }
             TimePickerDialog(this, tp, c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), false).show()
         }

@@ -13,13 +13,13 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/blackMate"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/ToolBarTitle"
-        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+        app:title="@string/ToolBarTitle" />
 
     <ListView
         android:id="@+id/lista_categoriaSeleccionada"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
