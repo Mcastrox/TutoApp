@@ -62,5 +62,8 @@
     <string name="contact">Contactar</string>
     <string name="label_fecha_txt">Fecha y Hora:</string>
     <string name="label_materia_txt">Materia Solicitada:</string>
+    <string name="nivel_txt">Nivel academico</string>
+    <string name="about_me_txt">Sobre mi</string>
+    <string name="disciplines_txt">Disciplinas</string>
 
 </resources>
