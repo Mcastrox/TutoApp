@@ -62,8 +62,10 @@
     <string name="contact">Contactar</string>
     <string name="label_fecha_txt">Fecha y Hora:</string>
     <string name="label_materia_txt">Materia Solicitada:</string>
+    <string name="label_notas_txt">Notas Adicionales:</string>
+    <string name="btn_aceptar_sol_txt">aceptar</string>
+    <string name="btn_rechazar_sol_txt">rechazar</string>add
     <string name="nivel_txt">Nivel academico</string>
     <string name="about_me_txt">Sobre mi</string>
     <string name="disciplines_txt">Disciplinas</string>
-
 </resources>

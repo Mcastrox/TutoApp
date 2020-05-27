@@ -13,9 +13,9 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:navigationIcon="@drawable/ic_keyboard_arrow_left"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Solicitud de Tutoria"
-        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+        app:title="Solicitud de Tutoria" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -85,10 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/label_materia"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
             android:fontFamily="@font/roboto"
             android:textSize="@dimen/medium_text"
-            tools:text="Materia" />
+            android:text="FALTA IMPLEMENTAR" />
 
         <TextView
             android:id="@+id/label_fecha"
@@ -102,26 +101,71 @@
             android:textColor="@color/redBrick"
             android:textSize="@dimen/button_size_text" />
 
-        <TextView
-            android:id="@+id/hora_tutoria"
+        <LinearLayout
+            android:id="@+id/fecha_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/label_fecha"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/small_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fecha_tutoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/small_margin"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/medium_text"
+                tools:text="Fecha" />
+
+            <TextView
+                android:id="@+id/hora_tutoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/medium_text"
+                tools:text="Hora" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_notas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fecha_container"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/medium_margin"
             android:fontFamily="@font/roboto"
-            android:text="Hora" />
+            android:text="@string/label_notas_txt"
+            android:textColor="@color/redBrick"
+            android:textSize="@dimen/button_size_text" />
+
+
+        <TextView
+            android:id="@+id/notas_tutoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/label_notas"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/small_margin"
+            android:background="@drawable/tv_red_border"
+            android:fontFamily="@font/roboto"
+            android:minLines="5"
+            android:padding="@dimen/small_margin"
+            android:textSize="@dimen/medium_text"
+            tools:text="Notas" />
+
 
         <Button
             android:id="@+id/aceptar_tutoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@id/rechazar_tutoria"
-            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_below="@id/notas_tutoria"
+            android:layout_marginTop="@dimen/big_margin"
             android:layout_marginBottom="@dimen/small_margin"
             android:background="@color/soft_cyan"
             android:fontFamily="@font/roboto"
-            android:text="aceptar"
+            android:text="@string/btn_aceptar_sol_txt"
             android:textColor="@color/white"
             android:textSize="@dimen/button_size_text"
             android:textStyle="bold" />
@@ -131,21 +175,14 @@
             android:id="@+id/rechazar_tutoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@id/aceptar_tutoria"
             android:layout_marginBottom="@dimen/small_margin"
             android:background="@color/redBrick"
             android:fontFamily="@font/roboto"
-            android:text="rechazar"
+            android:text="@string/btn_rechazar_sol_txt"
             android:textColor="@color/white"
             android:textSize="@dimen/button_size_text"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/notas_tutoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="notas" />
 
     </RelativeLayout>
 

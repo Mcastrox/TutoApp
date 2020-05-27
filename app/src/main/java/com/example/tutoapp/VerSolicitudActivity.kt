@@ -15,6 +15,8 @@ class VerSolicitudActivity : AppCompatActivity() {
     private lateinit var name: TextView
     private lateinit var hora: TextView
     private lateinit var notas: TextView
+    private lateinit var fecha: TextView
+    private lateinit var direccion: TextView
     private lateinit var btnAceptar: Button
     private lateinit var btnRechazar: Button
     private lateinit var imgEstudiante: ImageView
@@ -33,6 +35,8 @@ class VerSolicitudActivity : AppCompatActivity() {
     fun initialize() {
         imgEstudiante = findViewById(R.id.foto_estudiante)
         name = findViewById(R.id.nombre_estudiante)
+        fecha = findViewById(R.id.fecha_tutoria)
+        direccion = findViewById(R.id.ubicacion_solicitud)
         hora = findViewById(R.id.hora_tutoria)
         notas = findViewById(R.id.notas_tutoria)
         btnAceptar = findViewById(R.id.aceptar_tutoria)
@@ -43,6 +47,8 @@ class VerSolicitudActivity : AppCompatActivity() {
         name.text = solicitud.nombre_estudiante
         hora.text = solicitud.hora
         notas.text = solicitud.nota
+        direccion.text = solicitud.direccion
+        fecha.text = solicitud.fecha
 
     }
 
