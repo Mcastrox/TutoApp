@@ -3,18 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/medium_margin"
+    android:paddingRight="@dimen/medium_margin">
 
     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/foto_estudiante"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
         app:civ_border_width="0dp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -22,8 +27,8 @@
             android:id="@+id/nombre_estudiante"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Main Text"
             android:fontFamily="@font/roboto"
+            android:text="Main Text"
             android:textColor="@color/blackMate"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -32,8 +37,8 @@
             android:id="@+id/ubicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SubText"
             android:fontFamily="@font/roboto"
+            android:text="SubText"
             android:textColor="@color/blackMate"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -42,8 +47,8 @@
             android:id="@+id/estado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SubText"
             android:fontFamily="@font/roboto"
+            android:text="SubText"
             android:textColor="@color/blackMate"
             android:textSize="16sp"
             android:textStyle="bold" />

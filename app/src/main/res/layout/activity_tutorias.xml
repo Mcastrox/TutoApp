@@ -15,15 +15,17 @@
             android:layout_alignParentTop="true"
             android:background="@color/blackMate"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:navigationIcon="@drawable/ic_keyboard_arrow_left"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/solicitud_txt"
-            app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+            app:title="@string/solicitud_txt" />
 
         <ListView
             android:id="@+id/lista_solicitudes"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar" />
+            android:layout_below="@+id/toolbar"
+            android:divider="@drawable/line_divider"
+            android:dividerHeight="1dp" />
 
     </RelativeLayout>
 </layout>
