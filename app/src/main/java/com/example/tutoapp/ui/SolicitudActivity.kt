@@ -27,6 +27,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var idTutor: String
     private lateinit var estado: String
     private lateinit var nombre_estudiante: String
+    private lateinit var apellido_estudiante: String
     private lateinit var foto_estudiante: String
     private lateinit var idEstudiante: String
     private lateinit var seleccion: String
@@ -98,6 +99,7 @@ class SolicitudActivity : AppCompatActivity() {
         nombre_estudiante = intent.getStringExtra("nombre_estudiante")
         foto_estudiante = intent.getStringExtra("foto_estudiante")
         idTutor = intent.getStringExtra("idTutor")
+        apellido_estudiante = intent.getStringExtra("apellido_estudiante")
         txt_direccion = findViewById(R.id.txt_direccion)
         txt_categoria = findViewById(R.id.txt_categoria)
         txt_fecha = findViewById(R.id.txt_fecha)
@@ -125,7 +127,8 @@ class SolicitudActivity : AppCompatActivity() {
             idTutor,
             estado,
             nombre_estudiante,
-            foto_estudiante
+            foto_estudiante,
+            apellido_estudiante
         )
 
         viewModel.postUserData(solicitud, idTutor)

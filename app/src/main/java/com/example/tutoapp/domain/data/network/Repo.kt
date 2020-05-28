@@ -34,8 +34,9 @@ class Repo {
                 val tutorSolicitado:String ? = document.getString("tutorSolicitado")
                 val estado: String? = document.getString("estado")
                 val nombre_estudiante : String ? =document.getString("nombre_estudiante")
+                val apellido_estudiante : String ? = document.getString("apellido_estudiante")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
-                val solicitud = TutoriaModel(id!!,direccion!!,categoria!!,fecha!!,hora!!,nota!!,solicitante!!,tutorSolicitado!!,estado!!,nombre_estudiante!!,foto_estudiante!!)
+                val solicitud = TutoriaModel(id!!,direccion!!,categoria!!,fecha!!,hora!!,nota!!,solicitante!!,tutorSolicitado!!,estado!!,nombre_estudiante!!,foto_estudiante!!,apellido_estudiante!!)
                 listData.add(solicitud)
             }
             mutableData.value = listData
