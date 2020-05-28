@@ -25,7 +25,8 @@
         <activity android:name=".TutorFiltradoActivity"
             android:parentActivityName=".SearchFragment"/>
         <activity android:name=".SearchFragment"/>
-        <activity android:name=".VerSolicitudActivity" />
+        <activity android:name=".VerSolicitudActivity"
+            android:parentActivityName=".TutoriasActivity"/>
         <activity android:name=".TutoriasActivity" />
         <activity android:name=".ui.SolicitudActivity"
             android:parentActivityName=".SearchFragment"/>

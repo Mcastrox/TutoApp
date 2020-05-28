@@ -16,7 +16,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:navigationIcon="@drawable/ic_keyboard_arrow_left"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="Solicitud de Tutoria" />
+        app:title="@string/ver_solicitud_txt" />
 
     <ScrollView
         android:layout_width="wrap_content"
