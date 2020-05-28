@@ -20,6 +20,8 @@
     <ListView
         android:id="@+id/lista_categoriaSeleccionada"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@drawable/line_divider"
+        android:dividerHeight="1dp" />
 
 </LinearLayout>
