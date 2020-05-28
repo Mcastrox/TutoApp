@@ -71,6 +71,7 @@
                         android:hint="Nombre"
                         android:inputType="textPersonName"
                         android:padding="@dimen/small_margin"
+                        android:textSize="@dimen/subtitle_text"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
@@ -92,6 +93,7 @@
                         android:hint="Apellido"
                         android:inputType="textPersonName"
                         android:padding="@dimen/small_margin"
+                        android:textSize="@dimen/subtitle_text"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
@@ -113,6 +115,7 @@
                         android:hint="Correo"
                         android:inputType="textEmailAddress"
                         android:padding="@dimen/small_margin"
+                        android:textSize="@dimen/subtitle_text"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold" />
 
@@ -131,6 +134,7 @@
                         android:layout_height="@dimen/et_small_height"
                         android:background="#A3131313"
                         android:ems="10"
+                        android:textSize="@dimen/subtitle_text"
                         android:fontFamily="@font/roboto"
                         android:hint="Contraseña"
                         android:inputType="textPassword"
@@ -152,6 +156,7 @@
                         android:layout_height="@dimen/et_small_height"
                         android:background="#A3131313"
                         android:ems="10"
+                        android:textSize="@dimen/subtitle_text"
                         android:fontFamily="@font/roboto"
                         android:hint="Teléfono"
                         android:padding="@dimen/small_margin"
@@ -174,6 +179,7 @@
                         android:layout_marginBottom="@dimen/medium_margin"
                         android:background="#A3131313"
                         android:ems="10"
+                        android:textSize="@dimen/subtitle_text"
                         android:fontFamily="@font/roboto"
                         android:hint="Dirección"
                         android:padding="@dimen/small_margin"

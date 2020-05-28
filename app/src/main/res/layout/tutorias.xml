@@ -26,7 +26,7 @@
             android:text="Main Text"
             android:fontFamily="@font/roboto"
             android:textColor="@color/blackMate"
-            android:textSize="20sp"
+            android:textSize="@dimen/title_text"
             android:textStyle="bold" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:text="SubText"
             android:fontFamily="@font/roboto"
             android:textColor="@color/blackMate"
-            android:textSize="16sp"
+            android:textSize="@dimen/subtitle_text"
             android:textStyle="bold" />
     </LinearLayout>
 

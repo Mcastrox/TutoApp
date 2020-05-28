@@ -44,7 +44,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/txt_tutor_subtitle"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/title_text"
             android:fontFamily="@font/roboto"/>
 
 

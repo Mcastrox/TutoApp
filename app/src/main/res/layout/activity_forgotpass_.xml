@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        android:textSize="@dimen/title_text"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="@string/change_password"
@@ -68,7 +69,8 @@
                     android:inputType="textEmailAddress"
                     android:padding="@dimen/small_margin"
                     android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textSize="@dimen/subtitle_text"/>
 
             </com.google.android.material.textfield.TextInputLayout>
 

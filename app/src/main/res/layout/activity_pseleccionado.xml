@@ -58,7 +58,7 @@
                         android:textAlignment="center"
                         android:text="@string/username_txt"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/title_text"
                         android:textStyle="bold" />
 
                     <TextView
@@ -71,7 +71,7 @@
                         android:textAlignment="center"
                         android:text="@string/lastname_txt"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/title_text"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -97,7 +97,7 @@
                     android:textAlignment="center"
                     android:text="@string/ocupation_txt"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/subtitle_text"
                     android:textStyle="bold" />
 
                 <TextView
@@ -109,7 +109,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:text="@string/ubication_txt"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/subtitle_text"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -129,7 +129,7 @@
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:text="@string/about_me_txt"
-                android:textSize="18sp"
+                android:textSize="@dimen/subtitle_text"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -140,7 +140,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
@@ -157,7 +157,7 @@
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:text="@string/nivel_txt"
-                android:textSize="18sp"
+                android:textSize="@dimen/subtitle_text"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -169,7 +169,7 @@
                 android:fontFamily="@font/roboto"
                 android:drawableStart="@drawable/rectangle"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
@@ -186,7 +186,7 @@
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:text="@string/disciplines_txt"
-                android:textSize="18sp"
+                android:textSize="@dimen/subtitle_text"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -197,7 +197,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
@@ -214,7 +214,7 @@
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
                 android:text="@string/cellphone_txt"
-                android:textSize="18sp"
+                android:textSize="@dimen/subtitle_text"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -225,7 +225,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
@@ -241,7 +241,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="@string/email_txt"
-                android:textSize="18sp"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
@@ -253,7 +253,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
                 android:text="TextView"
-                android:textSize="18sp"
+                android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <Button

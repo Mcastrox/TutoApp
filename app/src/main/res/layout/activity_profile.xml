@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/blackMate"
+        android:textSize="@dimen/title_text"
         android:layout_alignParentTop="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -62,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:textColor="@color/blackMate"
-                android:textSize="@dimen/medium_text"
+                android:textSize="@dimen/subtitle_text"
                 tools:text="@string/AppName"/>
 
             </LinearLayout>
@@ -74,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/username_txt"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -86,7 +88,8 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
-                android:paddingRight="6dp" />
+                android:paddingRight="6dp"
+                android:textSize="@dimen/normal_text"/>
 
             <TextView
                 android:id="@+id/lastname"
@@ -95,6 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/lastname_txt"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -105,6 +109,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:textSize="@dimen/normal_text"
                 android:inputType="textPersonName"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -116,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/ubication_txt"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -126,6 +132,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="20"
+                android:textSize="@dimen/normal_text"
                 android:inputType="textLongMessage"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -137,6 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/cellphone_txt"
+                android:textSize="@dimen/subtitle_text"
                 android:textColor="@color/blackMate" />
 
             <EditText
@@ -147,6 +155,7 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:background="@drawable/edittext_border"
                 android:ems="10"
+                android:textSize="@dimen/normal_text"
                 android:inputType="phone"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
@@ -159,7 +168,7 @@
                 android:background="@color/soft_cyan"
                 android:text="@string/modify_txt"
                 android:textColor="#FFFFFF"
-                android:textSize="18sp"
+                android:textSize="@dimen/button_size_text"
                 android:textStyle="bold"
                 android:fontFamily="@font/roboto"/>
         </LinearLayout>

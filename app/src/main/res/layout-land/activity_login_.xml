@@ -70,7 +70,7 @@
                         android:textColor="@color/grey"
                         android:textAllCaps="true"
                         android:textStyle="bold"
-                        android:textSize="15sp" />
+                        android:textSize="@dimen/subtitle_text" />
 
 
                 </LinearLayout>
