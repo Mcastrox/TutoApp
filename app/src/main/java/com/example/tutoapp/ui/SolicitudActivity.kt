@@ -59,7 +59,7 @@ class SolicitudActivity : AppCompatActivity() {
             val dp = DatePickerDialog(
                 this,
                 DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-                    txt_fecha.setText("$dayOfMonth/$month/$year")
+                    txt_fecha.setText("$dayOfMonth/${month + 1}/$year")
                 },
                 year,
                 month,
@@ -134,7 +134,7 @@ class SolicitudActivity : AppCompatActivity() {
     }
 
 
-    private fun selectedCategory(){
+    private fun selectedCategory() {
         when (intent.getStringExtra("seleccion")) {
             "0" -> {
                 seleccion = resources.getString(R.string.art_txt)
@@ -172,7 +172,7 @@ class SolicitudActivity : AppCompatActivity() {
             "11" -> {
                 seleccion = resources.getString(R.string.socials_sciences_txt)
             }
-            else->{
+            else -> {
                 seleccion = ""
             }
         }
