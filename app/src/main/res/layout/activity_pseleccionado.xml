@@ -266,7 +266,7 @@
                 android:id="@+id/action_contactar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/soft_cyan"
+                android:background="@drawable/button"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/contact"
                 android:textColor="@color/white"

@@ -72,7 +72,7 @@
             tools:text="SubText"
             android:fontFamily="@font/roboto"
             android:textColor="@color/blackMate"
-            android:textSize="@dimen/subtitle_text"
+            android:textSize="@dimen/normal_text"
             android:textStyle="bold" />
     </LinearLayout>
 

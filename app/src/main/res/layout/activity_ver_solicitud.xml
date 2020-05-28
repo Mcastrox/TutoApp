@@ -168,7 +168,7 @@
                 android:layout_below="@id/notas_tutoria"
                 android:layout_marginTop="@dimen/big_margin"
                 android:layout_marginBottom="@dimen/small_margin"
-                android:background="@color/soft_cyan"
+                android:background="@drawable/button"
                 android:fontFamily="@font/roboto"
                 android:text="@string/btn_aceptar_sol_txt"
                 android:textColor="@color/white"

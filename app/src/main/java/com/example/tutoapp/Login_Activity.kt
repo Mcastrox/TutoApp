@@ -10,6 +10,7 @@ import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 
 class Login_Activity : AppCompatActivity() {

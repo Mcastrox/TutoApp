@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/xx_big_margin"
-            android:background="@color/soft_cyan"
+            android:background="@drawable/button"
             android:fontFamily="@font/roboto"
             android:text="@string/txt_register"
             android:textColor="@color/white"

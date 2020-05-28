@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -31,6 +32,11 @@ class Forgotpass_Activity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+        );
 
     }
     fun send(view:View){

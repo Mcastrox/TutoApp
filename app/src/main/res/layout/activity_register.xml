@@ -45,14 +45,14 @@
                     android:text="@string/register_text"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="21sp"
+                    android:textSize="@dimen/title_text"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:layout_marginBottom="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_marginBottom="@dimen/medium_margin"
                     android:background="@android:color/darker_gray" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -80,6 +80,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColorHint="@color/hint_color"
                     app:hintTextColor="@color/soft_cyan">
 
@@ -102,6 +103,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColorHint="@color/hint_color"
                     app:hintTextColor="@color/soft_cyan">
 
@@ -125,6 +127,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColorHint="@color/hint_color"
                     app:hintTextColor="@color/soft_cyan">
 
@@ -147,6 +150,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColorHint="@color/hint_color"
                     app:hintTextColor="@color/soft_cyan">
 
@@ -169,6 +173,7 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
                     android:textColorHint="@color/hint_color"
                     app:hintTextColor="@color/soft_cyan">
 
@@ -204,7 +209,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/soft_cyan"
+                    android:background="@drawable/button"
                     android:fontFamily="@font/roboto"
                     android:onClick="register"
                     android:text="Crear cuenta"

@@ -37,7 +37,7 @@
     <string name="search_txt">Buscar</string>
     <string name="profile_txt">Perfil</string>
     <string name="requests_txt">Solicitudes</string>
-    <string name="ubication_txt">Dirección:</string>
+    <string name="ubication_txt">Dirección</string>
     <string name="category_txt">Categoría</string>
     <string name="date_txt">Fecha</string>
     <string name="time_txt">Selecciona la hora</string>
@@ -60,9 +60,9 @@
     <string name="new_pass">Ingresa nueva contraseña</string>
     <string name="confirm_pass_txt">Confirma tu nueva contraseña</string>
     <string name="contact">Contactar</string>
-    <string name="label_fecha_txt">Fecha y Hora:</string>
-    <string name="label_materia_txt">Materia Solicitada:</string>
-    <string name="label_notas_txt">Notas Adicionales:</string>
+    <string name="label_fecha_txt">Fecha y Hora</string>
+    <string name="label_materia_txt">Materia Solicitada</string>
+    <string name="label_notas_txt">Notas Adicionales</string>
     <string name="btn_aceptar_sol_txt">aceptar</string>
     <string name="btn_rechazar_sol_txt">rechazar</string>add
     <string name="nivel_txt">Nivel académico</string>
@@ -72,4 +72,5 @@
     <string name="categories_txt">Categorías</string>
     <string name="tutors_txt">Tutores</string>
     <string name="ver_solicitud_txt">Ver Solicitud</string>
+    <string name="send_btn_txt">Enviar</string>
 </resources>

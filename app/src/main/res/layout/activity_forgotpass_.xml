@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,18 +8,24 @@
     android:orientation="vertical"
     tools:context=".Forgotpass_Activity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:textSize="@dimen/title_text"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:title="@string/change_password"
-        app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+        android:layout_height="wrap_content"
+        android:background="@color/background_blackAlpha"
+        android:orientation="vertical">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:textSize="@dimen/title_text"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:layout_marginTop="@dimen/big_margin"
+            app:title="@string/change_password"
+            app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +36,6 @@
         android:paddingLeft="@dimen/big_padding"
         android:paddingRight="@dimen/big_padding"
         android:background="@color/background_blackAlpha">
-
 
         <ProgressBar
             android:id="@+id/progressBar3"
@@ -77,10 +80,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/soft_cyan"
+                android:background="@drawable/button"
                 android:fontFamily="@font/roboto"
                 android:onClick="send"
-                android:text="Enviar"
+                android:text="@string/send_btn_txt"
                 android:textColor="#FFFFFf"
                 android:textSize="@dimen/button_size_text"
                 android:textStyle="bold"

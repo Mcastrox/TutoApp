@@ -23,7 +23,6 @@ class TutoriasActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var uidTutor: String
-    private lateinit var Toolbar: Toolbar
     private lateinit var adapter: SolicitudAdapter
     private lateinit var binding: ActivityTutoriasBinding
 

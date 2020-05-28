@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/small_margin"
             android:layout_marginBottom="@dimen/medium_margin"
-            android:background="@color/soft_cyan"
+            android:background="@drawable/button"
             android:fontFamily="@font/roboto"
             android:minWidth="250dp"
             android:text="@string/txt_register"
