@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.R
 import com.example.tutoapp.SearchFragment
@@ -31,10 +32,21 @@ class SolicitudActivity : AppCompatActivity() {
     //lazy se usa para instanciar el objeto hasta que se necesite
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java)}
 
+    var toolbar : Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitud)
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.solicitud_txt)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
         initialize()
+
 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -91,4 +103,6 @@ class SolicitudActivity : AppCompatActivity() {
 
         Toast.makeText(this,"Solicitud enviada con exito",Toast.LENGTH_LONG).show()
     }
+
+
 }
