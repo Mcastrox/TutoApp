@@ -1,5 +1,6 @@
 package com.example.tutoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
@@ -104,6 +105,13 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
 
                 lista_categoriaSeleccionada.adapter = adapter
+
+                lista_categoriaSeleccionada.setOnItemClickListener { parent, view, position, id ->
+                    val intent = Intent(this@TutorFiltradoActivity,PseleccionadoActivity::class.java)
+                    intent.putExtra("tutor", listaTutores[position])
+                    intent.putExtra("seleccion",eleccion)
+                    startActivity(intent)
+                }
             }
             })
 

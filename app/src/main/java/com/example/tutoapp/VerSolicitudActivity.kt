@@ -16,6 +16,7 @@ class VerSolicitudActivity : AppCompatActivity() {
     private lateinit var hora: TextView
     private lateinit var notas: TextView
     private lateinit var fecha: TextView
+    private lateinit var materia: TextView
     private lateinit var direccion: TextView
     private lateinit var btnAceptar: Button
     private lateinit var btnRechazar: Button
@@ -40,6 +41,7 @@ class VerSolicitudActivity : AppCompatActivity() {
         hora = findViewById(R.id.hora_tutoria)
         notas = findViewById(R.id.notas_tutoria)
         btnAceptar = findViewById(R.id.aceptar_tutoria)
+        materia = findViewById(R.id.tv_materia)
         btnRechazar = findViewById(R.id.rechazar_tutoria)
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
@@ -47,8 +49,10 @@ class VerSolicitudActivity : AppCompatActivity() {
         name.text = solicitud.nombre_estudiante
         hora.text = solicitud.hora
         notas.text = solicitud.nota
+        materia.text = solicitud.categoria
         direccion.text = solicitud.direccion
         fecha.text = solicitud.fecha
+
 
     }
 

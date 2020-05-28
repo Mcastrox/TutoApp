@@ -65,13 +65,13 @@ class PseleccionadoActivity : AppCompatActivity() {
 
 
         action_contactar.setOnClickListener {
+            val seleccion = intent?.getStringExtra("seleccion")
             val intent = Intent(this, SolicitudActivity::class.java)
             intent.putExtra("idEstudiante", user?.uid)
-
             intent.putExtra("nombre_estudiante",nombre_estudiante)
             intent.putExtra("foto_estudiante",url)
-
             intent.putExtra("idTutor",tutor.id )
+            intent.putExtra("seleccion",seleccion)
             //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)
         }

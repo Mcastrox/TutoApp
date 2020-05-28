@@ -90,7 +90,7 @@
                 android:layout_below="@+id/label_materia"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/roboto"
-                android:text="FALTA IMPLEMENTAR"
+                tools:text = "Materia"
                 android:textSize="@dimen/medium_text" />
 
             <TextView
