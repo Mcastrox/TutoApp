@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.viewmodel.SolicitudViewModel
@@ -24,12 +25,21 @@ class VerSolicitudActivity : AppCompatActivity() {
     private lateinit var idEstudiante: String
     private val viewModel by lazy { ViewModelProvider(this).get(SolicitudViewModel::class.java) }
 
+    var toolbar : Toolbar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_solicitud)
 
         initialize()
         observerData()
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle(R.string.ver_solicitud_txt)
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
     }
 
