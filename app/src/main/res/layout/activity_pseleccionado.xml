@@ -127,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/blackMate"
                 android:text="@string/about_me_txt"
                 android:textSize="18sp"
                 android:textAllCaps="true"
@@ -142,11 +143,19 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:backgroundTint="@color/soft_grey"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/blackMate"
                 android:text="@string/nivel_txt"
                 android:textSize="18sp"
                 android:textAllCaps="true"
@@ -158,15 +167,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
+                android:drawableStart="@drawable/rectangle"
                 android:text="TextView"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:backgroundTint="@color/soft_grey"
+                android:background="?android:attr/listDivider" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/blackMate"
                 android:text="@string/disciplines_txt"
                 android:textSize="18sp"
                 android:textAllCaps="true"
@@ -182,11 +200,19 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:backgroundTint="@color/soft_grey"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
+                android:textColor="@color/blackMate"
                 android:text="@string/cellphone_txt"
                 android:textSize="18sp"
                 android:textAllCaps="true"
@@ -202,6 +228,13 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/small_margin"
+                android:backgroundTint="@color/soft_grey"
+                android:background="?android:attr/listDivider" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -209,6 +242,7 @@
                 android:fontFamily="@font/roboto"
                 android:text="@string/email_txt"
                 android:textSize="18sp"
+                android:textColor="@color/blackMate"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 

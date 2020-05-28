@@ -23,7 +23,7 @@ class CentralActivity : AppCompatActivity() {
 
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.solicitud -> {
+                R.id.search_tutors -> {
                     selectedFragment = SearchFragment()
                     replaceFragment(selectedFragment as SearchFragment)
                     return@OnNavigationItemSelectedListener true
@@ -47,7 +47,7 @@ class CentralActivity : AppCompatActivity() {
             R.id.home -> {
                 selectedFragment = HomeFragment()
             }
-            R.id.solicitud -> {
+            R.id.search_tutors -> {
                 selectedFragment = SearchFragment()
             }
             R.id.perfil -> {

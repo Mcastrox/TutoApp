@@ -69,4 +69,6 @@
     <string name="about_me_txt">Sobre mi</string>
     <string name="disciplines_txt">Disciplinas</string>
     <string name="change_password">Cambiar Contraseña</string>
+    <string name="categories_txt">Categorias</string>
+    <string name="tutors_txt">Tutores</string>
 </resources>
