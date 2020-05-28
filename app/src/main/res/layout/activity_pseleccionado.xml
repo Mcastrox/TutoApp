@@ -18,8 +18,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:background="@color/blackMate">
+            android:layout_height="350dp">
 
             <ImageView
                 android:id="@+id/user_tutor"
@@ -36,12 +35,14 @@
                 android:gravity="center"
                 android:layout_margin="@dimen/small_margin"
                 android:orientation="vertical">
+
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/image_tutor"
                     android:layout_width="170dp"
                     android:layout_height="170dp"
                     android:layout_marginTop="16dp"
-                    app:civ_border_width="0dp" />
+                    android:background="@drawable/ic_usuario"
+                    app:civ_border_width="1dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -97,6 +98,7 @@
                     android:textAlignment="center"
                     android:text="@string/ocupation_txt"
                     android:textColor="@color/white"
+                    android:background="@color/blackMateTransparent"
                     android:textSize="@dimen/subtitle_text"
                     android:textStyle="bold" />
 
@@ -106,8 +108,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/small_margin"
                     android:fontFamily="@font/roboto"
+                    android:drawableStart="@drawable/ic_place_grey"
                     android:textAlignment="center"
                     android:textColor="@color/white"
+                    android:background="@color/blackMateTransparent"
                     android:text="@string/ubication_txt"
                     android:textSize="@dimen/subtitle_text"
                     android:textStyle="bold" />
@@ -139,13 +143,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:text="TextView"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
                 android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:layout_marginTop="@dimen/small_margin"
                 android:backgroundTint="@color/soft_grey"
                 android:background="?android:attr/listDivider" />
@@ -161,20 +165,22 @@
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
+
+
             <TextView
                 android:id="@+id/nivel_tutor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/roboto"
-                android:drawableStart="@drawable/rectangle"
                 android:text="TextView"
                 android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:layout_marginTop="@dimen/small_margin"
                 android:backgroundTint="@color/soft_grey"
                 android:background="?android:attr/listDivider" />
@@ -195,14 +201,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="FALTA IMPLENTAR"
                 android:fontFamily="@font/roboto"
-                android:text="TextView"
                 android:textSize="@dimen/normal_text"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:layout_marginTop="@dimen/small_margin"
                 android:backgroundTint="@color/soft_grey"
                 android:background="?android:attr/listDivider" />
@@ -230,7 +236,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="2dp"
                 android:layout_marginTop="@dimen/small_margin"
                 android:backgroundTint="@color/soft_grey"
                 android:background="?android:attr/listDivider" />
@@ -261,6 +267,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/soft_cyan"
+                android:layout_marginTop="@dimen/medium_margin"
                 android:text="@string/contact"
                 android:textColor="@color/white"
                 android:textStyle="bold"
