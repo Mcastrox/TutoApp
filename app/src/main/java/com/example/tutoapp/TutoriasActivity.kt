@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.get
 import androidx.databinding.DataBindingUtil
@@ -72,11 +73,23 @@ class TutoriasActivity : AppCompatActivity() {
         viewModel.getUserSolicitud(uidTutor).observe(this, Observer {
             adapter = SolicitudAdapter(this, it)
             lista_solicitudes.adapter = adapter
-            lista_solicitudes.setOnItemClickListener { parent, view, position, id ->
-                val intent = Intent(this, VerSolicitudActivity::class.java)
-                intent.putExtra("solicitud", it[position])
-                startActivity(intent)
+
+            if (it.isNullOrEmpty()){
+                binding.empty.visibility = View.VISIBLE
+                binding.listaSolicitudes.visibility = View.GONE
+
+            }else{
+                binding.empty.visibility = View.GONE
+                binding.listaSolicitudes.visibility = View.VISIBLE
+
+                lista_solicitudes.setOnItemClickListener { parent, view, position, id ->
+                    val intent = Intent(this, VerSolicitudActivity::class.java)
+                    intent.putExtra("solicitud", it[position])
+                    startActivity(intent)
+                }
+
             }
+
         })
     }
 

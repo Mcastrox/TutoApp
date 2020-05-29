@@ -1,5 +1,6 @@
 package com.example.tutoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -62,7 +63,6 @@ class AtributesActivity : AppCompatActivity() {
                 }
             }
         }
-
         cbdis2.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis2.isChecked -> {
@@ -73,7 +73,6 @@ class AtributesActivity : AppCompatActivity() {
                 }
             }
         }
-
         cbdis3.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis3.isChecked -> {
@@ -84,7 +83,6 @@ class AtributesActivity : AppCompatActivity() {
                 }
             }
         }
-
         cbdis4.setOnCheckedChangeListener { _, _ ->
             when {
                 cbdis4.isChecked -> {
@@ -177,7 +175,6 @@ class AtributesActivity : AppCompatActivity() {
         }
 
         guardar_tutor.setOnClickListener {
-
             guardar()
         }
 
@@ -311,5 +308,7 @@ class AtributesActivity : AppCompatActivity() {
         referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
         referencia.child("disciplinas").setValue(listaDisciplina)
         Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
+
+        finish()
     }
 }

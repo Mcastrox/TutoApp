@@ -19,13 +19,41 @@
             app:title="@string/solicitud_txt"
             app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
 
+        <LinearLayout
+            android:id="@+id/empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:tint="@color/light_grayish"
+                app:srcCompat="@drawable/ic_notification">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_sol_txt"
+                android:textSize="@dimen/title_text"
+                android:textColor="@color/soft_grey"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
         <ListView
             android:id="@+id/lista_solicitudes"
             android:divider="@drawable/line_divider"
             android:dividerHeight="1dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar" />
+            android:layout_below="@+id/toolbar"
+            android:visibility="visible"/>
 
     </RelativeLayout>
 </layout>

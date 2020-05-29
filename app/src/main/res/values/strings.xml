@@ -46,9 +46,9 @@
     <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aquí</string>
     <string name="txt_tutor_title">¿Quieres formar parte de nuestros tutores?</string>
     <string name="solicitud_txt">Solicitud de tutoría</string>
-    <string name="education_txt">Grado académico</string>
+    <string name="education_txt">Grado académico </string>
     <string name="ocupation_txt">Ocupación</string>
-    <string name="description_txt">Descripción</string>
+    <string name="description_txt">Descripción Personal</string>
     <string name="tutor_profile">Perfil de tutor</string>
     <string name="modify_txt">Modificar</string>
     <string name="modify_bar_txt">Modificar Perfil</string>
@@ -73,4 +73,8 @@
     <string name="tutors_txt">Tutores</string>
     <string name="ver_solicitud_txt">Ver Solicitud</string>
     <string name="send_btn_txt">Enviar</string>
+    <string name="empty_sol_txt">No tiene ninguna solicitud.</string>
+    <string name="empty_tutors_txt">No hay tutores disponibles.</string>
+    <string name="ex_education">(ex. Universitario, Maestria, Doctorado)</string>
+    <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
 </resources>

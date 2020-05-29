@@ -182,7 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/aceptar_tutoria"
                 android:layout_marginBottom="@dimen/small_margin"
-                android:background="@color/redBrick"
+                android:background="@drawable/button_red"
                 android:fontFamily="@font/roboto"
                 android:text="@string/btn_rechazar_sol_txt"
                 android:textColor="@color/white"

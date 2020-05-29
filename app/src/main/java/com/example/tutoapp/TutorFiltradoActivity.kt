@@ -3,6 +3,8 @@ package com.example.tutoapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.DataSnapshot
@@ -105,6 +107,15 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
 
                 lista_categoriaSeleccionada.adapter = adapter
+
+                if (listaTutores.isNullOrEmpty()){
+                    findViewById<LinearLayout>(R.id.empty).visibility = View.VISIBLE
+                    findViewById<ListView>(R.id.lista_categoriaSeleccionada).visibility = View.GONE
+
+                }else {
+                    findViewById<LinearLayout>(R.id.empty).visibility = View.GONE
+                    findViewById<ListView>(R.id.lista_categoriaSeleccionada).visibility = View.VISIBLE
+                }
 
                 lista_categoriaSeleccionada.setOnItemClickListener { parent, view, position, id ->
                     val intent = Intent(this@TutorFiltradoActivity,PseleccionadoActivity::class.java)
