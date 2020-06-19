@@ -1,9 +1,11 @@
 package com.example.tutoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_central.*
 
 class CentralActivity : AppCompatActivity() {
@@ -39,6 +41,7 @@ class CentralActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_central)
+        logUserVerify()
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         var selectedItemId = savedInstanceState?.getInt("ID")
@@ -71,6 +74,13 @@ class CentralActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("ID", bottomNavigation.selectedItemId)
+    }
+    private fun logUserVerify(){
+        var uid = FirebaseAuth.getInstance().uid
+        if(uid== null){
+            var intent = Intent (this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }
