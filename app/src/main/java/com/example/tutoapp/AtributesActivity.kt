@@ -303,6 +303,7 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun guardar() {
         val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+        referencia.child("Rol").setValue("Tutor")
         referencia.child("nivel").setValue(txtEducacion.text.toString())
         referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
         referencia.child("Descripcion").setValue(txtDescripcion.text.toString())

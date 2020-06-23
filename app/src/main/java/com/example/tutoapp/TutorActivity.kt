@@ -19,12 +19,8 @@ class TutorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutor)
 
-        auth = FirebaseAuth.getInstance()
-        val user: FirebaseUser?=auth.currentUser
-        uid = user?.uid!!
-        val referencia =  FirebaseDatabase .getInstance (). getReference ( "Users" ) .child (uid)
+
         nuevo_tutor_action.setOnClickListener {
-            referencia.child("Rol").setValue("Tutor")
             startActivity(Intent(this,AtributesActivity::class.java))
             finish()
         }
