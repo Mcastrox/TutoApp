@@ -3,6 +3,7 @@ package com.example.tutoapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.ui.SolicitudActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -23,12 +24,20 @@ class PseleccionadoActivity : AppCompatActivity() {
 
     private lateinit var url: String
     var mStorageRef: StorageReference? = null
+    var toolbar : Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pseleccionado)
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
+
+        toolbar = findViewById(R.id.toolbar)
+        toolbar?.setTitle("")
+        setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val tutor = intent.getSerializableExtra("tutor") as Model
         nombre_tutor.text = tutor.name
@@ -78,5 +87,6 @@ class PseleccionadoActivity : AppCompatActivity() {
             //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)
         }
+
     }
 }
