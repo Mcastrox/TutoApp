@@ -33,8 +33,10 @@
         <activity android:name=".ui.SolicitudActivity"
             android:parentActivityName=".SearchFragment"/>
 
-        <activity android:name=".PseleccionadoActivity" />
-        <activity android:name=".TutorActivity" />
+        <activity android:name=".PseleccionadoActivity"
+            android:parentActivityName=".SearchFragment"/>
+        <activity android:name=".TutorActivity"
+            android:parentActivityName=".PerfilFragment"/>
         <activity android:name=".ProfileActivity"
             android:parentActivityName=".PerfilFragment"/>
         <activity android:name=".AtributesActivity"
