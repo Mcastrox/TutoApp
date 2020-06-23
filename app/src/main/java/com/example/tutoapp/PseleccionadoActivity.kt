@@ -38,6 +38,7 @@ class PseleccionadoActivity : AppCompatActivity() {
         nivel_tutor.text = tutor.nivel
         correo_tutor.text = tutor.correo
         telefono_tutor.text = tutor.telefono
+        descripcion_tutor.text = tutor.descripcion
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
 

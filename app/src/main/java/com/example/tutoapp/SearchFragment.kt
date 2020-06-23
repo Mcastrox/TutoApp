@@ -81,6 +81,7 @@ class SearchFragment : Fragment() {
                     var direccion: String = ""
                     var rol: String = ""
                     var ruta : String = ""
+                    var descripcion : String = ""
                     var id : String = e.child("ID").value as String
 
                     if (e.child("Name").value != null) {
@@ -111,9 +112,12 @@ class SearchFragment : Fragment() {
                     if(e.child("urlImage").value != null){
                         ruta=e.child("urlImage").value as String
                     }
+                    if(e.child("Descripcion").value != null){
+                        descripcion=e.child("Descripcion").value as String
+                    }
 
                     if (rol == "Tutor") {
-                        listaTutores.add(Model(id,name,lastName, email, cellphone, nivel, ocupation, direccion, R.drawable.ic_art,ruta))
+                        listaTutores.add(Model(id,name,lastName, email, cellphone, nivel, ocupation, direccion, R.drawable.ic_art,ruta, descripcion))
                     }
 
                 }

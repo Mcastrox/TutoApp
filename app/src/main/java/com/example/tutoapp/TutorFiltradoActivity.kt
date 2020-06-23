@@ -52,6 +52,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var rol: String = ""
                     var name: String = ""
                     var ruta: String = ""
+                    var descripcion: String = ""
                     var categoria: String = eleccion
                     var id: String = e.child("ID").value as String
 
@@ -79,6 +80,9 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     if (e.child("Rol").value != null) {
                         rol = e.child("Rol").value as String
                     }
+                    if (e.child("Descripcion").value != null) {
+                        descripcion = e.child("Descripcion").value as String
+                    }
                     if (e.child("urlImage").value != null) {
                         ruta = e.child("urlImage").value as String
                     }
@@ -97,7 +101,8 @@ class TutorFiltradoActivity : AppCompatActivity() {
                                     ocupation,
                                     direccion,
                                     R.drawable.ic_art,
-                                    ruta
+                                    ruta,
+                                    descripcion
                                 )
                             )
                         }

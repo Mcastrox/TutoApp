@@ -11,5 +11,6 @@ class Model(var id : String,
             var ocupacion: String,
             var location : String,
             var img : Int ,
-            var ruta: String = "" ): Serializable{
+            var ruta: String = "" ,
+            var descripcion: String): Serializable{
 }
