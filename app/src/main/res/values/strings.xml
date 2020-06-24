@@ -77,4 +77,5 @@
     <string name="empty_tutors_txt">No hay tutores disponibles.</string>
     <string name="ex_education">(ex. Universitario, Maestria, Doctorado)</string>
     <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
+    <string name="chat">Chat</string>
 </resources>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
+        android:id="@+id/chat"
+        android:fontFamily="@font/roboto"
+        android:icon="@drawable/ic_chat_24dp"
+        android:title="@string/chat" />
+    <item
         android:id="@+id/search_tutors"
         android:fontFamily="@font/roboto"
         android:icon="@drawable/ic_search"
@@ -10,6 +15,11 @@
         android:fontFamily="@font/roboto"
         android:icon="@drawable/ic_menu_black_24dp"
         android:title="@string/categories_txt" />
+    <item
+        android:id="@+id/request"
+        android:fontFamily="@font/roboto"
+        android:icon="@drawable/ic_request_people_24dp"
+        android:title="@string/requests_txt" />
     <item
         android:id="@+id/perfil"
         android:fontFamily="@font/roboto"
