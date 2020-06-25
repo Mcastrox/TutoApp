@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
+        <activity android:name=".Chat.NewMessage"
+            android:parentActivityName=".Chat.CentralChat"></activity>
+        <activity android:name=".Chat.CentralChat" />
         <activity android:name=".CentralActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,32 +21,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Change_password"
-            android:parentActivityName=".PerfilFragment"></activity>
+        <activity
+            android:name=".Change_password"
+            android:parentActivityName=".PerfilFragment" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/SplashTheme">
-        </activity>
-        <activity android:name=".TutorFiltradoActivity"
-            android:parentActivityName=".SearchFragment"/>
-        <activity android:name=".SearchFragment"/>
-        <activity android:name=".VerSolicitudActivity"
-            android:parentActivityName=".TutoriasActivity"/>
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".TutorFiltradoActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity android:name=".SearchFragment" />
+        <activity
+            android:name=".VerSolicitudActivity"
+            android:parentActivityName=".TutoriasActivity" />
         <activity android:name=".TutoriasActivity" />
-        <activity android:name=".ui.SolicitudActivity"
-            android:parentActivityName=".SearchFragment"/>
-
-        <activity android:name=".PseleccionadoActivity"
-            android:parentActivityName=".SearchFragment"/>
-        <activity android:name=".TutorActivity"
-            android:parentActivityName=".PerfilFragment"/>
-        <activity android:name=".ProfileActivity"
-            android:parentActivityName=".PerfilFragment"/>
-        <activity android:name=".AtributesActivity"
-            android:parentActivityName=".TutoriasActivity"/>
-        <activity android:name=".Forgotpass_Activity"
-            android:parentActivityName=".Change_password"/>
-        <activity android:name=".PerfilFragment"/>
+        <activity
+            android:name=".ui.SolicitudActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity
+            android:name=".PseleccionadoActivity"
+            android:parentActivityName=".SearchFragment" />
+        <activity
+            android:name=".TutorActivity"
+            android:parentActivityName=".PerfilFragment" />
+        <activity
+            android:name=".ProfileActivity"
+            android:parentActivityName=".PerfilFragment" />
+        <activity
+            android:name=".AtributesActivity"
+            android:parentActivityName=".TutoriasActivity" />
+        <activity
+            android:name=".Forgotpass_Activity"
+            android:parentActivityName=".Change_password" />
+        <activity android:name=".PerfilFragment" />
         <activity
             android:name=".Login_Activity"
             android:windowSoftInputMode="adjustPan" />

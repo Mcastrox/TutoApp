@@ -69,7 +69,10 @@ class PerfilFragment : Fragment() {
             Toast.makeText(activity!!,"Loggin Out... ", Toast.LENGTH_SHORT).show()
             logOut()
             if(auth.currentUser==null){
-                startActivity(Intent(activity!!,MainActivity::class.java))
+
+                val intent = Intent (activity!!, MainActivity::class.java)
+                intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
             else{
                 Toast.makeText(activity!!,"No funciono ", Toast.LENGTH_LONG).show()

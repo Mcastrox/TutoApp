@@ -13,4 +13,5 @@ class Model(var id : String,
             var img : Int ,
             var ruta: String = "" ,
             var descripcion: String): Serializable{
+    constructor(): this ("","","","","","","","",0,"","")
 }

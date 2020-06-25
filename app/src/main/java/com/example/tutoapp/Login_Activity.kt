@@ -65,7 +65,9 @@ class Login_Activity : AppCompatActivity() {
     }
 
     private fun action() {
-        startActivity(Intent(this, CentralActivity::class.java))
+        val intent = Intent (this, CentralActivity::class.java)
+        intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 
 }

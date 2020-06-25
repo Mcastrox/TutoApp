@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.viewmodel.SolicitudViewModel
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_ver_solicitud.*
 
 
 class VerSolicitudActivity : AppCompatActivity() {
@@ -40,7 +41,7 @@ class VerSolicitudActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
-
+        
     }
 
     fun initialize() {
