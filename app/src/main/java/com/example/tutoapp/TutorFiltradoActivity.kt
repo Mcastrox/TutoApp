@@ -17,7 +17,6 @@ class TutorFiltradoActivity : AppCompatActivity() {
     private var listaTutores = mutableListOf<Model>()
     private lateinit var adapter: TutorAdapter
     private lateinit var lista_categoriaSeleccionada: ListView
-    private lateinit var listaDisciplina: ArrayList<Disciplina>
 
 
     var toolbar: Toolbar? = null
@@ -25,8 +24,6 @@ class TutorFiltradoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutor_filtrado)
-
-        initArrayDisciplina()
 
         var eleccion = intent.getStringExtra("seleccion")
 
@@ -56,6 +53,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var ruta: String = ""
                     var descripcion: String = ""
                     var categoria: String = eleccion
+                    var listaDisciplina: ArrayList<Disciplina>  = arrayListOf<Disciplina>()
                     var id: String = e.child("ID").value as String
 
                     if (e.child("Name").value != null) {
@@ -90,9 +88,12 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     }
                     if (e.child("disciplinas").exists()) {
                         for (item in 0..11) {
+                            val name = e.child("disciplinas").child("$item").child("name").value as String
                             val isSelected = e.child("disciplinas").child("$item")
                                 .child("seleccionado").value as Boolean
-                            listaDisciplina[item].seleccionado = isSelected
+                            if(isSelected){
+                                listaDisciplina.add(Disciplina("$item",name,"",isSelected))
+                            }
                         }
                     }
 
@@ -155,21 +156,5 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
     }
 
-    private fun initArrayDisciplina() {
-        this.listaDisciplina = ArrayList();
-        this.listaDisciplina.add(Disciplina("1", "Arte", "", false))
-        this.listaDisciplina.add(Disciplina("2", "Idiomas", "", false))
-        this.listaDisciplina.add(Disciplina("3", "Matemáticas", "", false))
-        this.listaDisciplina.add(Disciplina("4", "Diseño", "", false))
-        this.listaDisciplina.add(Disciplina("5", "Economía", "", false))
-        this.listaDisciplina.add(Disciplina("6", "Habilidades Sociales", "", false))
-        this.listaDisciplina.add(Disciplina("7", "Física", "", false))
-        this.listaDisciplina.add(Disciplina("8", "Computación", "", false))
-        this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
-        this.listaDisciplina.add(Disciplina("10", "Música", "", false))
-        this.listaDisciplina.add(Disciplina("11", "Matemáticas Superior", "", false))
-        this.listaDisciplina.add(Disciplina("12", "Ciencias Sociales", "", false))
-
-    }
 }
 
