@@ -3,7 +3,10 @@ package com.example.tutoapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.GridView
 import androidx.appcompat.widget.Toolbar
+import com.example.tutoapp.adapter.GvAdapter
 import com.example.tutoapp.ui.SolicitudActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -21,6 +24,8 @@ class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
+    private lateinit var gvDisciplinas : GridView
+    private var gv_adapter: GvAdapter?= null
 
     private lateinit var url: String
     var mStorageRef: StorageReference? = null
@@ -29,8 +34,11 @@ class PseleccionadoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pseleccionado)
+        gvDisciplinas = findViewById(R.id.gv_disciplina)
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
+
+        Log.d("life","onCreate")
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle("")
@@ -40,6 +48,7 @@ class PseleccionadoActivity : AppCompatActivity() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val tutor = intent.getSerializableExtra("tutor") as Model
+
         nombre_tutor.text = tutor.name
         lastname_tutor.text = tutor.lastname
         location_tutor.text = tutor.location
@@ -48,6 +57,13 @@ class PseleccionadoActivity : AppCompatActivity() {
         correo_tutor.text = tutor.correo
         telefono_tutor.text = tutor.telefono
         descripcion_tutor.text = tutor.descripcion
+
+
+        gv_adapter =
+            tutor.listaDisciplina?.let { GvAdapter(this, it) }
+
+        gvDisciplinas?.adapter = gv_adapter
+
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
 

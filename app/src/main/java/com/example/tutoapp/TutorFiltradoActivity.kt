@@ -11,25 +11,27 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import kotlinx.android.synthetic.main.activity_tutor_filtrado.*
 
 class TutorFiltradoActivity : AppCompatActivity() {
 
     private var listaTutores = mutableListOf<Model>()
-    private lateinit var adapter : TutorAdapter
-    private lateinit var lista_categoriaSeleccionada : ListView
+    private lateinit var adapter: TutorAdapter
+    private lateinit var lista_categoriaSeleccionada: ListView
+    private lateinit var listaDisciplina: ArrayList<Disciplina>
 
 
-    var toolbar : Toolbar? = null
+    var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutor_filtrado)
 
+        initArrayDisciplina()
+
         var eleccion = intent.getStringExtra("seleccion")
 
-        lista_categoriaSeleccionada=findViewById(R.id.lista_categoriaSeleccionada)
-        adapter= TutorAdapter(this,listaTutores)
+        lista_categoriaSeleccionada = findViewById(R.id.lista_categoriaSeleccionada)
+        adapter = TutorAdapter(this, listaTutores)
 
         val ref = FirebaseDatabase.getInstance().getReference("Users") // referencia a la bd
         ref.addValueEventListener(object : ValueEventListener {
@@ -86,10 +88,19 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     if (e.child("urlImage").value != null) {
                         ruta = e.child("urlImage").value as String
                     }
+                    if (e.child("disciplinas").exists()) {
+                        for (item in 0..11) {
+                            val isSelected = e.child("disciplinas").child("$item")
+                                .child("seleccionado").value as Boolean
+                            listaDisciplina[item].seleccionado = isSelected
+                        }
+                    }
 
 
                     if (rol == "Tutor") {
-                        if (e.child("disciplinas").child("${categoria}").child("seleccionado").value == true) {
+                        if (e.child("disciplinas").child("${categoria}")
+                                .child("seleccionado").value == true
+                        ) {
                             listaTutores.add(
                                 Model(
                                     id,
@@ -102,7 +113,8 @@ class TutorFiltradoActivity : AppCompatActivity() {
                                     direccion,
                                     R.drawable.ic_art,
                                     ruta,
-                                    descripcion
+                                    descripcion,
+                                    listaDisciplina
                                 )
                             )
                         }
@@ -113,23 +125,25 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
                 lista_categoriaSeleccionada.adapter = adapter
 
-                if (listaTutores.isNullOrEmpty()){
+                if (listaTutores.isNullOrEmpty()) {
                     findViewById<LinearLayout>(R.id.empty).visibility = View.VISIBLE
                     findViewById<ListView>(R.id.lista_categoriaSeleccionada).visibility = View.GONE
 
-                }else {
+                } else {
                     findViewById<LinearLayout>(R.id.empty).visibility = View.GONE
-                    findViewById<ListView>(R.id.lista_categoriaSeleccionada).visibility = View.VISIBLE
+                    findViewById<ListView>(R.id.lista_categoriaSeleccionada).visibility =
+                        View.VISIBLE
                 }
 
                 lista_categoriaSeleccionada.setOnItemClickListener { parent, view, position, id ->
-                    val intent = Intent(this@TutorFiltradoActivity,PseleccionadoActivity::class.java)
+                    val intent =
+                        Intent(this@TutorFiltradoActivity, PseleccionadoActivity::class.java)
                     intent.putExtra("tutor", listaTutores[position])
-                    intent.putExtra("seleccion",eleccion)
+                    intent.putExtra("seleccion", eleccion)
                     startActivity(intent)
                 }
             }
-            })
+        })
 
 
         toolbar = findViewById(R.id.toolbar)
@@ -138,6 +152,23 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+
+    }
+
+    private fun initArrayDisciplina() {
+        this.listaDisciplina = ArrayList();
+        this.listaDisciplina.add(Disciplina("1", "Arte", "", false))
+        this.listaDisciplina.add(Disciplina("2", "Idiomas", "", false))
+        this.listaDisciplina.add(Disciplina("3", "Matemáticas", "", false))
+        this.listaDisciplina.add(Disciplina("4", "Diseño", "", false))
+        this.listaDisciplina.add(Disciplina("5", "Economía", "", false))
+        this.listaDisciplina.add(Disciplina("6", "Habilidades Sociales", "", false))
+        this.listaDisciplina.add(Disciplina("7", "Física", "", false))
+        this.listaDisciplina.add(Disciplina("8", "Computación", "", false))
+        this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
+        this.listaDisciplina.add(Disciplina("10", "Música", "", false))
+        this.listaDisciplina.add(Disciplina("11", "Matemáticas Superior", "", false))
+        this.listaDisciplina.add(Disciplina("12", "Ciencias Sociales", "", false))
 
     }
 }
