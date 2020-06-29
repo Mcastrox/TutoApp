@@ -11,9 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar">
-        <activity android:name=".Chat.NewMessage"
-            android:parentActivityName=".Chat.CentralChat"></activity>
-        <activity android:name=".Chat.CentralChat" />
+        <activity android:name=".Chat.ChatLog"
+            android:parentActivityName=".CentralActivity" />
+        <activity
+            android:name=".Chat.NewMessage"
+            android:parentActivityName=".Chat.CentralChat" />
+        <activity
+            android:name=".Chat.CentralChat"
+            android:parentActivityName=".CentralActivity" />
         <activity android:name=".CentralActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
