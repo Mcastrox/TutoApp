@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.GridView
 import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.adapter.GvAdapter
+import com.example.tutoapp.models.Model
 import com.example.tutoapp.ui.SolicitudActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser

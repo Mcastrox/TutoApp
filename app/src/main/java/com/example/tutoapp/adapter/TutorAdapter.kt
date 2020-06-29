@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.example.tutoapp.Model
+import com.example.tutoapp.models.Model
 import com.example.tutoapp.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.row.view.*

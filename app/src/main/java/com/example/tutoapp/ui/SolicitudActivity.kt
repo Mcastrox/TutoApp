@@ -2,7 +2,6 @@ package com.example.tutoapp.ui
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,8 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.R
-import com.example.tutoapp.SearchFragment
-import com.example.tutoapp.TutoriaModel
+import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
 import java.text.SimpleDateFormat
 import java.util.*

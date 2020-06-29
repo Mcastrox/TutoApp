@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.example.tutoapp.R
-import com.example.tutoapp.TutoriaModel
+import com.example.tutoapp.models.TutoriaModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.tutorias.view.*
 

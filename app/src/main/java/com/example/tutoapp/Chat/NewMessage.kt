@@ -3,13 +3,12 @@ package com.example.tutoapp.Chat
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.tutoapp.Model
+import com.example.tutoapp.models.Model
 import com.example.tutoapp.R
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.firestore.auth.User
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Item
@@ -77,7 +76,20 @@ class NewMessage : AppCompatActivity() {
                         ruta = e.child("urlImage").value as String
                     }
 
-                    user = Model(id,name,lastName, email, cellphone, nivel, ocupation, direccion, R.drawable.ic_art, ruta, descripcion, null )
+                    user = Model(
+                        id,
+                        name,
+                        lastName,
+                        email,
+                        cellphone,
+                        nivel,
+                        ocupation,
+                        direccion,
+                        R.drawable.ic_art,
+                        ruta,
+                        descripcion,
+                        null
+                    )
                     adapter.add(UserItem(user))
                 }
 

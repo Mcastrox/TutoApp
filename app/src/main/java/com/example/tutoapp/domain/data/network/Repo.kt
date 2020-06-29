@@ -2,11 +2,10 @@ package com.example.tutoapp.domain.data.network
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.tutoapp.Persona
-import com.example.tutoapp.TutoriaModel
+import com.example.tutoapp.models.Persona
+import com.example.tutoapp.models.TutoriaModel
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 
 class Repo {
     fun postUserData(tutoria: TutoriaModel, idTutor: String): Int {
@@ -36,7 +35,20 @@ class Repo {
                 val nombre_estudiante : String ? =document.getString("nombre_estudiante")
                 val apellido_estudiante : String ? = document.getString("apellido_estudiante")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
-                val solicitud = TutoriaModel(id!!,direccion!!,categoria!!,fecha!!,hora!!,nota!!,solicitante!!,tutorSolicitado!!,estado!!,nombre_estudiante!!,foto_estudiante!!,apellido_estudiante!!)
+                val solicitud = TutoriaModel(
+                    id!!,
+                    direccion!!,
+                    categoria!!,
+                    fecha!!,
+                    hora!!,
+                    nota!!,
+                    solicitante!!,
+                    tutorSolicitado!!,
+                    estado!!,
+                    nombre_estudiante!!,
+                    foto_estudiante!!,
+                    apellido_estudiante!!
+                )
                 listData.add(solicitud)
             }
             mutableData.value = listData
@@ -86,7 +98,15 @@ class Repo {
                 }
 
                 //aca guardamos el objeto que enviaremos
-                persona.value = Persona(id,name,correo,direccion,lastName,telefono,urlImage)
+                persona.value = Persona(
+                    id,
+                    name,
+                    correo,
+                    direccion,
+                    lastName,
+                    telefono,
+                    urlImage
+                )
             }
 
         }

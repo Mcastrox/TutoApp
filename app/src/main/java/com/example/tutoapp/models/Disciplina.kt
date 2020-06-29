@@ -1,4 +1,4 @@
-package com.example.tutoapp
+package com.example.tutoapp.models
 
 import android.os.Parcel
 import android.os.Parcelable
