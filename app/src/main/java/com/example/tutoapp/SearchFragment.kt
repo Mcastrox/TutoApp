@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.tutoapp.adapter.TutorAdapter
 import com.example.tutoapp.databinding.FragmentSearchBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,7 +33,10 @@ class SearchFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        adapter = TutorAdapter(requireActivity(), listaTutores)
+        adapter = TutorAdapter(
+            requireActivity(),
+            listaTutores
+        )
     }
 
     override fun onCreateView(
