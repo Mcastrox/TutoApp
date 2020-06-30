@@ -26,8 +26,12 @@ class Change_password : AppCompatActivity() {
     private lateinit var etchange_pass: EditText
     private lateinit var etnew_pass: EditText
     private lateinit var etconfirm_pass: EditText
+    private var user: FirebaseUser? = null
+    private var actual_pass : String = ""
+    private var lista : ArrayList<String> = arrayListOf<String>()
 
     var toolbar : Toolbar? = null
+    lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,11 +53,34 @@ class Change_password : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
+        auth = FirebaseAuth.getInstance()
+        user = auth.currentUser
+        uid = user?.uid!!
+
+        val ref = FirebaseDatabase.getInstance().getReference("Users")
+        val userRef = ref.child(user?.uid!!)
+
+
+        userRef.addValueEventListener (object : ValueEventListener {
+            override fun onCancelled(dataSnapshot: DatabaseError) {
+
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+               if(dataSnapshot.child("pass").exists()){
+                   lista.add(dataSnapshot.child("pass").value as String)
+               }
+            }
+        })
+
+        Log.d("1", lista[0])
 
     }
 
     private fun update() {
-        val user = FirebaseAuth.getInstance().currentUser
+
+
+
 
         val password: String = etchange_pass.text.toString()
         val new: String = etnew_pass.text.toString()

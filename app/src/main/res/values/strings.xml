@@ -78,4 +78,5 @@
     <string name="ex_education">(ex. Universitario, Maestria, Doctorado)</string>
     <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
     <string name="chat">Chat</string>
+    <string name="password_actual">Ingresa tu contraseña actual</string>
 </resources>
