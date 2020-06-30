@@ -1,4 +1,4 @@
-package com.example.tutoapp
+package com.example.tutoapp.models
 
 import java.io.Serializable
 

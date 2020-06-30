@@ -7,6 +7,9 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.widget.Toolbar
+import com.example.tutoapp.adapter.TutorAdapter
+import com.example.tutoapp.models.Disciplina
+import com.example.tutoapp.models.Model
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -92,7 +95,14 @@ class TutorFiltradoActivity : AppCompatActivity() {
                             val isSelected = e.child("disciplinas").child("$item")
                                 .child("seleccionado").value as Boolean
                             if(isSelected){
-                                listaDisciplina.add(Disciplina("$item",name,"",isSelected))
+                                listaDisciplina.add(
+                                    Disciplina(
+                                        "$item",
+                                        name,
+                                        "",
+                                        isSelected
+                                    )
+                                )
                             }
                         }
                     }

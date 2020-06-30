@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.example.tutoapp.adapter.TutorAdapter
 import com.example.tutoapp.databinding.FragmentSearchBinding
+import com.example.tutoapp.models.Disciplina
+import com.example.tutoapp.models.Model
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -32,7 +35,10 @@ class SearchFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        adapter = TutorAdapter(requireActivity(), listaTutores)
+        adapter = TutorAdapter(
+            requireActivity(),
+            listaTutores
+        )
     }
 
     override fun onCreateView(
@@ -126,7 +132,14 @@ class SearchFragment : Fragment() {
                             val isSelected = e.child("disciplinas").child("$item")
                                 .child("seleccionado").value as Boolean
                             if(isSelected){
-                                listaDisciplina.add(Disciplina("$item",name,"",isSelected))
+                                listaDisciplina.add(
+                                    Disciplina(
+                                        "$item",
+                                        name,
+                                        "",
+                                        isSelected
+                                    )
+                                )
                             }
                         }
                     }

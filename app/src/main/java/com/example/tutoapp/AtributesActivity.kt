@@ -8,6 +8,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.example.tutoapp.models.Disciplina
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -189,18 +190,102 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun initArrayDisciplina() {
         this.listaDisciplina = ArrayList();
-        this.listaDisciplina.add(Disciplina("1", "Arte", "", false))
-        this.listaDisciplina.add(Disciplina("2", "Idiomas", "", false))
-        this.listaDisciplina.add(Disciplina("3", "Matemáticas", "", false))
-        this.listaDisciplina.add(Disciplina("4", "Diseño", "", false))
-        this.listaDisciplina.add(Disciplina("5", "Economía", "", false))
-        this.listaDisciplina.add(Disciplina("6", "Habilidades Sociales", "", false))
-        this.listaDisciplina.add(Disciplina("7", "Física", "", false))
-        this.listaDisciplina.add(Disciplina("8", "Computación", "", false))
-        this.listaDisciplina.add(Disciplina("9", "Quimica", "", false))
-        this.listaDisciplina.add(Disciplina("10", "Música", "", false))
-        this.listaDisciplina.add(Disciplina("11", "Matemáticas Superior", "", false))
-        this.listaDisciplina.add(Disciplina("12", "Ciencias Sociales", "", false))
+        this.listaDisciplina.add(
+            Disciplina(
+                "1",
+                "Arte",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "2",
+                "Idiomas",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "3",
+                "Matemáticas",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "4",
+                "Diseño",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "5",
+                "Economía",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "6",
+                "Habilidades Sociales",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "7",
+                "Física",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "8",
+                "Computación",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "9",
+                "Quimica",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "10",
+                "Música",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "11",
+                "Matemáticas Superior",
+                "",
+                false
+            )
+        )
+        this.listaDisciplina.add(
+            Disciplina(
+                "12",
+                "Ciencias Sociales",
+                "",
+                false
+            )
+        )
 
     }
 
