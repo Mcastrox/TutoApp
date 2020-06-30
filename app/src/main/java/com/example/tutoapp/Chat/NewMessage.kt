@@ -1,5 +1,7 @@
 package com.example.tutoapp.Chat
 
+import android.content.Intent
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -92,6 +94,22 @@ class NewMessage : AppCompatActivity() {
                     )
                     adapter.add(UserItem(user))
                 }
+
+                adapter.setOnItemClickListener { item, view ->
+                    val userItem = item as UserItem
+                    Log.d("nombre ",userItem.user.name)
+                    Log.d("ruta d ela imagen",userItem.user.ruta)
+                    Log.d("id del usuario",userItem.user.id)
+
+                   val intent=Intent(view.context, ChatLog::class.java)
+                    intent.putExtra("nombre",userItem.user.name)
+
+                    intent.putExtra("uri",userItem.user.ruta)
+                    intent.putExtra("userId",userItem.user.id)
+                    startActivity(intent)
+                    finish()
+                }
+
 
                 lista_usuarios.adapter=adapter
             }
