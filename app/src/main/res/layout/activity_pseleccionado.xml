@@ -138,15 +138,17 @@
 
             </FrameLayout>
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:padding="@dimen/medium_padding">
 
                 <TextView
+                    android:id="@+id/tv_label_sobre_mi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/about_me_txt"
@@ -159,6 +161,7 @@
                     android:id="@+id/descripcion_tutor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_label_sobre_mi"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
@@ -166,15 +169,19 @@
                     android:textStyle="bold" />
 
                 <View
+                    android:id="@+id/view_divider_1"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_below="@+id/descripcion_tutor"
                     android:layout_marginTop="@dimen/small_margin"
                     android:background="?android:attr/listDivider"
                     android:backgroundTint="@color/soft_grey" />
 
                 <TextView
+                    android:id="@+id/tv_label_nivel_academico"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/view_divider_1"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/nivel_txt"
@@ -188,6 +195,7 @@
                     android:id="@+id/nivel_tutor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_label_nivel_academico"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="TextView"
@@ -196,15 +204,19 @@
 
 
                 <View
+                    android:id="@+id/view_divider_2"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_below="@+id/nivel_tutor"
                     android:layout_marginTop="@dimen/small_margin"
                     android:background="?android:attr/listDivider"
                     android:backgroundTint="@color/soft_grey" />
 
                 <TextView
+                    android:id="@+id/tv_label_disciplinas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/view_divider_2"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/disciplines_txt"
@@ -213,37 +225,36 @@
                     android:textSize="@dimen/subtitle_text"
                     android:textStyle="bold" />
 
-                <RelativeLayout
+
+                <GridView
+                    android:id="@+id/gv_disciplina"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/tv_label_disciplinas"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:alignmentMode="alignMargins"
+                    android:background="@color/hint_color"
+                    android:columnWidth="80dp"
+                    android:horizontalSpacing="4dp"
+                    android:numColumns="4"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="20dp" />
 
-                    <GridView
-                        android:id="@+id/gv_disciplina"
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="@dimen/medium_margin"
-                        android:layout_height="72dp"
-                        android:isScrollContainer="false"
-                        android:alignmentMode="alignMargins"
-                        android:background="@color/hint_color"
-                        android:columnWidth="80dp"
-                        android:horizontalSpacing="8dp"
-                        android:numColumns="auto_fit"
-                        android:stretchMode="columnWidth"
-                        android:verticalSpacing="8dp"/>
-
-                </RelativeLayout>
 
                 <View
+                    android:id="@+id/view_divider_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_below="@id/gv_disciplina"
                     android:layout_marginTop="@dimen/small_margin"
                     android:background="?android:attr/listDivider"
                     android:backgroundTint="@color/soft_grey" />
 
                 <TextView
+                    android:id="@+id/tv_label_telefono"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/view_divider_3"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/cellphone_txt"
@@ -256,6 +267,7 @@
                     android:id="@+id/telefono_tutor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_label_telefono"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="TextView"
@@ -263,15 +275,19 @@
                     android:textStyle="bold" />
 
                 <View
+                    android:id="@+id/view_divider_4"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
+                    android:layout_below="@id/telefono_tutor"
                     android:layout_marginTop="@dimen/small_margin"
                     android:background="?android:attr/listDivider"
                     android:backgroundTint="@color/soft_grey" />
 
                 <TextView
+                    android:id="@+id/tv_label_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/view_divider_4"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="@string/email_txt"
@@ -284,6 +300,7 @@
                     android:id="@+id/correo_tutor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_label_email"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/roboto"
                     android:text="TextView"
@@ -294,6 +311,7 @@
                     android:id="@+id/action_contactar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/correo_tutor"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/button"
                     android:fontFamily="@font/roboto"
@@ -302,7 +320,7 @@
                     android:textSize="@dimen/button_size_text"
                     android:textStyle="bold" />
 
-            </LinearLayout>
+            </RelativeLayout>
         </LinearLayout>
 
     </ScrollView>

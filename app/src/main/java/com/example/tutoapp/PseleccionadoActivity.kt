@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.adapter.GvAdapter
@@ -20,17 +22,19 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_pseleccionado.*
+import kotlinx.android.synthetic.main.fragment_search.*
+import kotlin.math.round
 
 class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
-    private lateinit var gvDisciplinas : GridView
-    private var gv_adapter: GvAdapter?= null
+    private lateinit var gvDisciplinas: GridView
+    private var gv_adapter: GvAdapter? = null
 
     private lateinit var url: String
     var mStorageRef: StorageReference? = null
-    var toolbar : Toolbar? = null
+    var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +43,7 @@ class PseleccionadoActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
 
-        Log.d("life","onCreate")
+        Log.d("life", "onCreate")
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle("")
@@ -60,10 +64,14 @@ class PseleccionadoActivity : AppCompatActivity() {
         descripcion_tutor.text = tutor.descripcion
 
 
+        gridViewSetHeight(gvDisciplinas, tutor.listaDisciplina?.size)
+
         gv_adapter =
             tutor.listaDisciplina?.let { GvAdapter(this, it) }
 
         gvDisciplinas?.adapter = gv_adapter
+
+
 
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
@@ -104,6 +112,27 @@ class PseleccionadoActivity : AppCompatActivity() {
             //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)
         }
+
+    }
+
+    fun gridViewSetHeight(gridview: GridView, listSize: Int?) {
+        var row: Int
+
+        row = if(listSize!!%4 != 0){
+            listSize /4 +1
+        }else{
+            listSize/4
+        }
+
+        var params: ViewGroup.LayoutParams = gridview.layoutParams
+        val height: Int = 92
+
+        Log.d("as", listSize.toString())
+        Log.d("as", row.toString())
+        Log.d("as", height.toString())
+        params.height = height * row
+        Log.d("as", params.height.toString())
+        gridview.layoutParams = params
 
     }
 }
