@@ -16,9 +16,6 @@ class GvAdapter(private val mcontext: Context, private val arrayList: ArrayList<
         var view = LayoutInflater.from(mcontext).inflate(R.layout.item_gv, parent, false)
         var tv_disciplina: TextView = view.findViewById(R.id.tv_disciplinas)
 
-        Log.d("Cantidad", "aqui entro")
-        Log.d("Salida", arrayList[position].name.toString())
-        Log.d("Salida", arrayList[position].seleccionado.toString())
         if (arrayList[position].seleccionado) {
             var disciplina: String? = arrayList[position].name
             tv_disciplina.text = disciplina.toString()

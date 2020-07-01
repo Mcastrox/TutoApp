@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.GridView
 import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.adapter.GvAdapter
+import com.example.tutoapp.components.ExpandableHeightGridView
+import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
 import com.example.tutoapp.ui.SolicitudActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -29,7 +31,7 @@ class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
-    private lateinit var gvDisciplinas: GridView
+    private lateinit var gvDisciplinas: ExpandableHeightGridView
     private var gv_adapter: GvAdapter? = null
 
     private lateinit var url: String
@@ -43,7 +45,6 @@ class PseleccionadoActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
 
-        Log.d("life", "onCreate")
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle("")
@@ -64,14 +65,7 @@ class PseleccionadoActivity : AppCompatActivity() {
         descripcion_tutor.text = tutor.descripcion
 
 
-        gridViewSetHeight(gvDisciplinas, tutor.listaDisciplina?.size)
-
-        gv_adapter =
-            tutor.listaDisciplina?.let { GvAdapter(this, it) }
-
-        gvDisciplinas?.adapter = gv_adapter
-
-
+        tutor.listaDisciplina?.let { gridViewCreated(it) }
 
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
@@ -115,24 +109,12 @@ class PseleccionadoActivity : AppCompatActivity() {
 
     }
 
-    fun gridViewSetHeight(gridview: GridView, listSize: Int?) {
-        var row: Int
+    private fun gridViewCreated(listaDisciplina: ArrayList<Disciplina>){
+        gv_adapter =
+            listaDisciplina?.let { GvAdapter(this, it) }
 
-        row = if(listSize!!%4 != 0){
-            listSize /4 +1
-        }else{
-            listSize/4
-        }
-
-        var params: ViewGroup.LayoutParams = gridview.layoutParams
-        val height: Int = 92
-
-        Log.d("as", listSize.toString())
-        Log.d("as", row.toString())
-        Log.d("as", height.toString())
-        params.height = height * row
-        Log.d("as", params.height.toString())
-        gridview.layoutParams = params
-
+        gvDisciplinas?.adapter = gv_adapter
+        gvDisciplinas.isExpanded = true
     }
+
 }

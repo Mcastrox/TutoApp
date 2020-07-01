@@ -226,10 +226,12 @@
                     android:textStyle="bold" />
 
 
-                <GridView
+
+                <com.example.tutoapp.components.ExpandableHeightGridView
                     android:id="@+id/gv_disciplina"
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="72dp"
                     android:layout_below="@+id/tv_label_disciplinas"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:alignmentMode="alignMargins"
@@ -238,7 +240,7 @@
                     android:horizontalSpacing="4dp"
                     android:numColumns="4"
                     android:stretchMode="columnWidth"
-                    android:verticalSpacing="20dp" />
+                    android:verticalSpacing="10dp" />
 
 
                 <View
@@ -310,7 +312,7 @@
                 <Button
                     android:id="@+id/action_contactar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_below="@id/correo_tutor"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/button"
