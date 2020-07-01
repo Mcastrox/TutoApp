@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tutoapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -10,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeNoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".Chat.ChatLog"
             android:parentActivityName=".CentralActivity" />
         <activity
@@ -19,9 +20,9 @@
         <activity
             android:name=".Chat.CentralChat"
             android:parentActivityName=".CentralActivity" />
-        <activity android:name=".CentralActivity">
+        <activity android:name=".CentralActivity" android:theme="@style/SplashTheme2" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -35,7 +36,8 @@
         <activity
             android:name=".TutorFiltradoActivity"
             android:parentActivityName=".SearchFragment" />
-        <activity android:name=".SearchFragment" />
+        <activity android:name=".SearchFragment"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".VerSolicitudActivity"
             android:parentActivityName=".TutoriasActivity" />
@@ -58,7 +60,8 @@
         <activity
             android:name=".Forgotpass_Activity"
             android:parentActivityName=".Change_password" />
-        <activity android:name=".PerfilFragment" />
+        <activity android:name=".PerfilFragment"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Login_Activity"
             android:windowSoftInputMode="adjustPan" />

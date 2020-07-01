@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -26,19 +27,18 @@ class Change_password : AppCompatActivity() {
     private lateinit var etchange_pass: EditText
     private lateinit var etnew_pass: EditText
     private lateinit var etconfirm_pass: EditText
-    private var user: FirebaseUser? = null
 
     var toolbar : Toolbar? = null
-    lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_password)
 
+        auth = FirebaseAuth.getInstance()
+
         etchange_pass = findViewById(R.id.pass_change)
         etnew_pass = findViewById(R.id.pass_new)
         etconfirm_pass = findViewById(R.id.confirm_pass)
-
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle(R.string.change_password)
@@ -47,73 +47,62 @@ class Change_password : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        auth = FirebaseAuth.getInstance()
-        user = auth.currentUser
-        uid = user?.uid!!
-
-
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
-        val userRef = ref.child(user?.uid!!)
-
-
-        userRef.addValueEventListener (object : ValueEventListener {
-
-            var password: String = ""
-
-            override fun onCancelled(dataSnapshot: DatabaseError) {
-
-            }
-
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-               if(dataSnapshot.child("pass").exists()){
-                   dataSnapshot.child("pass").getValue(String::class.java)?.let { password=it }
-               }
-
-                Log.d("as",password)
-                modificar_info.setOnClickListener {
-                    update(password)
-                }
-            }
-        })
-
-    }
-
-    private fun update(password : String) {
-
-        val password: String = etchange_pass.text.toString()
-        val new: String = etnew_pass.text.toString()
-        val confirm: String = etconfirm_pass.text.toString()
-
-        Log.d("as",password)
-
-
-        if (etnew_pass.text.length < 6 || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirm) || (new != confirm) ) {
-            etnew_pass.setError("La contraseña debe tener al menos 6 caracteres")
-            etchange_pass.setError("No puede ir vacío.")
-            etconfirm_pass.setError("Debe ser igual a la nueva contraseña")
-
-        }
-
-        val newPassword = etnew_pass.text.toString()
-
-
-        if (!TextUtils.isEmpty(password) && !TextUtils.isEmpty(new) && (new == confirm) && (etnew_pass.text.length >= 6))
-            user?.updatePassword(newPassword)
-                ?.addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Password actualizado", Toast.LENGTH_LONG).show()
-
-                        etchange_pass.text.clear()
-                        etnew_pass.text.clear()
-                        etconfirm_pass.text.clear()
-                    }
-                }
-        else {
-            Toast.makeText(this, "Por favor revise todos los campos", Toast.LENGTH_LONG).show()
+        modificar_info.setOnClickListener{
+            changePassword()
         }
 
     }
 
+
+    private fun changePassword() {
+
+        if (etnew_pass.text.length < 6 ){
+            etnew_pass.setError("La contraseña debe tener al menos 6 caracteres.")
+        }
+
+        if (etchange_pass.text.isNotEmpty() && etnew_pass.text.isNotEmpty() && etconfirm_pass.text.isNotEmpty() && etnew_pass.text.length >= 6) {
+
+            if (etnew_pass.text.toString().equals(etconfirm_pass.text.toString())) {
+
+                val user = auth.currentUser
+                if (user != null && user.email != null) {
+                    val credential = EmailAuthProvider
+                        .getCredential(user.email!!, etchange_pass.text.toString())
+
+                    user?.reauthenticate(credential)
+                        ?.addOnCompleteListener {
+                            if (it.isSuccessful) {
+
+                                user?.updatePassword(etnew_pass.text.toString())
+                                    ?.addOnCompleteListener { task ->
+                                        if (task.isSuccessful) {
+                                            Toast.makeText(
+                                                this,
+                                                "Tu contraseña ha sido actualizada.",
+                                                Toast.LENGTH_LONG
+                                            ).show()
+
+                                            etchange_pass.text.clear()
+                                            etnew_pass.text.clear()
+                                            etconfirm_pass.text.clear()
+                                        }
+                                    }
+                            } else {
+                                Toast.makeText(this, "Contraseña actual incorrecta.", Toast.LENGTH_LONG)
+                                    .show()
+                            }
+                        }
+                }
+            } else {
+                etconfirm_pass.setError("Las contraseñas no son iguales.")
+                etconfirm_pass.text.clear()
+            }
+        }else {
+            Toast.makeText(this, "Por favor llene todos los campos.", Toast.LENGTH_LONG).show()
+        }
+    }
 }
+
+
 
 
