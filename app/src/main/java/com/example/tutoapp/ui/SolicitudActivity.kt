@@ -88,9 +88,20 @@ class SolicitudActivity : AppCompatActivity() {
 
 
         btn_solicitar.setOnClickListener {
-            crearSolicitud()
-            finish()
+
+            if(txt_direccion.text.isNotEmpty() && txt_categoria.text.isNotEmpty() && txt_fecha.text.isNotEmpty() &&
+                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty()) {
+
+                crearSolicitud()
+                finish()
+
+            }else{
+
+                Toast.makeText(this, "Por favor rellene todos los campos", Toast.LENGTH_LONG).show()
+
+            }
         }
+
 
 
     }

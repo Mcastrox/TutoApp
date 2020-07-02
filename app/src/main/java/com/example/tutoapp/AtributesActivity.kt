@@ -386,14 +386,22 @@ class AtributesActivity : AppCompatActivity() {
 
 
     private fun guardar() {
-        val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
-        referencia.child("Rol").setValue("Tutor")
-        referencia.child("nivel").setValue(txtEducacion.text.toString())
-        referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
-        referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
-        referencia.child("disciplinas").setValue(listaDisciplina)
-        Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
 
-        finish()
+
+        if(txtDescripcion.text.isNotEmpty() && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
+
+            val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+            referencia.child("Rol").setValue("Tutor")
+            referencia.child("nivel").setValue(txtEducacion.text.toString())
+            referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
+            referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
+            referencia.child("disciplinas").setValue(listaDisciplina)
+            Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
+
+            finish()
+
+        }else {
+            Toast.makeText(this,"Por favor rellenar todos los campos",Toast.LENGTH_LONG).show()
+        }
     }
 }
