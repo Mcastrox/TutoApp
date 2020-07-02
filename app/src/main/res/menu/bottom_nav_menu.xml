@@ -18,11 +18,11 @@
     <item
         android:id="@+id/request"
         android:fontFamily="@font/roboto"
-        android:icon="@drawable/ic_request_people_24dp"
+        android:icon="@drawable/ic_send"
         android:title="@string/requests_txt" />
     <item
         android:id="@+id/perfil"
         android:fontFamily="@font/roboto"
-        android:icon="@drawable/ic_person"
+        android:icon="@drawable/ic_profile"
         android:title="@string/profile_txt" />
 </menu>
