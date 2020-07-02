@@ -8,18 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.adapter.SolicitudEnviadaAdapter
-<<<<<<< HEAD:app/src/main/java/com/example/tutoapp/SolicitudEnviada.kt
 import com.example.tutoapp.databinding.FragmentSolicitudEnviadaBinding
-import com.example.tutoapp.viewmodel.EstudianteViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-=======
-import com.example.tutoapp.databinding.ActivitySolicitudEnviadaBinding
 import com.example.tutoapp.viewmodel.TutorViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import kotlinx.android.synthetic.main.activity_solicitud_enviada.*
->>>>>>> 32757108bf00a81746e67f2bb98d70391ba1cf5c:app/src/main/java/com/example/tutoapp/SolicitudEnviadaActivity.kt
 
 class SolicitudEnviada : Fragment() {
 
