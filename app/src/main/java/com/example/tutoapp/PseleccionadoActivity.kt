@@ -61,7 +61,6 @@ class PseleccionadoActivity : AppCompatActivity() {
         ocupation_tutor.text = tutor.ocupacion
         nivel_tutor.text = tutor.nivel
         correo_tutor.text = tutor.correo
-        telefono_tutor.text = tutor.telefono
         descripcion_tutor.text = tutor.descripcion
 
 

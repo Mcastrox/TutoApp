@@ -144,176 +144,153 @@
                 android:orientation="vertical"
                 android:padding="@dimen/medium_padding">
 
-                <TextView
-                    android:id="@+id/tv_label_sobre_mi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/about_me_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blackMate"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/descripcion_tutor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_label_sobre_mi"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-                    android:textSize="@dimen/normal_text"
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/view_divider_1"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@+id/descripcion_tutor"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:background="?android:attr/listDivider"
-                    android:backgroundTint="@color/soft_grey" />
-
-                <TextView
-                    android:id="@+id/tv_label_nivel_academico"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/view_divider_1"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/nivel_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blackMate"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/nivel_tutor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_label_nivel_academico"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="TextView"
-                    android:textSize="@dimen/normal_text"
-                    android:textStyle="bold" />
-
-
-                <View
-                    android:id="@+id/view_divider_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@+id/nivel_tutor"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:background="?android:attr/listDivider"
-                    android:backgroundTint="@color/soft_grey" />
-
-                <TextView
-                    android:id="@+id/tv_label_disciplinas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/view_divider_2"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/disciplines_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blackMate"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold" />
-
-
-
-                <com.example.tutoapp.components.ExpandableHeightGridView
-                    android:id="@+id/gv_disciplina"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:minHeight="72dp"
-                    android:layout_below="@+id/tv_label_disciplinas"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:alignmentMode="alignMargins"
-                    android:background="@color/hint_color"
-                    android:columnWidth="80dp"
-                    android:horizontalSpacing="4dp"
-                    android:numColumns="4"
-                    android:stretchMode="columnWidth"
-                    android:verticalSpacing="10dp" />
+                    app:cardBackgroundColor="@color/light"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/small_margin"
+                        android:background="@color/light"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_label_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text=" Email"
+                            android:textColor="@color/blackMate"
+                            android:drawableTint="@color/blackMate"
+                            android:textSize="@dimen/normal_text"
+                            android:drawableStart="@drawable/ic_email"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/correo_tutor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_label_email"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="TextView"
+                            android:textSize="@dimen/normal_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_label_sobre_mi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/about_me_txt"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/normal_text"
+                            android:drawableStart="@drawable/ic_person"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descripcion_tutor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_label_sobre_mi"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                            android:textSize="@dimen/normal_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_label_nivel_academico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text=" Nivel Académico"
+                            android:drawableTint="@color/blackMate"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/normal_text"
+                            android:drawableStart="@drawable/ic_school"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/nivel_tutor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_label_nivel_academico"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="TextView"
+                            android:textSize="@dimen/normal_text"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
 
-                <View
-                    android:id="@+id/view_divider_3"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card2"
                     android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/gv_disciplina"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:background="?android:attr/listDivider"
-                    android:backgroundTint="@color/soft_grey" />
-
-                <TextView
-                    android:id="@+id/tv_label_telefono"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/view_divider_3"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/cellphone_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blackMate"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold" />
+                    android:layout_below="@+id/card1"
+                    app:cardBackgroundColor="@color/light"
+                    android:layout_marginBottom="@dimen/medium_margin"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    >
 
-                <TextView
-                    android:id="@+id/telefono_tutor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_label_telefono"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="TextView"
-                    android:textSize="@dimen/normal_text"
-                    android:textStyle="bold" />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/small_margin"
+                        android:background="@color/light"
+                        >
 
-                <View
-                    android:id="@+id/view_divider_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_below="@id/telefono_tutor"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:background="?android:attr/listDivider"
-                    android:backgroundTint="@color/soft_grey" />
+                        <TextView
+                            android:id="@+id/tv_label_disciplinas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/disciplines_txt"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/normal_text"
+                            android:drawableStart="@drawable/ic_menu_black_24dp"
+                            android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tv_label_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/view_divider_4"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/email_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/blackMate"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold" />
+                        <com.example.tutoapp.components.ExpandableHeightGridView
+                            android:id="@+id/gv_disciplina"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="72dp"
+                            android:layout_below="@+id/tv_label_disciplinas"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:alignmentMode="alignMargins"
+                            android:background="@color/light"
+                            android:columnWidth="80dp"
+                            android:horizontalSpacing="4dp"
+                            android:numColumns="auto_fit"
+                            android:stretchMode="columnWidth"
+                            android:verticalSpacing="10dp" />
 
-                <TextView
-                    android:id="@+id/correo_tutor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/tv_label_email"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/roboto"
-                    android:text="TextView"
-                    android:textSize="@dimen/normal_text"
-                    android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <Button
                     android:id="@+id/action_contactar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_below="@id/correo_tutor"
+                    android:layout_below="@+id/card2"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:background="@drawable/button"
                     android:fontFamily="@font/roboto"
