@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerSolicitudEnviadaActivity"></activity>
+        <activity android:name=".VerSolicitudEnviadaActivity"
+            android:parentActivityName=".SolicitudEnviada"/>
         <activity
             android:name=".Chat.ChatLog"
             android:parentActivityName=".CentralActivity" />
