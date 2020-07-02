@@ -9,16 +9,12 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.tutoapp.adapter.SolicitudAdapter
 import com.example.tutoapp.adapter.SolicitudEnviadaAdapter
 import com.example.tutoapp.databinding.ActivitySolicitudEnviadaBinding
-import com.example.tutoapp.databinding.ActivityTutoriasBinding
-import com.example.tutoapp.viewmodel.EstudianteViewModel
 import com.example.tutoapp.viewmodel.TutorViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_solicitud_enviada.*
-import kotlinx.android.synthetic.main.activity_tutorias.*
 
 class SolicitudEnviadaActivity : AppCompatActivity() {
 
@@ -27,7 +23,7 @@ class SolicitudEnviadaActivity : AppCompatActivity() {
     private lateinit var adapter: SolicitudEnviadaAdapter
     private lateinit var binding: ActivitySolicitudEnviadaBinding
 
-    private val viewModel by lazy { ViewModelProvider(this).get(EstudianteViewModel::class.java) }
+    private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

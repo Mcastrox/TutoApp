@@ -23,4 +23,12 @@ class TutorViewModel : ViewModel() {
         return mutableData
     }
 
+    fun getEstudianteSolicitud(idEstudiante: String): LiveData<MutableList<TutoriaModel>> {
+        val mutableData = MutableLiveData<MutableList<TutoriaModel>>()
+        repo.getStudentUserSolicitud(idEstudiante).observeForever { solicitudes->
+            mutableData.value = solicitudes
+        }
+
+        return mutableData
+    }
 }
