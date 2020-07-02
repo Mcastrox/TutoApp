@@ -71,7 +71,7 @@
     <string name="change_password">Cambiar Contraseña</string>
     <string name="categories_txt">Categorías</string>
     <string name="tutors_txt">Tutores</string>
-    <string name="ver_solicitud_txt">Ver Solicitud</string>
+    <string name="ver_solicitud_txt">Solicitud</string>
     <string name="send_btn_txt">Enviar</string>
     <string name="empty_sol_txt">No tiene ninguna solicitud.</string>
     <string name="empty_tutors_txt">No hay tutores disponibles.</string>
@@ -81,4 +81,6 @@
     <string name="password_actual">Contraseña actual</string>
     <string name="hora_text">Hora Solicitada</string>
     <string name="date_text">Fecha Solicitada</string>
+    <string name="ver_solicitud_enviada_txt">Solicitud Enviada</string>
+    <string name="solicitud_enviada_txt">Solicitudes enviadas</string>
 </resources>

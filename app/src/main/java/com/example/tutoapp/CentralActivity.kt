@@ -37,8 +37,8 @@ class CentralActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.request -> {
-                    val intent = Intent(this,SolicitudEnviadaActivity::class.java)
-                    startActivity(intent)
+                    selectedFragment = SolicitudEnviada()
+                    replaceFragment(selectedFragment as SolicitudEnviada)
                     return@OnNavigationItemSelectedListener true
                 }
                 else -> {
@@ -67,6 +67,9 @@ class CentralActivity : AppCompatActivity() {
             }
             R.id.perfil -> {
                 selectedFragment = PerfilFragment()
+            }
+            R.id.request -> {
+                selectedFragment = SolicitudEnviada()
             }
             else -> {
                 selectedFragment = HomeFragment()

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SolicitudEnviadaActivity">
+    tools:context=".SolicitudEnviada">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,8 +16,7 @@
             android:background="@color/blackMate"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/solicitud_txt"
-            app:navigationIcon="@drawable/ic_keyboard_arrow_left"/>
+            app:title="@string/solicitud_enviada_txt" />
 
         <LinearLayout
             android:id="@+id/empty"
