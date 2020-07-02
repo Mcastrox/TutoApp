@@ -36,6 +36,11 @@ class CentralActivity : AppCompatActivity() {
                     startActivity(intent)
                     return@OnNavigationItemSelectedListener true
                 }
+                R.id.request -> {
+                    val intent = Intent(this,VerSolicitudEnviadaActivity::class.java)
+                    startActivity(intent)
+                    return@OnNavigationItemSelectedListener true
+                }
                 else -> {
                     false
                 }

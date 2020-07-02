@@ -161,18 +161,29 @@
                         android:background="@color/light"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/tv_label_email"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
-                            android:fontFamily="@font/roboto"
-                            android:text=" Email"
-                            android:textColor="@color/blackMate"
-                            android:drawableTint="@color/blackMate"
-                            android:textSize="@dimen/normal_text"
-                            android:drawableStart="@drawable/ic_email"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="@dimen/small_margin"
+                                app:srcCompat="@drawable/ic_email">
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/tv_label_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/email_txt"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/normal_text"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/correo_tutor"
@@ -185,18 +196,29 @@
                             android:textSize="@dimen/normal_text"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tv_label_sobre_mi"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentTop="true"
                             android:layout_marginTop="16dp"
-                            android:fontFamily="@font/roboto"
-                            android:text="@string/about_me_txt"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/normal_text"
-                            android:drawableStart="@drawable/ic_person"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="@dimen/small_margin"
+                                app:srcCompat="@drawable/ic_person">
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/tv_label_sobre_mi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/about_me_txt"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/normal_text"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/descripcion_tutor"
@@ -209,18 +231,30 @@
                             android:textSize="@dimen/normal_text"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tv_label_nivel_academico"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
-                            android:fontFamily="@font/roboto"
-                            android:text=" Nivel Académico"
-                            android:drawableTint="@color/blackMate"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/normal_text"
-                            android:drawableStart="@drawable/ic_school"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:tint="@color/blackMate"
+                                android:layout_marginRight="@dimen/small_margin"
+                                app:srcCompat="@drawable/ic_school">
+                            </ImageView>
+
+                            <TextView
+                                android:id="@+id/tv_label_nivel_academico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/nivel_txt"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/normal_text"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/nivel_tutor"
@@ -253,19 +287,31 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/small_margin"
-                        android:background="@color/light"
-                        >
+                        android:background="@color/light" >
 
-                        <TextView
+                        <LinearLayout
                             android:id="@+id/tv_label_disciplinas"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto"
-                            android:text="@string/disciplines_txt"
-                            android:textColor="@color/blackMate"
-                            android:textSize="@dimen/normal_text"
-                            android:drawableStart="@drawable/ic_menu_black_24dp"
-                            android:textStyle="bold" />
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="@dimen/small_margin"
+                                app:srcCompat="@drawable/ic_menu_black_24dp">
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:text="@string/disciplines_txt"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/normal_text"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
 
                         <com.example.tutoapp.components.ExpandableHeightGridView
                             android:id="@+id/gv_disciplina"

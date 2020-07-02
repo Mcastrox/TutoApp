@@ -79,4 +79,6 @@
     <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
     <string name="chat">Chat</string>
     <string name="password_actual">Contraseña actual</string>
+    <string name="hora_text">Hora Solicitada</string>
+    <string name="date_text">Fecha Solicitada</string>
 </resources>

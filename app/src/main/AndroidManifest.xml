@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Chat.ChatLog"
+        <activity android:name=".VerSolicitudEnviadaActivity"></activity>
+        <activity
+            android:name=".Chat.ChatLog"
             android:parentActivityName=".CentralActivity" />
         <activity
             android:name=".Chat.NewMessage"
@@ -20,9 +22,11 @@
         <activity
             android:name=".Chat.CentralChat"
             android:parentActivityName=".CentralActivity" />
-        <activity android:name=".CentralActivity" android:theme="@style/SplashTheme2" >
+        <activity
+            android:name=".CentralActivity"
+            android:theme="@style/SplashTheme2">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -36,7 +40,8 @@
         <activity
             android:name=".TutorFiltradoActivity"
             android:parentActivityName=".SearchFragment" />
-        <activity android:name=".SearchFragment"
+        <activity
+            android:name=".SearchFragment"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".VerSolicitudActivity"
@@ -60,7 +65,8 @@
         <activity
             android:name=".Forgotpass_Activity"
             android:parentActivityName=".Change_password" />
-        <activity android:name=".PerfilFragment"
+        <activity
+            android:name=".PerfilFragment"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".Login_Activity"

@@ -114,6 +114,7 @@ class SolicitudActivity : AppCompatActivity() {
 
     private fun crearSolicitud() {
         var id = UUID.randomUUID().toString()
+
         var solicitud = TutoriaModel(
             id,
             txt_direccion.text.toString(),

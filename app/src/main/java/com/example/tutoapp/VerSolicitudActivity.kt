@@ -54,6 +54,7 @@ class VerSolicitudActivity : AppCompatActivity() {
         btnAceptar = findViewById(R.id.aceptar_tutoria)
         materia = findViewById(R.id.tv_materia)
         btnRechazar = findViewById(R.id.rechazar_tutoria)
+
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
         idEstudiante = solicitud.solicitante

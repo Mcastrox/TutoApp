@@ -59,24 +59,11 @@
                 android:textSize="@dimen/small_text"
                 tools:text="Ubicacion" />
 
-            <RatingBar
-                android:id="@+id/rating"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ubicacion_solicitud"
-                android:layout_centerHorizontal="true"
-                android:numStars="5"
-                android:rating="3"
-                android:scaleX="0.75"
-                android:scaleY="0.75"
-                android:theme="@style/RatingBar" />
-
             <TextView
                 android:id="@+id/label_materia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rating"
+                android:layout_below="@+id/ubicacion_solicitud"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:fontFamily="@font/roboto"
