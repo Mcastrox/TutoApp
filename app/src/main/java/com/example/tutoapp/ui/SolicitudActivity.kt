@@ -26,7 +26,10 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var estado: String
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
+    private lateinit var nombre_tutor: String
+    private lateinit var apellido_tutor: String
     private lateinit var foto_estudiante: String
+    private lateinit var foto_tutor: String
     private lateinit var idEstudiante: String
     private lateinit var seleccion: String
 
@@ -97,7 +100,10 @@ class SolicitudActivity : AppCompatActivity() {
         nombre_estudiante = intent.getStringExtra("nombre_estudiante")
         foto_estudiante = intent.getStringExtra("foto_estudiante")
         idTutor = intent.getStringExtra("idTutor")
+        foto_tutor = intent.getStringExtra("foto_tutor")
         apellido_estudiante = intent.getStringExtra("apellido_estudiante")
+        nombre_tutor = intent.getStringExtra("nombre_tutor")
+        apellido_tutor = intent.getStringExtra("apellido_tutor")
         txt_direccion = findViewById(R.id.txt_direccion)
         txt_categoria = findViewById(R.id.txt_categoria)
         txt_fecha = findViewById(R.id.txt_fecha)
@@ -127,10 +133,13 @@ class SolicitudActivity : AppCompatActivity() {
             estado,
             nombre_estudiante,
             foto_estudiante,
-            apellido_estudiante
+            apellido_estudiante,
+            nombre_tutor,
+            apellido_tutor,
+            foto_tutor
         )
 
-        viewModel.postUserData(solicitud, idTutor)
+        viewModel.postUserData(solicitud, idTutor, idEstudiante)
 
         Toast.makeText(this, "Solicitud enviada con exito", Toast.LENGTH_LONG).show()
     }

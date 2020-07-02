@@ -74,6 +74,7 @@
         <activity
             android:name=".Register_Activity"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".SolicitudEnviadaActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
