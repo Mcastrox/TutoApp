@@ -24,7 +24,7 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
         binding.apply {
-            nombreTutor.text = solicitud.nombre_tutor + " " + solicitud.apellido_estudiante
+            nombreTutor.text = solicitud.nombre_tutor + " " + solicitud.apellido_tutor
             ubicacionSolicitud.text = solicitud.direccion
             tvMateria.text = solicitud.categoria
             fechaTutoria.text = solicitud.fecha
