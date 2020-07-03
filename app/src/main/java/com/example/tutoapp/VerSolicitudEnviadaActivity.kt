@@ -40,6 +40,7 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
             fechaTutoria.text = solicitud.fecha
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
+
         }
         Picasso.get().load(solicitud.foto_tutor).into(binding.fotoTutor)
 

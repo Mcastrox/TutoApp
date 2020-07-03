@@ -3,6 +3,7 @@ package com.example.tutoapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -35,6 +36,10 @@ class TutoriasActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         getCurrentUser()
+    }
+
+    override fun onStart() {
+        super.onStart()
         observerData()
     }
 

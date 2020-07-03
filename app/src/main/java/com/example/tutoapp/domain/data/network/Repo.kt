@@ -15,6 +15,17 @@ class Repo {
         db.document(idEstudiante).collection("SolicitudesEnviadas").document(tutoria.id).set(tutoria)
         return 1
     }
+
+    fun updateSolicitud(idTutor: String, idEstudiante: String, idSolicitud: String, nuevoEstado: String){
+        var db = FirebaseFirestore.getInstance().collection("Usuarios")
+        db.document(idTutor).collection("SolicitudesRecibidas").document(idSolicitud).update(mapOf(
+            "estado" to nuevoEstado
+        ))
+        db.document(idEstudiante).collection("SolicitudesEnviadas").document(idSolicitud).update(mapOf(
+            "estado" to nuevoEstado
+        ))
+    }
+
     fun getUserSolicitud(idTutor: String) : LiveData<MutableList<TutoriaModel>>{
 
         val mutableData = MutableLiveData<MutableList<TutoriaModel>>()

@@ -2,26 +2,23 @@ package com.example.tutoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.databinding.ActivityVerSolicitudBinding
 import com.example.tutoapp.models.TutoriaModel
-import com.example.tutoapp.viewmodel.SolicitudViewModel
+import com.example.tutoapp.viewmodel.TutorViewModel
 import com.squareup.picasso.Picasso
 
 
 class VerSolicitudActivity : AppCompatActivity() {
-    private lateinit var btnAceptar: Button
-    private lateinit var btnRechazar: Button
-    private lateinit var imgEstudiante: ImageView
     private lateinit var idEstudiante: String
     private lateinit var binding : ActivityVerSolicitudBinding
-    private val viewModel by lazy { ViewModelProvider(this).get(SolicitudViewModel::class.java) }
+    private lateinit var idTutor : String
+    private lateinit var idSolicitud: String
+    private var estadoSolicitud : Array<String> = arrayOf("Aceptada","Rechazada")
+    private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
 
     var toolbar : Toolbar? = null
 
@@ -31,7 +28,6 @@ class VerSolicitudActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_ver_solicitud)
 
         initialize()
-        observerData()
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle(R.string.ver_solicitud_txt)
@@ -43,9 +39,11 @@ class VerSolicitudActivity : AppCompatActivity() {
     }
 
     fun initialize() {
-        imgEstudiante = findViewById(R.id.foto_estudiante)
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
+        idEstudiante = solicitud.solicitante
+        idTutor = solicitud.tutorSolicitado
+        idSolicitud = solicitud.id
         binding.apply {
             nombreEstudiante.text = solicitud.nombre_estudiante + " " + solicitud.apellido_estudiante
             fechaTutoria.text = solicitud.fecha
@@ -53,17 +51,21 @@ class VerSolicitudActivity : AppCompatActivity() {
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
             tvMateria.text = solicitud.categoria
+            aceptarTutoria.setOnClickListener {
+                viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
+                Toast.makeText(this@VerSolicitudActivity, "Has aceptado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
+                onBackPressed()
+            }
+            rechazarTutoria.setOnClickListener {
+                viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[1])
+                Toast.makeText(this@VerSolicitudActivity, "Has rechazado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
+                onBackPressed()
+            }
         }
-        idEstudiante = solicitud.solicitante
+
+        Picasso.get().load(solicitud.foto_estudiante).into(binding.fotoEstudiante)
 
     }
 
-    private fun observerData() {
-        viewModel.getUserSolicitud(idEstudiante).observe(this, Observer {
-            //it trae el objeto persona de la base de datos
-            Picasso.get().load(it.urlImage).into(imgEstudiante)
-        })
-
-    }
 }
 

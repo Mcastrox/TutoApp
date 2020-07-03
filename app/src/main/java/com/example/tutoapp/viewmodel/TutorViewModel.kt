@@ -7,7 +7,7 @@ import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.domain.data.network.Repo
 
 class TutorViewModel : ViewModel() {
-    val repo = Repo()
+    private val repo = Repo()
 
     fun postUserData(tutoria: TutoriaModel, idTutor: String, idEstudiante: String): Int {
 
@@ -30,5 +30,9 @@ class TutorViewModel : ViewModel() {
         }
 
         return mutableData
+    }
+
+    fun updateEstadoSolicitud(idTutor: String, idEstudiante: String, idSolicitud: String, nuevoEstado: String){
+        return repo.updateSolicitud(idTutor,idEstudiante,idSolicitud,nuevoEstado)
     }
 }
