@@ -83,4 +83,7 @@
     <string name="date_text">Fecha Solicitada</string>
     <string name="ver_solicitud_enviada_txt">Solicitud Enviada</string>
     <string name="solicitud_enviada_txt">Solicitudes enviadas</string>
+    <string name="rate_tutor_txt">¡Califica al tutor!</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="rate_btn">Calificar</string>
 </resources>

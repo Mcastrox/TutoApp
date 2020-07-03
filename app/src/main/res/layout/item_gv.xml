@@ -5,9 +5,9 @@
     android:layout_margin="@dimen/small_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardBackgroundColor="@color/light"
+    app:cardBackgroundColor="@color/transparent"
     app:cardCornerRadius="12dp"
-    app:cardElevation="6dp">
+    app:cardElevation="0dp">
 
     <TextView
         android:id="@+id/tv_disciplinas"

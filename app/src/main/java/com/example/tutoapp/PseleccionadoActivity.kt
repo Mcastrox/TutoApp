@@ -1,12 +1,12 @@
 package com.example.tutoapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.view.ViewGroup
-import android.widget.GridView
+import android.widget.Button
+import android.widget.RatingBar
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.adapter.GvAdapter
 import com.example.tutoapp.components.ExpandableHeightGridView
@@ -24,14 +24,16 @@ import com.google.firebase.storage.StorageReference
 import com.squareup.picasso.Picasso
 import jp.wasabeef.picasso.transformations.BlurTransformation
 import kotlinx.android.synthetic.main.activity_pseleccionado.*
-import kotlinx.android.synthetic.main.fragment_search.*
-import kotlin.math.round
+
 
 class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
     private lateinit var gvDisciplinas: ExpandableHeightGridView
+    private lateinit var value: String
+    private lateinit var rating1: RatingBar
+
     private var gv_adapter: GvAdapter? = null
 
     private lateinit var url: String
@@ -41,10 +43,15 @@ class PseleccionadoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pseleccionado)
+
         gvDisciplinas = findViewById(R.id.gv_disciplina)
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
-
+        var ModelDialog = AlertDialog.Builder(this)
+        val DialogView = layoutInflater.inflate(R.layout.rating_alert, null)
+        val btnCancel = DialogView.findViewById<Button>(R.id.action_cancelar)
+        val btnRate = DialogView.findViewById<Button>(R.id.action_calificar)
+        val rating = DialogView.findViewById<RatingBar>(R.id.rating)
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle("")
@@ -52,6 +59,8 @@ class PseleccionadoActivity : AppCompatActivity() {
 
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+        ModelDialog.setView(DialogView)
+
 
         val tutor = intent.getSerializableExtra("tutor") as Model
 
@@ -63,6 +72,34 @@ class PseleccionadoActivity : AppCompatActivity() {
         correo_tutor.text = tutor.correo
         descripcion_tutor.text = tutor.descripcion
 
+        rating1 = findViewById(R.id.rating1)
+        var alert_dialog = ModelDialog.create()
+
+        rating.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
+            override fun onRatingChanged(
+                ratingBar: RatingBar?,
+                v: Float,
+                b: Boolean
+            ) {
+                value = v.toString()
+            }
+        })
+
+        ocupation_tutor.setOnClickListener {
+
+            alert_dialog.show()
+
+            btnCancel.setOnClickListener {
+                alert_dialog.dismiss()
+            }
+
+            btnRate.setOnClickListener {
+                Toast.makeText(this, "${value}", Toast.LENGTH_LONG).show()
+                alert_dialog.dismiss()
+            }
+
+
+        }
 
         tutor.listaDisciplina?.let { gridViewCreated(it) }
 
