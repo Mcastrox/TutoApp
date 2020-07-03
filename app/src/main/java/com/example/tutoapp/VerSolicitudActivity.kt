@@ -6,24 +6,21 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.example.tutoapp.databinding.ActivityVerSolicitudBinding
 import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.SolicitudViewModel
 import com.squareup.picasso.Picasso
 
 
 class VerSolicitudActivity : AppCompatActivity() {
-    private lateinit var name: TextView
-    private lateinit var hora: TextView
-    private lateinit var notas: TextView
-    private lateinit var fecha: TextView
-    private lateinit var materia: TextView
-    private lateinit var direccion: TextView
     private lateinit var btnAceptar: Button
     private lateinit var btnRechazar: Button
     private lateinit var imgEstudiante: ImageView
     private lateinit var idEstudiante: String
+    private lateinit var binding : ActivityVerSolicitudBinding
     private val viewModel by lazy { ViewModelProvider(this).get(SolicitudViewModel::class.java) }
 
     var toolbar : Toolbar? = null
@@ -31,6 +28,7 @@ class VerSolicitudActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ver_solicitud)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_ver_solicitud)
 
         initialize()
         observerData()
@@ -46,25 +44,17 @@ class VerSolicitudActivity : AppCompatActivity() {
 
     fun initialize() {
         imgEstudiante = findViewById(R.id.foto_estudiante)
-        name = findViewById(R.id.nombre_estudiante)
-        fecha = findViewById(R.id.fecha_tutoria)
-        direccion = findViewById(R.id.ubicacion_solicitud)
-        hora = findViewById(R.id.hora_tutoria)
-        notas = findViewById(R.id.notas_tutoria)
-        btnAceptar = findViewById(R.id.aceptar_tutoria)
-        materia = findViewById(R.id.tv_materia)
-        btnRechazar = findViewById(R.id.rechazar_tutoria)
-
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
+        binding.apply {
+            nombreEstudiante.text = solicitud.nombre_estudiante + " " + solicitud.apellido_estudiante
+            fechaTutoria.text = solicitud.fecha
+            ubicacionSolicitud.text = solicitud.direccion
+            horaTutoria.text = solicitud.hora
+            notasTutoria.text = solicitud.nota
+            tvMateria.text = solicitud.categoria
+        }
         idEstudiante = solicitud.solicitante
-        name.text = solicitud.nombre_estudiante
-        hora.text = solicitud.hora
-        notas.text = solicitud.nota
-        materia.text = solicitud.categoria
-        direccion.text = solicitud.direccion
-        fecha.text = solicitud.fecha
-
 
     }
 
