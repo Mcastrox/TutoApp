@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.tutoapp.Chat.CentralChat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_central.*
@@ -31,11 +30,7 @@ class CentralActivity : AppCompatActivity() {
                     replaceFragment(selectedFragment as SearchFragment)
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.chat -> {
-                    val intent = Intent(this,CentralChat::class.java)
-                    startActivity(intent)
-                    return@OnNavigationItemSelectedListener true
-                }
+
                 R.id.request -> {
                     selectedFragment = SolicitudEnviada()
                     replaceFragment(selectedFragment as SolicitudEnviada)

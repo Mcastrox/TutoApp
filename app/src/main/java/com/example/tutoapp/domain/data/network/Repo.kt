@@ -51,6 +51,8 @@ class Repo {
                 val apellido_tutor : String ? = document.getString("apellido_tutor")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
                 val foto_tutor : String? =document.getString("foto_tutor")
+                val correo_tutor : String? =document.getString ("correoTutor")
+                val telefono_tutor: String? = document.getString("telefonoTutor")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -66,7 +68,9 @@ class Repo {
                     apellido_estudiante!!,
                     nombre_tutor!!,
                     apellido_tutor!!,
-                    foto_tutor!!
+                    foto_tutor!!,
+                    correo_tutor!!,
+                    telefono_tutor!!
                 )
                 listData.add(solicitud)
             }
@@ -101,6 +105,8 @@ class Repo {
                 val apellido_tutor : String ? = document.getString("apellido_tutor")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
                 val foto_tutor : String? =document.getString("foto_tutor")
+                val correo_tutor : String? =document.getString ("correoTutor")
+                val telefono_tutor: String? = document.getString("telefonoTutor")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -116,7 +122,9 @@ class Repo {
                     apellido_estudiante!!,
                     nombre_tutor!!,
                     apellido_tutor!!,
-                    foto_tutor!!
+                    foto_tutor!!,
+                    correo_tutor!!,
+                    telefono_tutor!!
                 )
                 listData.add(solicitud)
             }

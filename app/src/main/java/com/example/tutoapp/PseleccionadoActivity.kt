@@ -141,6 +141,8 @@ class PseleccionadoActivity : AppCompatActivity() {
             intent.putExtra("nombre_tutor",tutor.name)
             intent.putExtra("apellido_tutor", tutor.lastname)
             intent.putExtra("foto_tutor", tutor.ruta)
+            intent.putExtra("correo_tutor",tutor.correo)
+            intent.putExtra("telefono_tutor",tutor.telefono)
             intent.putExtra("seleccion", seleccion)
             //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)

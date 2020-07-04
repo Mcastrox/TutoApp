@@ -15,15 +15,6 @@
         <activity android:name=".VerSolicitudEnviadaActivity"
             android:parentActivityName=".SolicitudEnviada"/>
         <activity
-            android:name=".Chat.ChatLog"
-            android:parentActivityName=".CentralActivity" />
-        <activity
-            android:name=".Chat.NewMessage"
-            android:parentActivityName=".Chat.CentralChat" />
-        <activity
-            android:name=".Chat.CentralChat"
-            android:parentActivityName=".CentralActivity" />
-        <activity
             android:name=".CentralActivity"
             android:theme="@style/SplashTheme2">
             <intent-filter>
