@@ -2,9 +2,7 @@ package com.example.tutoapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.RatingBar
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -12,7 +10,7 @@ import com.example.tutoapp.adapter.GvAdapter
 import com.example.tutoapp.components.ExpandableHeightGridView
 import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
-import com.example.tutoapp.ui.SolicitudActivity
+import com.example.tutoapp.models.RatingModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
@@ -33,8 +31,10 @@ class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var telefono_estudiante: String
     private lateinit var correo_estudiante: String
     private lateinit var gvDisciplinas: ExpandableHeightGridView
-    private lateinit var value: String
+    private var value: Float = 0.0f
     private lateinit var rating1: RatingBar
+    private lateinit var myRate : LinearLayout
+    private var avg : Float = 0.0f
 
     private var gv_adapter: GvAdapter? = null
 
@@ -49,10 +49,12 @@ class PseleccionadoActivity : AppCompatActivity() {
         gvDisciplinas = findViewById(R.id.gv_disciplina)
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
+        rating1 = findViewById(R.id.rating1)
+        myRate = findViewById(R.id.myRate)
         var ModelDialog = AlertDialog.Builder(this)
         val DialogView = layoutInflater.inflate(R.layout.rating_alert, null)
-        val btnCancel = DialogView.findViewById<Button>(R.id.action_cancelar)
-        val btnRate = DialogView.findViewById<Button>(R.id.action_calificar)
+        val btnCancel = DialogView.findViewById<TextView>(R.id.action_cancelar)
+        val btnRate = DialogView.findViewById<TextView>(R.id.action_calificar)
         val rating = DialogView.findViewById<RatingBar>(R.id.rating)
 
         toolbar = findViewById(R.id.toolbar)
@@ -67,28 +69,25 @@ class PseleccionadoActivity : AppCompatActivity() {
         val tutor = intent.getSerializableExtra("tutor") as Model
 
         nombre_tutor.text = tutor.name
+        AverageRating( tutor.ratings )
         lastname_tutor.text = tutor.lastname
         location_tutor.text = tutor.location
         ocupation_tutor.text = tutor.ocupacion
         nivel_tutor.text = tutor.nivel
         correo_tutor.text = tutor.correo
         descripcion_tutor.text = tutor.descripcion
+        tutor.listaDisciplina?.let { gridViewCreated(it) }
 
-        rating1 = findViewById(R.id.rating1)
+
         var alert_dialog = ModelDialog.create()
 
         rating.setOnRatingBarChangeListener(object : RatingBar.OnRatingBarChangeListener {
-            override fun onRatingChanged(
-                ratingBar: RatingBar?,
-                v: Float,
-                b: Boolean
-            ) {
-                value = v.toString()
+            override fun onRatingChanged(ratingBar: RatingBar?, rating: Float, b: Boolean) {
+                value = rating
             }
         })
 
-        ocupation_tutor.setOnClickListener {
-
+        myRate.setOnClickListener {
             alert_dialog.show()
 
             btnCancel.setOnClickListener {
@@ -96,14 +95,17 @@ class PseleccionadoActivity : AppCompatActivity() {
             }
 
             btnRate.setOnClickListener {
+                val tutorRef = FirebaseDatabase.getInstance().getReference("Users").child(tutor.id)
+
                 Toast.makeText(this, "${value}", Toast.LENGTH_LONG).show()
+
+                tutor.ratings?.add(RatingModel(value.toString()))
+
+                tutorRef.child("ratings").setValue(tutor.ratings)
                 alert_dialog.dismiss()
             }
 
-
         }
-
-        tutor.listaDisciplina?.let { gridViewCreated(it) }
 
         Picasso.get().load(tutor.ruta).into(image_tutor)
         Picasso.get().load(tutor.ruta).into(user_tutor)
@@ -160,6 +162,18 @@ class PseleccionadoActivity : AppCompatActivity() {
 
         gvDisciplinas?.adapter = gv_adapter
         gvDisciplinas.isExpanded = true
+    }
+
+    private fun AverageRating(ratings: ArrayList<RatingModel>?){
+
+        if (ratings != null) {
+            for( rating in ratings){
+                avg += rating.value!!.toFloat() / ratings.size
+            }
+        }
+
+        rating1.rating = avg
+
     }
 
 }

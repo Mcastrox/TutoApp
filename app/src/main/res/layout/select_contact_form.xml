@@ -2,44 +2,79 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-<TextView
+    android:padding="@dimen/medium_margin"
     android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Elige una forma de contactar"
-    android:textSize="24sp"
-    android:textColor="@color/blackMate"
-    android:fontFamily="sans-serif-black"/>
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/student_contact_txt"
+        android:textAlignment="center"
+        android:textColor="@color/blackMate"
+        android:textSize="@dimen/title_text"
+        android:textAllCaps="true"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:layout_margin="@dimen/medium_margin"
+        android:text="@string/choose_contact"
+        android:textAlignment="center"
+        android:textColor="@color/soft_grey"
+        android:textSize="@dimen/normal_text"
+        android:textStyle="bold"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="3"
+        android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/wha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:background="#DA08810D"
-                android:fontFamily="sans-serif-black"
-                android:text="WhatsApp"
-                android:textColor="@color/white" />
-            <Button
-                android:id="@+id/mail"
-                android:layout_margin="24dp"
-                android:textColor="@color/white"
-                android:fontFamily="sans-serif-black"
-                android:text="Gmail"
-                android:background="@color/redBrick"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/action_email"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/email_txt"
+            android:textColor="@color/soft_cyan"
+            android:textAllCaps="true"
+            android:textSize="@dimen/normal_text"
+            android:textStyle="bold" />
 
-        </LinearLayout>
+        <TextView
+            android:id="@+id/action_cancelar"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:text="@string/cancel_btn"
+            android:textColor="@color/redBrick2"
+            android:textSize="@dimen/normal_text"
+            android:textStyle="bold"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:id="@+id/action_wha"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Whatsapp"
+            android:textColor="@color/soft_cyan"
+            android:textAllCaps="true"
+            android:textSize="@dimen/normal_text"
+            android:textStyle="bold" />
+
     </LinearLayout>
+
 
 </LinearLayout>

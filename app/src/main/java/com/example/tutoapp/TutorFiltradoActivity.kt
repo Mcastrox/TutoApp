@@ -3,6 +3,7 @@ package com.example.tutoapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.ListView
@@ -10,17 +11,18 @@ import androidx.appcompat.widget.Toolbar
 import com.example.tutoapp.adapter.TutorAdapter
 import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
+import com.example.tutoapp.models.RatingModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.rating_alert.*
 
 class TutorFiltradoActivity : AppCompatActivity() {
 
     private var listaTutores = mutableListOf<Model>()
     private lateinit var adapter: TutorAdapter
     private lateinit var lista_categoriaSeleccionada: ListView
-
 
     var toolbar: Toolbar? = null
 
@@ -57,6 +59,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var descripcion: String = ""
                     var categoria: String = eleccion
                     var listaDisciplina: ArrayList<Disciplina>  = arrayListOf<Disciplina>()
+                    var ratings: ArrayList<RatingModel>  = arrayListOf<RatingModel>()
                     var id: String = e.child("ID").value as String
 
                     if (e.child("Name").value != null) {
@@ -107,6 +110,16 @@ class TutorFiltradoActivity : AppCompatActivity() {
                         }
                     }
 
+                    if (e.child("ratings").exists()) {
+                        val count : Long = e.child("ratings").childrenCount -1
+                        Log.d("ToyArto",count.toString())
+
+                        for (item in 0..count ) {
+                            val value = e.child("ratings").child("$item").child("value").value as String
+                            ratings.add( RatingModel( value))
+                        }
+                    }
+
 
                     if (rol == "Tutor") {
                         if (e.child("disciplinas").child("${categoria}")
@@ -125,7 +138,8 @@ class TutorFiltradoActivity : AppCompatActivity() {
                                     R.drawable.ic_art,
                                     ruta,
                                     descripcion,
-                                    listaDisciplina
+                                    listaDisciplina,
+                                    ratings
                                 )
                             )
                         }

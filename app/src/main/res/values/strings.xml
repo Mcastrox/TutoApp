@@ -86,4 +86,15 @@
     <string name="rate_tutor_txt">¡Califica al tutor!</string>
     <string name="cancel_btn">Cancelar</string>
     <string name="rate_btn">Calificar</string>
+    <string name="student_contact_txt">Contacta al estudiante</string>
+    <string name="choose_contact">Selecciona una forma de contacto</string>
+    <string name="msg_reject">Esta solicitud fue rechazada.</string>
+    <string name="here_txt">aquí.</string>
+    <string name="accept_txt">Esta solicitud fue aceptada.</string>
+    <string name="msg_choose_categories">Selecciona la/las categorías que quieres impartir.</string>
+    <string name="msg_description">Escribe lo que quieres que sepan de ti.</string>
+    <string name="msg_notas">Ayudale a saber lo que esperas de la tutoría.</string>
+    <string name="msg_categoria">Elige la categoría de tu interés.</string>
+    <string name="msg_date">Selecciona la fecha de tutoría.</string>
+    <string name="msg_hora">Escoge la hora de tutoría.</string>
 </resources>

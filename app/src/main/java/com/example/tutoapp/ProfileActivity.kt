@@ -62,12 +62,6 @@ class ProfileActivity : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        /*val user: FirebaseUser?=mAuth.currentUser
-        mDataBaseReference= FirebaseDatabase.getInstance().getReference("Users")
-        uid = user?.uid!!
-        val mUser= mAuth!!.currentUser
-        val mUserReference= mDataBaseReference!!.child(mUser!!.uid)*/
-
     }
 
 
@@ -108,7 +102,7 @@ class ProfileActivity : AppCompatActivity() {
                 }
                 .addOnCompleteListener { task ->
                     if (task.isComplete) {
-                        Toast.makeText(this, "Post Added!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this, "Imagen agregada", Toast.LENGTH_SHORT).show()
 
                         // intent
                     }
@@ -118,7 +112,7 @@ class ProfileActivity : AppCompatActivity() {
 
         selected = null
 
-        Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Guardado con éxito", Toast.LENGTH_LONG).show()
 
     }
 

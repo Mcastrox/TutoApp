@@ -23,7 +23,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center|start"
         android:layout_weight="1"
         android:orientation="vertical">
 
@@ -46,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Lastname"
-                android:layout_marginLeft="@dimen/small_margin"
+                android:layout_marginStart="@dimen/small_margin"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/title_text"
                 android:textStyle="bold" />
@@ -68,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SubText"
+            android:layout_marginTop="@dimen/small_margin"
             android:fontFamily="@font/roboto"
             android:textColor="@color/blackMate"
             android:textSize="@dimen/normal_text"

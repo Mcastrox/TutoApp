@@ -7,17 +7,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Layout
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
+import android.widget.RatingBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.databinding.ActivityVerSolicitudBinding
+import com.example.tutoapp.models.RatingModel
 import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
+import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.select_contact_form.view.*
+import org.w3c.dom.Text
 
 
 class VerSolicitudActivity : AppCompatActivity() {
@@ -65,7 +71,14 @@ class VerSolicitudActivity : AppCompatActivity() {
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
             tvMateria.text = solicitud.categoria
+
+            if(solicitud.estado.equals("En espera")){
+                rechazarTutoria.visibility = View.VISIBLE
+                aceptarTutoria.visibility = View.VISIBLE
+            }
+
             aceptarTutoria.setOnClickListener {
+                viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
 
                 //add modal
                 openDIalog(telefonoEstudiante,idTutor,idEstudiante,idSolicitud)
@@ -75,12 +88,32 @@ class VerSolicitudActivity : AppCompatActivity() {
                 // Toast.makeText(this@VerSolicitudActivity, "Has aceptado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
 
                 // onBackPressed()
+
+                rechazarTutoria.visibility = View.GONE
+                aceptarTutoria.visibility = View.GONE
+                messageAccept.visibility = View.VISIBLE
             }
+
             rechazarTutoria.setOnClickListener {
                 viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[1])
                 Toast.makeText(this@VerSolicitudActivity, "Has rechazado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
                 onBackPressed()
 
+                rechazarTutoria.visibility = View.GONE
+                aceptarTutoria.visibility = View.GONE
+                messageReject.visibility = View.VISIBLE
+            }
+
+            if(solicitud.estado.equals("Rechazada")){
+                messageReject.visibility = View.VISIBLE
+            }
+
+            if(solicitud.estado.equals("Aceptada")){
+                messageAccept.visibility = View.VISIBLE
+            }
+
+            contactAction.setOnClickListener{
+                openDIalog(telefonoEstudiante,idTutor,idEstudiante,idSolicitud)
             }
         }
 
@@ -113,46 +146,45 @@ class VerSolicitudActivity : AppCompatActivity() {
 
     }
 
-    private fun openDIalog(telefonoEstudiante:String,idTutor:String,idEstudiante:String,idSolicitud:String){
-        val diologBuilder = AlertDialog.Builder(this)
-        diologBuilder.setMessage("Formas de conatcto")
-            // if the dialog is cancelable
-            .setCancelable(false)
-            // positive button text and action
-            .setPositiveButton("Whattsap", DialogInterface.OnClickListener {
-                //poner intent de wha
+    private fun openDIalog(telefonoEstudiante : String, idTutor : String, idEstudiante : String, idSolicitud : String){
+        val dialogBuilder = AlertDialog.Builder(this)
+        val DialogView = layoutInflater.inflate(R.layout.select_contact_form, null)
+        val btnCancel = DialogView.findViewById<TextView>(R.id.action_cancelar)
+        val btnEmail = DialogView.findViewById<TextView>(R.id.action_email)
+        val btnWha = DialogView.findViewById<TextView>(R.id.action_wha)
 
-                    dialog, id ->
-                run {
+        dialogBuilder.setView(DialogView)
 
-                    sendWhatsApp(telefonoEstudiante)
-                    viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
-                    onBackPressed()
-                }
-            })
-            .setNeutralButton("Correo", DialogInterface.OnClickListener {
-                //poner intent de gmail
-                    dialog, id ->
-                run {
-
-                   sendEmail(correoEstudiante,"TutoApp Mail","Este es un mensaje de prueba")
-                    viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
-
-                }
-            })
-            .setNegativeButton("Cancelar", DialogInterface.OnClickListener {
-                    dialog, id -> dialog.cancel()
-            })
-
-
-
-
-        // create dialog box
-        val alert = diologBuilder.create()
-        // set title for alert dialog box
-        alert.setTitle("Contactar Tutor")
-        // show alert dialog
+        val alert = dialogBuilder.create()
         alert.show()
+
+        btnCancel.setOnClickListener {
+            alert.dismiss()
+        }
+
+        btnEmail.setOnClickListener {
+
+            run {
+
+                sendEmail(correoEstudiante,"TutoApp Mail","Este es un mensaje de prueba")
+                viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
+
+            }
+
+            alert.dismiss()
+        }
+
+        btnWha.setOnClickListener {
+
+            run {
+
+                sendWhatsApp(telefonoEstudiante)
+                viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
+                onBackPressed()
+            }
+
+            alert.dismiss()
+        }
 
     }
 

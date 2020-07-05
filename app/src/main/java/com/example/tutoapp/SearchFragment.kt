@@ -18,10 +18,12 @@ import com.example.tutoapp.adapter.ListAdapter
 import com.example.tutoapp.databinding.FragmentSearchBinding
 import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
+import com.example.tutoapp.models.RatingModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.protobuf.FloatValue
 
 
 /**
@@ -94,6 +96,7 @@ class SearchFragment : Fragment() {
                     var ruta: String = ""
                     var descripcion: String = ""
                     var listaDisciplina: ArrayList<Disciplina> = arrayListOf<Disciplina>()
+                    var ratings: ArrayList<RatingModel>  = arrayListOf<RatingModel>()
                     var id: String = e.child("ID").value as String
 
 
@@ -147,6 +150,16 @@ class SearchFragment : Fragment() {
                         }
                     }
 
+                    if (e.child("ratings").exists()) {
+                        val count : Long = e.child("ratings").childrenCount -1
+                        Log.d("ToyArto",count.toString())
+
+                        for (item in 0..count ) {
+                            val value = e.child("ratings").child("$item").child("value").value as String
+                            ratings.add( RatingModel( value))
+                        }
+                    }
+
                     if (rol == "Tutor") {
                         listaTutores.add(
                             Model(
@@ -161,7 +174,8 @@ class SearchFragment : Fragment() {
                                 R.drawable.ic_art,
                                 ruta,
                                 descripcion,
-                                listaDisciplina
+                                listaDisciplina,
+                                ratings
                             )
                         )
                     }

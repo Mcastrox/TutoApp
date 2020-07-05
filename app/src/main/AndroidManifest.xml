@@ -42,7 +42,7 @@
             android:parentActivityName=".TutoriasActivity" />
         <activity android:name=".TutoriasActivity" />
         <activity
-            android:name=".ui.SolicitudActivity"
+            android:name=".SolicitudActivity"
             android:parentActivityName=".SearchFragment" />
         <activity
             android:name=".PseleccionadoActivity"

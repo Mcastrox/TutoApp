@@ -85,13 +85,20 @@
 
                     </LinearLayout>
 
-                    <RatingBar
-                        android:id="@+id/rating1"
+                    <LinearLayout
+                        android:id="@+id/myRate"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:scaleX="0.75"
-                        android:scaleY="0.75"
-                        android:theme="@style/RatingBar" />
+                        android:layout_height="wrap_content">
+
+                        <RatingBar
+                            android:id="@+id/rating1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:scaleX="0.75"
+                            android:scaleY="0.75"
+                            android:theme="@style/RatingBar" />
+                    </LinearLayout>
 
                 </LinearLayout>
 

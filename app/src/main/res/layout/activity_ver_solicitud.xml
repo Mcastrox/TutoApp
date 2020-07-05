@@ -162,6 +162,7 @@
                     android:text="@string/btn_aceptar_sol_txt"
                     android:textColor="@color/white"
                     android:textSize="@dimen/button_size_text"
+                    android:visibility="gone"
                     android:textStyle="bold" />
 
 
@@ -176,7 +177,56 @@
                     android:text="@string/btn_rechazar_sol_txt"
                     android:textColor="@color/white"
                     android:textSize="@dimen/button_size_text"
+                    android:visibility="gone"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/message_reject"
+                    android:layout_below="@id/notas_tutoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:gravity="center"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/msg_reject"
+                    android:textAllCaps="true"
+                    android:visibility="gone"
+                    android:textSize="@dimen/normal_text"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/message_accept"
+                    android:layout_below="@id/notas_tutoria"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/accept_txt"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/normal_text"
+                        />
+
+                    <TextView
+                        android:id="@+id/contact_action"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto"
+                        android:textColor="@color/soft_cyan"
+                        android:text="@string/contact"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/normal_text"
+                        />
+
+                </LinearLayout>
+
 
             </RelativeLayout>
         </ScrollView>

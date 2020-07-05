@@ -14,7 +14,8 @@ class Model(
     var img: Int,
     var ruta: String = "",
     var descripcion: String,
-    var listaDisciplina: ArrayList<Disciplina>?
+    var listaDisciplina: ArrayList<Disciplina>?,
+    var ratings: ArrayList<RatingModel>?
 ): Serializable{
-    constructor(): this ("","","","","","","","",0,"","",null)
+    constructor(): this ("","","","","","","","",0,"","",null, null)
 }

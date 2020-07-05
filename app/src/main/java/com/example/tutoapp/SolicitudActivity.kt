@@ -1,4 +1,4 @@
-package com.example.tutoapp.ui
+package com.example.tutoapp
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
@@ -9,9 +9,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
-import com.example.tutoapp.R
 import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
+import kotlinx.android.synthetic.main.activity_atributes.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -91,8 +91,12 @@ class SolicitudActivity : AppCompatActivity() {
 
         btn_solicitar.setOnClickListener {
 
+            if (txt_notas.text.length < 50 ){
+                txt_notas.setError("Debe tener al menos 50 caracteres.")
+            }
+
             if(txt_direccion.text.isNotEmpty() && txt_categoria.text.isNotEmpty() && txt_fecha.text.isNotEmpty() &&
-                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty()) {
+                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50) {
 
                 crearSolicitud()
                 finish()

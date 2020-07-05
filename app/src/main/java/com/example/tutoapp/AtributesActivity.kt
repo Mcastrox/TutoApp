@@ -387,8 +387,11 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun guardar() {
 
+        if (textDescripcion.text.length < 50 ){
+            txtDescripcion.setError("La descripcion debe tener al menos 50 caracteres.")
+        }
 
-        if(txtDescripcion.text.isNotEmpty() && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
+        if(txtDescripcion.text.isNotEmpty() && txtDescripcion.text.length >= 50  && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
 
             val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
             referencia.child("Rol").setValue("Tutor")
