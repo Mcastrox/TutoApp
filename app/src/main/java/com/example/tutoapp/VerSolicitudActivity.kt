@@ -25,8 +25,8 @@ class VerSolicitudActivity : AppCompatActivity() {
     private lateinit var binding : ActivityVerSolicitudBinding
     private lateinit var idTutor : String
     private lateinit var idSolicitud: String
-    private lateinit var correoTutor: String
-    private lateinit var telefonoTutor: String
+    private lateinit var correoEstudiante: String
+    private lateinit var telefonoEstudiante: String
     private lateinit var dialog:Button
     private var estadoSolicitud : Array<String> = arrayOf("Aceptada","Rechazada")
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
@@ -55,8 +55,8 @@ class VerSolicitudActivity : AppCompatActivity() {
         idEstudiante = solicitud.solicitante
         idTutor = solicitud.tutorSolicitado
         idSolicitud = solicitud.id
-        correoTutor= solicitud.correoTutor
-        telefonoTutor= solicitud.telefonoTutor
+        correoEstudiante= solicitud.correoEstudiante
+        telefonoEstudiante= solicitud.telefonoEstudiante
 
         binding.apply {
             nombreEstudiante.text = solicitud.nombre_estudiante + " " + solicitud.apellido_estudiante
@@ -68,7 +68,7 @@ class VerSolicitudActivity : AppCompatActivity() {
             aceptarTutoria.setOnClickListener {
 
                 //add modal
-                openDIalog(telefonoTutor,idTutor,idEstudiante,idSolicitud)
+                openDIalog(telefonoEstudiante,idTutor,idEstudiante,idSolicitud)
 
                 // sendWhatsApp(telefonoTutor)
                 // viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
@@ -113,7 +113,7 @@ class VerSolicitudActivity : AppCompatActivity() {
 
     }
 
-    private fun openDIalog(telefonoTutor:String,idTutor:String,idEstudiante:String,idSolicitud:String){
+    private fun openDIalog(telefonoEstudiante:String,idTutor:String,idEstudiante:String,idSolicitud:String){
         val diologBuilder = AlertDialog.Builder(this)
         diologBuilder.setMessage("Formas de conatcto")
             // if the dialog is cancelable
@@ -125,7 +125,7 @@ class VerSolicitudActivity : AppCompatActivity() {
                     dialog, id ->
                 run {
 
-                    sendWhatsApp(telefonoTutor)
+                    sendWhatsApp(telefonoEstudiante)
                     viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
                     onBackPressed()
                 }
@@ -135,7 +135,7 @@ class VerSolicitudActivity : AppCompatActivity() {
                     dialog, id ->
                 run {
 
-                   sendEmail(correoTutor,"TutoApp Mail","Este es un mensaje de prueba")
+                   sendEmail(correoEstudiante,"TutoApp Mail","Este es un mensaje de prueba")
                     viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
 
                 }
