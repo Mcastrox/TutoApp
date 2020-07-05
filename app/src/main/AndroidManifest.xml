@@ -12,11 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerSolicitudEnviadaActivity"
-            android:parentActivityName=".SolicitudEnviada"/>
+        <activity
+            android:name=".VerSolicitudEnviadaActivity"
+            android:parentActivityName=".SolicitudEnviada" />
         <activity
             android:name=".CentralActivity"
-            android:theme="@style/SplashTheme2">
+            android:theme="@style/SplashTheme2"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -66,8 +68,9 @@
         <activity
             android:name=".Register_Activity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".SolicitudEnviada"
-            tools:ignore="Instantiatable"/>
+        <activity
+            android:name=".SolicitudEnviada"
+            tools:ignore="Instantiatable" />
 
         <meta-data
             android:name="preloaded_fonts"
