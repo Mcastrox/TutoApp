@@ -32,8 +32,8 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var foto_tutor: String
     private lateinit var idEstudiante: String
     private lateinit var seleccion: String
-    private lateinit var correoTutor: String
-    private lateinit var telefonoTutor: String
+    private lateinit var correoEstudiante: String
+    private lateinit var telefonoEstudiante: String
 
     //lazy se usa para instanciar el objeto hasta que se necesite
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
@@ -124,8 +124,8 @@ class SolicitudActivity : AppCompatActivity() {
         txt_notas = findViewById(R.id.notas_tutor)
         estado = "En espera"
         btn_solicitar = findViewById(R.id.action_solicitar)
-        correoTutor=intent.getStringExtra("correo_tutor")
-        telefonoTutor=intent.getStringExtra("telefono_tutor")
+        correoEstudiante=intent.getStringExtra("correo_estudiante")
+        telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
         selectedCategory()
 
         txt_categoria.setText(seleccion)
@@ -151,8 +151,8 @@ class SolicitudActivity : AppCompatActivity() {
             nombre_tutor,
             apellido_tutor,
             foto_tutor,
-            correoTutor,
-            telefonoTutor
+            correoEstudiante,
+            telefonoEstudiante
         )
 
         viewModel.postUserData(solicitud, idTutor, idEstudiante)

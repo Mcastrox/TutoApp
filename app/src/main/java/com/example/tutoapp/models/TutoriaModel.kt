@@ -18,7 +18,7 @@ class TutoriaModel(
     var nombre_tutor : String,
     var apellido_tutor : String,
     var foto_tutor: String,
-    var correoTutor : String,
-    var telefonoTutor: String
+    var correoEstudiante : String,
+    var telefonoEstudiante: String
 ) : Serializable {
 }

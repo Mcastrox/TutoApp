@@ -30,6 +30,8 @@ class PseleccionadoActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var nombre_estudiante: String
     private lateinit var apellido_estudiante: String
+    private lateinit var telefono_estudiante: String
+    private lateinit var correo_estudiante: String
     private lateinit var gvDisciplinas: ExpandableHeightGridView
     private lateinit var value: String
     private lateinit var rating1: RatingBar
@@ -123,6 +125,8 @@ class PseleccionadoActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 nombre_estudiante = dataSnapshot.child("Name").value as String
                 apellido_estudiante = dataSnapshot.child("lastName").value as String
+                telefono_estudiante=dataSnapshot.child("telefono").value as String
+                correo_estudiante=dataSnapshot.child("correo").value as String
                 url = dataSnapshot.child("urlImage").value as String
 
             }
@@ -141,8 +145,8 @@ class PseleccionadoActivity : AppCompatActivity() {
             intent.putExtra("nombre_tutor",tutor.name)
             intent.putExtra("apellido_tutor", tutor.lastname)
             intent.putExtra("foto_tutor", tutor.ruta)
-            intent.putExtra("correo_tutor",tutor.correo)
-            intent.putExtra("telefono_tutor",tutor.telefono)
+            intent.putExtra("correo_estudiante",correo_estudiante)
+            intent.putExtra("telefono_estudiante",telefono_estudiante)
             intent.putExtra("seleccion", seleccion)
             //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)

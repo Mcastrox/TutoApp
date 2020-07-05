@@ -51,8 +51,8 @@ class Repo {
                 val apellido_tutor : String ? = document.getString("apellido_tutor")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
                 val foto_tutor : String? =document.getString("foto_tutor")
-                val correo_tutor : String? =document.getString ("correoTutor")
-                val telefono_tutor: String? = document.getString("telefonoTutor")
+                val correo_estudiante : String? =document.getString ("correoEstudiante")
+                val telefono_estudiante: String? = document.getString("telefonoEstudiante")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -69,8 +69,8 @@ class Repo {
                     nombre_tutor!!,
                     apellido_tutor!!,
                     foto_tutor!!,
-                    correo_tutor!!,
-                    telefono_tutor!!
+                    correo_estudiante!!,
+                    telefono_estudiante!!
                 )
                 listData.add(solicitud)
             }
@@ -105,8 +105,8 @@ class Repo {
                 val apellido_tutor : String ? = document.getString("apellido_tutor")
                 val foto_estudiante : String? =document.getString("foto_estudiante")
                 val foto_tutor : String? =document.getString("foto_tutor")
-                val correo_tutor : String? =document.getString ("correoTutor")
-                val telefono_tutor: String? = document.getString("telefonoTutor")
+                val correo_estudiante : String? =document.getString ("correoEstudiante")
+                val telefono_estudiante: String? = document.getString("telefonoEstudiante")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -123,8 +123,8 @@ class Repo {
                     nombre_tutor!!,
                     apellido_tutor!!,
                     foto_tutor!!,
-                    correo_tutor!!,
-                    telefono_tutor!!
+                    correo_estudiante!!,
+                    telefono_estudiante!!
                 )
                 listData.add(solicitud)
             }
