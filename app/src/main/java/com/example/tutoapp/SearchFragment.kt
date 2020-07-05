@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -170,6 +171,16 @@ class SearchFragment : Fragment() {
 
 
                 list.adapter = adapter
+                adapter.notifyDataSetChanged()
+
+                if (listaTutores.isNullOrEmpty()) {
+                     binding.empty.visibility = View.VISIBLE
+                     binding.list.visibility = View.GONE
+
+                } else {
+                    binding.empty.visibility = View.GONE
+                    binding.list.visibility = View.VISIBLE
+                }
 
             }
 
