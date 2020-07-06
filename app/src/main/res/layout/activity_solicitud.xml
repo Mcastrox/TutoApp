@@ -88,7 +88,7 @@
                 android:textColor="@color/soft_grey" />
 
             <Spinner
-                android:id="@+id/txt_categoria"
+                android:id="@+id/sp_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
