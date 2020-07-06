@@ -1,6 +1,7 @@
 package com.example.tutoapp.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,15 +16,16 @@ class TutorAdapter(private val mContext: Context , private val listaTutores : Li
         val layout = LayoutInflater.from(mContext).inflate(R.layout.row,parent, false)
         val tutor = listaTutores[position]
 
-        layout.textView1.text=tutor.name
-        layout.textView2.text=tutor.lastname
-        layout.ubicacion_solicitud.text = tutor.location
-        layout.textView3.text=tutor.ocupacion
+        layout.apply {
+            textView1.text=tutor.name
+            textView2.text=tutor.lastname
+            ubicacion_solicitud.text = tutor.location
+            textView3.text=tutor.ocupacion
+            cuota.text = "%.2f".format(tutor.cuota.toDouble())
+        }
 
-        layout.image.setImageResource(tutor.img)
-
-        if(tutor.ruta == ""){
-            layout.image.setImageResource(tutor.img)
+        if(tutor.ruta == "0"){
+            layout.image.setImageResource(R.drawable.ic_usuario)
         }
         else{
             Picasso.get().load(tutor.ruta).into(layout.image)

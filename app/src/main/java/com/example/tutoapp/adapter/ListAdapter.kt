@@ -13,7 +13,14 @@ import com.example.tutoapp.PseleccionadoActivity
 import com.example.tutoapp.R
 import com.example.tutoapp.models.Model
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.row.view.*
 import kotlinx.android.synthetic.main.rvrow.view.*
+import kotlinx.android.synthetic.main.rvrow.view.cuota
+import kotlinx.android.synthetic.main.rvrow.view.image
+import kotlinx.android.synthetic.main.rvrow.view.textView1
+import kotlinx.android.synthetic.main.rvrow.view.textView2
+import kotlinx.android.synthetic.main.rvrow.view.textView3
+import kotlinx.android.synthetic.main.rvrow.view.ubicacion_solicitud
 
 class ListAdapter(private val context: Context) : RecyclerView.Adapter<ListAdapter.ListViewHolder>(), Filterable {
 
@@ -50,11 +57,19 @@ class ListAdapter(private val context: Context) : RecyclerView.Adapter<ListAdapt
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         fun bindView(tutor : Model){
-            Picasso.get().load(tutor.ruta).into(itemView.image)
-            itemView.textView1.text=tutor.name
-            itemView.textView2.text=tutor.lastname
-            itemView.ubicacion_solicitud.text = tutor.location
-            itemView.textView3.text=tutor.ocupacion
+            if(tutor.ruta == "0"){
+                itemView.image.setImageResource(R.drawable.ic_usuario)
+            }
+            else{
+                Picasso.get().load(tutor.ruta).into(itemView.image)
+            }
+            itemView.apply {
+                textView1.text=tutor.name
+                textView2.text=tutor.lastname
+                ubicacion_solicitud.text = tutor.location
+                textView3.text=tutor.ocupacion
+                cuota.text = "%.2f".format(tutor.cuota.toDouble())
+            }
         }
     }
 

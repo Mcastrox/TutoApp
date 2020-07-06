@@ -4,15 +4,16 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
+import com.example.tutoapp.models.Disciplina
+import com.example.tutoapp.models.Model
 import com.example.tutoapp.models.TutoriaModel
 import com.example.tutoapp.viewmodel.TutorViewModel
-import kotlinx.android.synthetic.main.activity_atributes.*
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class SolicitudActivity : AppCompatActivity() {
     private lateinit var txt_direccion: EditText
@@ -33,6 +34,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var seleccion: String
     private lateinit var correoEstudiante: String
     private lateinit var telefonoEstudiante: String
+    private lateinit var tutor: Model
 
 
     //lazy se usa para instanciar el objeto hasta que se necesite
@@ -92,7 +94,7 @@ class SolicitudActivity : AppCompatActivity() {
 
         btn_solicitar.setOnClickListener {
 
-            if (txt_notas.text.length < 50 ){
+            if (txt_notas.text.length < 20 ){
                 txt_notas.setError("Debe tener al menos 50 caracteres.")
             }
 
@@ -114,14 +116,19 @@ class SolicitudActivity : AppCompatActivity() {
     }
 
     fun initialize() {
+
+        tutor = intent.getSerializableExtra("tutor") as Model
+
         idEstudiante = intent.getStringExtra("idEstudiante")
         nombre_estudiante = intent.getStringExtra("nombre_estudiante")
         foto_estudiante = intent.getStringExtra("foto_estudiante")
-        idTutor = intent.getStringExtra("idTutor")
-        foto_tutor = intent.getStringExtra("foto_tutor")
         apellido_estudiante = intent.getStringExtra("apellido_estudiante")
-        nombre_tutor = intent.getStringExtra("nombre_tutor")
-        apellido_tutor = intent.getStringExtra("apellido_tutor")
+        correoEstudiante=intent.getStringExtra("correo_estudiante")
+        telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
+        idTutor = tutor.id
+        foto_tutor = tutor.ruta
+        nombre_tutor = tutor.name
+        apellido_tutor = tutor.lastname
         txt_direccion = findViewById(R.id.txt_direccion)
         sp_categoria = findViewById(R.id.sp_categoria)
         txt_fecha = findViewById(R.id.txt_fecha)
@@ -129,26 +136,18 @@ class SolicitudActivity : AppCompatActivity() {
         txt_notas = findViewById(R.id.notas_tutor)
         estado = "En espera"
         btn_solicitar = findViewById(R.id.action_solicitar)
-        correoEstudiante=intent.getStringExtra("correo_estudiante")
-        telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
 
         sp_categoria = findViewById(R.id.sp_categoria) as Spinner
-        val categorias = arrayOf("Arte","Idiomas","Matematicas","Diseño","Economia","Habilidades Sociales", "Fisica",
-            "Computacion","Quimica","Musica","Matematica Superior","Ciencias Sociales")
 
         selectedCategory()
 
-        sp_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias)
+        val categorias = initArray(tutor.listaDisciplina)
 
-        sp_categoria.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(p0: AdapterView<*>?) {
+        sp_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias!!)
 
-            }
-
-            override fun onItemSelected(parent: AdapterView<*>,
-                                        view: View, position: Int, id: Long) {
-
-            }
+        for(i in categorias!!.indices){
+            if(categorias[i].equals(seleccion))
+                sp_categoria.setSelection(i)
         }
 
     }
@@ -179,6 +178,16 @@ class SolicitudActivity : AppCompatActivity() {
         viewModel.postUserData(solicitud, idTutor, idEstudiante)
 
         Toast.makeText(this, "Solicitud enviada con exito", Toast.LENGTH_LONG).show()
+    }
+
+    private fun initArray(arrayList: ArrayList<Disciplina>?): Array<String?>? {
+        val arrayString = arrayList?.size?.let { arrayOfNulls<String>(it) }
+        if (arrayString != null) {
+            for(i in arrayString.indices){
+                arrayString[i] = arrayList[i].name
+            }
+        }
+        return arrayString
     }
 
 

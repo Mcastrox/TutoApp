@@ -143,14 +143,10 @@ class PseleccionadoActivity : AppCompatActivity() {
             intent.putExtra("nombre_estudiante", nombre_estudiante)
             intent.putExtra("apellido_estudiante", apellido_estudiante)
             intent.putExtra("foto_estudiante", url)
-            intent.putExtra("idTutor", tutor.id)
-            intent.putExtra("nombre_tutor",tutor.name)
-            intent.putExtra("apellido_tutor", tutor.lastname)
-            intent.putExtra("foto_tutor", tutor.ruta)
+            intent.putExtra("tutor",tutor)
             intent.putExtra("correo_estudiante",correo_estudiante)
             intent.putExtra("telefono_estudiante",telefono_estudiante)
             intent.putExtra("seleccion", seleccion)
-            //startActivity(Intent(this,SolicitudActivity::class.java))
             startActivity(intent)
         }
 
