@@ -56,6 +56,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     var rol: String = ""
                     var name: String = ""
                     var ruta: String = ""
+                    var cuota: String = "0.00"
                     var descripcion: String = ""
                     var categoria: String = eleccion
                     var listaDisciplina: ArrayList<Disciplina>  = arrayListOf<Disciplina>()
@@ -91,6 +92,9 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     }
                     if (e.child("urlImage").value != null) {
                         ruta = e.child("urlImage").value as String
+                    }
+                    if (e.child("cuota").exists()) {
+                        cuota = e.child("cuota").value as String
                     }
                     if (e.child("disciplinas").exists()) {
                         for (item in 0..11) {
@@ -139,7 +143,8 @@ class TutorFiltradoActivity : AppCompatActivity() {
                                     ruta,
                                     descripcion,
                                     listaDisciplina,
-                                    ratings
+                                    ratings,
+                                    cuota
                                 )
                             )
                         }

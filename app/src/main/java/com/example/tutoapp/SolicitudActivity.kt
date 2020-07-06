@@ -16,7 +16,7 @@ import java.util.*
 
 class SolicitudActivity : AppCompatActivity() {
     private lateinit var txt_direccion: EditText
-    private lateinit var txt_categoria: Spinner
+    private lateinit var sp_categoria: Spinner
     private lateinit var txt_fecha: EditText
     private lateinit var txt_hora: EditText
     private lateinit var txt_notas: EditText
@@ -43,26 +43,6 @@ class SolicitudActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitud)
-
-
-        txt_categoria = findViewById(R.id.txt_categoria) as Spinner
-        val categorias = arrayOf("Arte","Idiomas","Matematicas","Diseño","Economia","Habilidades Sociales", "Fisica",
-            "Computacion","Quimica","Musica","Matematica Superior","Ciencias Sociales")
-
-        txt_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias)
-
-        txt_categoria.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(p0: AdapterView<*>?) {
-
-            }
-
-            override fun onItemSelected(parent: AdapterView<*>,
-                                        view: View, position: Int, id: Long) {
-
-            }
-        }
-
-
 
 
         toolbar = findViewById(R.id.toolbar)
@@ -116,7 +96,7 @@ class SolicitudActivity : AppCompatActivity() {
                 txt_notas.setError("Debe tener al menos 50 caracteres.")
             }
 
-            if(txt_direccion.text.isNotEmpty() && txt_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
+            if(txt_direccion.text.isNotEmpty() && sp_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
                     txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50) {
 
                 crearSolicitud()
@@ -143,7 +123,7 @@ class SolicitudActivity : AppCompatActivity() {
         nombre_tutor = intent.getStringExtra("nombre_tutor")
         apellido_tutor = intent.getStringExtra("apellido_tutor")
         txt_direccion = findViewById(R.id.txt_direccion)
-        txt_categoria = findViewById(R.id.txt_categoria)
+        sp_categoria = findViewById(R.id.sp_categoria)
         txt_fecha = findViewById(R.id.txt_fecha)
         txt_hora = findViewById(R.id.txt_hora)
         txt_notas = findViewById(R.id.notas_tutor)
@@ -152,10 +132,24 @@ class SolicitudActivity : AppCompatActivity() {
         correoEstudiante=intent.getStringExtra("correo_estudiante")
         telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
 
+        sp_categoria = findViewById(R.id.sp_categoria) as Spinner
+        val categorias = arrayOf("Arte","Idiomas","Matematicas","Diseño","Economia","Habilidades Sociales", "Fisica",
+            "Computacion","Quimica","Musica","Matematica Superior","Ciencias Sociales")
 
         selectedCategory()
 
-        seleccion = txt_categoria.toString()
+        sp_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias)
+
+        sp_categoria.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>,
+                                        view: View, position: Int, id: Long) {
+
+            }
+        }
 
     }
 
@@ -165,7 +159,7 @@ class SolicitudActivity : AppCompatActivity() {
         var solicitud = TutoriaModel(
             id,
             txt_direccion.text.toString(),
-            txt_categoria.toString(),
+            sp_categoria.selectedItem.toString(),
             txt_fecha.text.toString(),
             txt_hora.text.toString(),
             txt_notas.text.toString(),

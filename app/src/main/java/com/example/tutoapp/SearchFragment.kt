@@ -95,6 +95,7 @@ class SearchFragment : Fragment() {
                     var rol: String = ""
                     var ruta: String = ""
                     var descripcion: String = ""
+                    var cuota: String = "0.00"
                     var listaDisciplina: ArrayList<Disciplina> = arrayListOf<Disciplina>()
                     var ratings: ArrayList<RatingModel>  = arrayListOf<RatingModel>()
                     var id: String = e.child("ID").value as String
@@ -130,6 +131,9 @@ class SearchFragment : Fragment() {
                     }
                     if (e.child("Descripcion").value != null) {
                         descripcion = e.child("Descripcion").value as String
+                    }
+                    if (e.child("cuota").exists()) {
+                        cuota = e.child("cuota").value as String
                     }
                     if (e.child("disciplinas").exists()) {
                         for (item in 0..11) {
@@ -175,7 +179,8 @@ class SearchFragment : Fragment() {
                                 ruta,
                                 descripcion,
                                 listaDisciplina,
-                                ratings
+                                ratings,
+                                cuota
                             )
                         )
                     }
