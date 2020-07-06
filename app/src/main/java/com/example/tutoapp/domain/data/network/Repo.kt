@@ -53,6 +53,7 @@ class Repo {
                 val foto_tutor : String? =document.getString("foto_tutor")
                 val correo_estudiante : String? =document.getString ("correoEstudiante")
                 val telefono_estudiante: String? = document.getString("telefonoEstudiante")
+                val hora1:String? = document.getString("hora1")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -70,7 +71,8 @@ class Repo {
                     apellido_tutor!!,
                     foto_tutor!!,
                     correo_estudiante!!,
-                    telefono_estudiante!!
+                    telefono_estudiante!!,
+                        hora1!!
                 )
                 listData.add(solicitud)
             }
@@ -107,6 +109,7 @@ class Repo {
                 val foto_tutor : String? =document.getString("foto_tutor")
                 val correo_estudiante : String? =document.getString ("correoEstudiante")
                 val telefono_estudiante: String? = document.getString("telefonoEstudiante")
+                val hora1:String? = document.getString("hora1")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -124,7 +127,8 @@ class Repo {
                     apellido_tutor!!,
                     foto_tutor!!,
                     correo_estudiante!!,
-                    telefono_estudiante!!
+                    telefono_estudiante!!,
+                        hora1!!
                 )
                 listData.add(solicitud)
             }

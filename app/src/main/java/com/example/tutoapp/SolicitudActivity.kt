@@ -35,6 +35,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var correoEstudiante: String
     private lateinit var telefonoEstudiante: String
     private lateinit var tutor: Model
+    private lateinit var txt_hora1 : EditText
 
 
     //lazy se usa para instanciar el objeto hasta que se necesite
@@ -91,6 +92,21 @@ class SolicitudActivity : AppCompatActivity() {
             ).show()
         }
 
+        txt_hora1.setOnClickListener {
+            val tp = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                c.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                c.set(Calendar.MINUTE, minute)
+                txt_hora1.setText(SimpleDateFormat("hh:mm a").format(c.time))
+            }
+            TimePickerDialog(
+                    this,
+                    tp,
+                    c.get(Calendar.HOUR_OF_DAY),
+                    c.get(Calendar.MINUTE),
+                    false
+            ).show()
+        }
+
 
         btn_solicitar.setOnClickListener {
 
@@ -99,7 +115,8 @@ class SolicitudActivity : AppCompatActivity() {
             }
 
             if(txt_direccion.text.isNotEmpty() && sp_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
-                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50) {
+                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50 &&
+                    txt_hora1.text.isNotEmpty()) {
 
                 crearSolicitud()
                 finish()
@@ -136,7 +153,7 @@ class SolicitudActivity : AppCompatActivity() {
         txt_notas = findViewById(R.id.notas_tutor)
         estado = "En espera"
         btn_solicitar = findViewById(R.id.action_solicitar)
-
+        txt_hora1 = findViewById(R.id.txt_hora1)
         sp_categoria = findViewById(R.id.sp_categoria) as Spinner
 
         selectedCategory()
@@ -172,7 +189,8 @@ class SolicitudActivity : AppCompatActivity() {
             apellido_tutor,
             foto_tutor,
             correoEstudiante,
-            telefonoEstudiante
+            telefonoEstudiante,
+                txt_hora1.text.toString()
         )
 
         viewModel.postUserData(solicitud, idTutor, idEstudiante)

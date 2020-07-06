@@ -71,6 +71,7 @@ class VerSolicitudActivity : AppCompatActivity() {
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
             tvMateria.text = solicitud.categoria
+           // horaTutoria.text = solicitud.hora1
 
             if(solicitud.estado.equals("En espera")){
                 rechazarTutoria.visibility = View.VISIBLE
