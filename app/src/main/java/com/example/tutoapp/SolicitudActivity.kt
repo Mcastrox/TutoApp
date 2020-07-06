@@ -4,9 +4,8 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.models.TutoriaModel
@@ -17,7 +16,7 @@ import java.util.*
 
 class SolicitudActivity : AppCompatActivity() {
     private lateinit var txt_direccion: EditText
-    private lateinit var txt_categoria: EditText
+    private lateinit var txt_categoria: Spinner
     private lateinit var txt_fecha: EditText
     private lateinit var txt_hora: EditText
     private lateinit var txt_notas: EditText
@@ -35,6 +34,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var correoEstudiante: String
     private lateinit var telefonoEstudiante: String
 
+
     //lazy se usa para instanciar el objeto hasta que se necesite
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
 
@@ -43,6 +43,27 @@ class SolicitudActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_solicitud)
+
+
+        txt_categoria = findViewById(R.id.txt_categoria) as Spinner
+        val categorias = arrayOf("Arte","Idiomas","Matematicas","Diseño","Economia","Habilidades Sociales", "Fisica",
+            "Computacion","Quimica","Musica","Matematica Superior","Ciencias Sociales")
+
+        txt_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias)
+
+        txt_categoria.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>,
+                                        view: View, position: Int, id: Long) {
+
+            }
+        }
+
+
+
 
         toolbar = findViewById(R.id.toolbar)
         toolbar?.setTitle(R.string.solicitud_txt)
@@ -95,7 +116,7 @@ class SolicitudActivity : AppCompatActivity() {
                 txt_notas.setError("Debe tener al menos 50 caracteres.")
             }
 
-            if(txt_direccion.text.isNotEmpty() && txt_categoria.text.isNotEmpty() && txt_fecha.text.isNotEmpty() &&
+            if(txt_direccion.text.isNotEmpty() && txt_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
                     txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50) {
 
                 crearSolicitud()
@@ -130,9 +151,11 @@ class SolicitudActivity : AppCompatActivity() {
         btn_solicitar = findViewById(R.id.action_solicitar)
         correoEstudiante=intent.getStringExtra("correo_estudiante")
         telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
+
+
         selectedCategory()
 
-        txt_categoria.setText(seleccion)
+        seleccion = txt_categoria.toString()
 
     }
 
@@ -142,7 +165,7 @@ class SolicitudActivity : AppCompatActivity() {
         var solicitud = TutoriaModel(
             id,
             txt_direccion.text.toString(),
-            txt_categoria.text.toString(),
+            txt_categoria.toString(),
             txt_fecha.text.toString(),
             txt_hora.text.toString(),
             txt_notas.text.toString(),

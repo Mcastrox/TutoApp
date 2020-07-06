@@ -43,7 +43,17 @@
         <activity android:name=".TutoriasActivity" />
         <activity
             android:name=".SolicitudActivity"
-            android:parentActivityName=".SearchFragment" />
+            android:parentActivityName=".SearchFragment" >
+
+            <intent-filter>
+
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".PseleccionadoActivity"
             android:parentActivityName=".SearchFragment" />
@@ -71,6 +81,7 @@
         <activity
             android:name=".SolicitudEnviada"
             tools:ignore="Instantiatable" />
+
 
         <meta-data
             android:name="preloaded_fonts"
