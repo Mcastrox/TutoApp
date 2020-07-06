@@ -2,12 +2,14 @@ package com.example.tutoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputFilter
 import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import com.example.tutoapp.components.MoneyFilter
 import com.example.tutoapp.models.Disciplina
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -19,29 +21,31 @@ import kotlinx.android.synthetic.main.activity_atributes.*
 
 class AtributesActivity : AppCompatActivity() {
 
-    lateinit var txtEducacion: EditText
-    lateinit var txtOcupacion: EditText
-    lateinit var txtDescripcion: EditText
-    lateinit var listaDisciplina: ArrayList<Disciplina>
-    lateinit var btnGuardar: Button
+    private lateinit var txtEducacion: EditText
+    private lateinit var txtOcupacion: EditText
+    private lateinit var txtDescripcion: EditText
+    private lateinit var listaDisciplina: ArrayList<Disciplina>
+    private lateinit var btnGuardar: Button
+    private lateinit var etCuota: EditText
+
 
     //check box
-    lateinit var cbdis1: CheckBox
-    lateinit var cbdis2: CheckBox
-    lateinit var cbdis3: CheckBox
-    lateinit var cbdis4: CheckBox
-    lateinit var cbdis5: CheckBox
-    lateinit var cbdis6: CheckBox
-    lateinit var cbdis7: CheckBox
-    lateinit var cbdis8: CheckBox
-    lateinit var cbdis9: CheckBox
-    lateinit var cbdis10: CheckBox
-    lateinit var cbdis11: CheckBox
-    lateinit var cbdis12: CheckBox
+    private lateinit var cbdis1: CheckBox
+    private lateinit var cbdis2: CheckBox
+    private lateinit var cbdis3: CheckBox
+    private lateinit var cbdis4: CheckBox
+    private lateinit var cbdis5: CheckBox
+    private lateinit var cbdis6: CheckBox
+    private lateinit var cbdis7: CheckBox
+    private lateinit var cbdis8: CheckBox
+    private lateinit var cbdis9: CheckBox
+    private lateinit var cbdis10: CheckBox
+    private lateinit var cbdis11: CheckBox
+    private lateinit var cbdis12: CheckBox
 
 
-    lateinit var uid: String
-    lateinit var auth: FirebaseAuth
+    private lateinit var uid: String
+    private lateinit var auth: FirebaseAuth
 
     var toolbar : Toolbar? = null
 
@@ -306,6 +310,9 @@ class AtributesActivity : AppCompatActivity() {
         this.cbdis11 = findViewById(R.id.categoria_matematicasSuperior)
         this.cbdis12 = findViewById(R.id.categoria_cienciasSociales)
         this.btnGuardar = findViewById(R.id.guardar_tutor)
+        this.etCuota = findViewById(R.id.cuota_tutoria)
+
+        etCuota.filters = arrayOf<InputFilter>(MoneyFilter(2,2));
 
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
@@ -328,6 +335,12 @@ class AtributesActivity : AppCompatActivity() {
                 val nivel = p0.child("nivel").value as String?
                 val desc = p0.child("Descripcion").value as String?
                 val ocupacion = p0.child("ocupacion").value as String?
+                val cuota = p0.child("cuota").value as String?
+
+                if(cuota!=null){
+                    val fCuota = cuota.toDouble()
+                    etCuota.setText("%.2f".format(fCuota))
+                }
 
                 txtEducacion.setText(nivel)
                 txtOcupacion.setText(ocupacion)
@@ -398,6 +411,7 @@ class AtributesActivity : AppCompatActivity() {
             referencia.child("nivel").setValue(txtEducacion.text.toString())
             referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
             referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
+            referencia.child("cuota").setValue(etCuota.text.toString())
             referencia.child("disciplinas").setValue(listaDisciplina)
             Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
 

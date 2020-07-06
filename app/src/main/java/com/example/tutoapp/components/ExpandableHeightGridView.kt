@@ -21,11 +21,7 @@ class ExpandableHeightGridView : GridView {
     }
 
     public override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        // HACK! TAKE THAT ANDROID!
         if (isExpanded) {
-            // Calculate entire height by providing a very large height hint.
-            // But do not use the highest 2 bits of this integer; those are
-            // reserved for the MeasureSpec mode.
             val expandSpec = MeasureSpec.makeMeasureSpec(
                 Int.MAX_VALUE shr 2, MeasureSpec.AT_MOST
             )
