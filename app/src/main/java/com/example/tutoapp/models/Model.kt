@@ -15,7 +15,8 @@ class Model(
     var ruta: String = "",
     var descripcion: String,
     var listaDisciplina: ArrayList<Disciplina>?,
-    var ratings: ArrayList<RatingModel>?
+    var ratings: ArrayList<RatingModel>?,
+    var cuota: String
 ): Serializable{
-    constructor(): this ("","","","","","","","",0,"","",null, null)
+    constructor(): this ("","","","","","","","",0,"","",null, null, "")
 }
