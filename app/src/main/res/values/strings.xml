@@ -99,4 +99,5 @@
     <string name="msg_date">Selecciona la fecha de tutoría.</string>
     <string name="msg_hora">Escoge la hora inicial de la tutoría.</string>
     <string name="msg_hora1">Escoge la hora final de la tutoría.</string>
+    <string name="description_ocupation">Labor o puesto de trabajo</string>
 </resources>

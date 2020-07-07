@@ -318,9 +318,6 @@ class AtributesActivity : AppCompatActivity() {
         val user: FirebaseUser? = auth.currentUser
         uid = user?.uid!!
 
-        Log.d("Uid-Usuario", uid.toString())
-        //this.txtEducacion.text = uid.toString()
-
         val ref = FirebaseDatabase.getInstance().getReference("Users")
         val userRef = ref.child(user?.uid!!)
 

@@ -171,9 +171,128 @@
                             android:layout_marginTop="@dimen/small_margin"
                             android:fontFamily="@font/roboto"
                             android:minLines="5"
-                            android:padding="@dimen/small_margin"
                             android:textSize="@dimen/normal_text"
                             tools:text="Notas" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card1"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/small_margin">
+
+                        <TextView
+                            android:id="@+id/label_estado"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Estado"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/small_margin"
+                            android:layout_marginEnd="@dimen/small_margin"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="@dimen/normal_text"
+                            tools:text="estado" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card3"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    app:cardBackgroundColor="@color/light"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="end"
+                        android:padding="@dimen/small_margin">
+
+                        <TextView
+                            android:id="@+id/label_monto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/small_margin"
+                            android:fontFamily="@font/roboto"
+                            android:text="Monto Total"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/monto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="@dimen/normal_text"
+                            android:textStyle="bold"
+                            tools:text="monto" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card4"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/myRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="@dimen/small_margin">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Califica al tutor"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <RatingBar
+                            android:id="@+id/rating1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:scaleX="0.75"
+                            android:scaleY="0.75"
+                            android:theme="@style/RatingBar" />
+
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
