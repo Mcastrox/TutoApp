@@ -1,5 +1,6 @@
 package com.example.tutoapp
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
@@ -33,7 +34,6 @@ class VerSolicitudActivity : AppCompatActivity() {
     private lateinit var idSolicitud: String
     private lateinit var correoEstudiante: String
     private lateinit var telefonoEstudiante: String
-    private lateinit var dialog:Button
     private var estadoSolicitud : Array<String> = arrayOf("Aceptada","Rechazada")
     private val viewModel by lazy { ViewModelProvider(this).get(TutorViewModel::class.java) }
 
@@ -55,6 +55,7 @@ class VerSolicitudActivity : AppCompatActivity() {
 
     }
 
+    @SuppressLint("SetTextI18n")
     fun initialize() {
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
 
@@ -71,6 +72,8 @@ class VerSolicitudActivity : AppCompatActivity() {
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
             tvMateria.text = solicitud.categoria
+            monto.text = solicitud.cuota_total
+            duracion.text = solicitud.duracion + " h"
 
             if(solicitud.estado.equals("En espera")){
                 rechazarTutoria.visibility = View.VISIBLE

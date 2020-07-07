@@ -1,5 +1,6 @@
 package com.example.tutoapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.RatingBar
@@ -25,6 +26,7 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVerSolicitudEnviadaBinding
     private var value: Float = 0.0f
+    private var avg : Float = 0.0f
     var toolbar: Toolbar? = null
 
 
@@ -43,6 +45,7 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
         initialize()
     }
 
+    @SuppressLint("SetTextI18n")
     fun initialize() {
 
         val solicitud = intent.getSerializableExtra("solicitud") as TutoriaModel
@@ -56,29 +59,14 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
             notasTutoria.text = solicitud.nota
             status.text = solicitud.estado
             monto.text = solicitud.cuota_total
+            duracion.text = solicitud.duracion + " h"
 
-
-            if (status.equals("En espera")) {
-                status.setTextColor(
-                    ContextCompat.getColor(
-                        this@VerSolicitudEnviadaActivity,
-                        R.color.yellow
-                    )
-                )
-            } else if (status.equals("Rechazada")) {
-                status.setTextColor(
-                    ContextCompat.getColor(
-                        this@VerSolicitudEnviadaActivity,
-                        R.color.redBrick
-                    )
-                )
-            } else if (status.equals("Aceptada")) {
-                status.setTextColor(
-                    ContextCompat.getColor(
-                        this@VerSolicitudEnviadaActivity,
-                        R.color.green
-                    )
-                )
+            if (status.text == "En espera") {
+                status.setTextColor(getColor(R.color.yellow))
+            } else if (status.text == "Rechazada") {
+                status.setTextColor(getColor(R.color.redBrick))
+            } else if (status.text == "Aceptada") {
+                status.setTextColor(getColor(R.color.green))
             }
 
             var modelDialog = AlertDialog.Builder(this@VerSolicitudEnviadaActivity)
@@ -106,15 +94,18 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
+
                     var ratings = arrayListOf<RatingModel>()
                     if (p0.child("ratings").exists()) {
                         val count: Long = p0.child("ratings").childrenCount - 1
-
                         for (item in 0..count) {
                             val value =
                                 p0.child("ratings").child("$item").child("value").value as String
                             ratings.add(RatingModel(value))
                         }
+
+                        AverageRating( ratings )
+
                     }
 
                     myRate.setOnClickListener {
@@ -128,6 +119,10 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
                             ratings?.add(RatingModel(value.toString()))
                             tutorRef.child("ratings").setValue(ratings)
                             alert_dialog.dismiss()
+                            finish();
+                            overridePendingTransition(0, 0);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
                         }
 
                     }
@@ -138,6 +133,18 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
         }
 
         Picasso.get().load(solicitud.foto_tutor).into(binding.fotoTutor)
+
+    }
+
+    private fun AverageRating(ratings: ArrayList<RatingModel>?){
+
+        if (ratings != null) {
+            for( rating in ratings){
+                avg += rating.value!!.toFloat() / ratings.size
+            }
+        }
+
+        rating1.rating = avg
 
     }
 

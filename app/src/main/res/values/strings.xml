@@ -80,7 +80,7 @@
     <string name="ex_ubication">(ex. Santa Ana, Santa Ana)</string>
     <string name="chat">Chat</string>
     <string name="password_actual">Contraseña actual</string>
-    <string name="hora_text">Hora Solicitada</string>
+    <string name="hora_text">Tiempo Solicitado</string>
     <string name="date_text">Fecha Solicitada</string>
     <string name="ver_solicitud_enviada_txt">Solicitud Enviada</string>
     <string name="solicitud_enviada_txt">Solicitudes enviadas</string>
@@ -100,4 +100,5 @@
     <string name="msg_hora">Escoge la hora inicial de la tutoría.</string>
     <string name="msg_hora1">Elige la cantidad de horas que quieres que dure la tutoría.</string>
     <string name="description_ocupation">Labor o puesto de trabajo</string>
+    <string name="guion">-</string>
 </resources>

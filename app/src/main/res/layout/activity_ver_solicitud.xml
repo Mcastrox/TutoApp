@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".VerSolicitudActivity">
+    tools:context=".VerSolicitudEnviadaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:navigationIcon="@drawable/ic_keyboard_arrow_left"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/ver_solicitud_txt" />
+            app:title="@string/ver_solicitud_enviada_txt" />
 
         <ScrollView
             android:layout_width="wrap_content"
@@ -29,132 +29,229 @@
                 android:layout_height="match_parent"
                 android:padding="@dimen/medium_margin">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/foto_estudiante"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_margin="@dimen/small_margin"
-                    android:background="@drawable/ic_usuario" />
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="match_parent"
+                    app:cardBackgroundColor="@color/light"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/nombre_estudiante"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/foto_estudiante"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="@dimen/subtitle_text"
-                    android:textStyle="bold"
-                    tools:text="Name" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/ubicacion_solicitud"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/nombre_estudiante"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:drawableStart="@drawable/ic_place_grey"
-                    android:fontFamily="@font/roboto"
-                    android:textColor="@color/soft_grey"
-                    android:textSize="@dimen/small_text"
-                    tools:text="Ubicacion" />
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/foto_estudiante"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="@dimen/small_margin"
+                            android:background="@drawable/ic_usuario"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="0dp" />
 
-                <TextView
-                    android:id="@+id/label_materia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/ubicacion_solicitud"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/label_materia_txt"
-                    android:textColor="@color/redBrick"
-                    android:textSize="@dimen/subtitle_text" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center|start"
+                            android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/tv_materia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/label_materia"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="@dimen/normal_text"
-                    tools:text="Materia" />
+                            <TextView
+                                android:id="@+id/nombre_estudiante"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:textColor="@color/blackMate"
+                                android:textSize="@dimen/subtitle_text"
+                                android:textStyle="bold"
+                                tools:text="Name" />
 
-                <TextView
-                    android:id="@+id/label_fecha"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tv_materia"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/label_fecha_txt"
-                    android:textColor="@color/redBrick"
-                    android:textSize="@dimen/subtitle_text" />
+                            <TextView
+                                android:id="@+id/ubicacion_solicitud"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/small_margin"
+                                android:drawableStart="@drawable/ic_place_grey"
+                                android:fontFamily="@font/roboto"
+                                android:textColor="@color/soft_grey"
+                                android:textSize="@dimen/normal_text"
+                                tools:text="Ubicacion" />
 
-                <LinearLayout
-                    android:id="@+id/fecha_container"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/label_fecha"
-                    android:layout_centerHorizontal="true"
-                    android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/tv_materia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/medium_margin"
+                                android:fontFamily="@font/roboto"
+                                android:textColor="@color/redBrick"
+                                android:textSize="@dimen/title_text"
+                                android:textStyle="bold"
+                                tools:text="Materia" />
 
-                    <TextView
-                        android:id="@+id/fecha_tutoria"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/small_margin"
-                        android:fontFamily="@font/roboto"
-                        android:textSize="@dimen/normal_text"
-                        tools:text="Fecha" />
+                        </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/hora_tutoria"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto"
-                        android:textSize="@dimen/normal_text"
-                        tools:text="Hora" />
+                    </LinearLayout>
 
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/label_notas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/fecha_container"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:fontFamily="@font/roboto"
-                    android:text="@string/label_notas_txt"
-                    android:textColor="@color/redBrick"
-                    android:textSize="@dimen/subtitle_text" />
+                </androidx.cardview.widget.CardView>
 
 
-                <TextView
-                    android:id="@+id/notas_tutoria"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/label_notas"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="@dimen/small_margin"
-                    android:background="@drawable/tv_red_border"
-                    android:fontFamily="@font/roboto"
-                    android:minLines="5"
-                    android:padding="@dimen/small_margin"
-                    android:textSize="@dimen/normal_text"
-                    tools:text="Notas" />
+                    android:layout_below="@+id/card"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/medium_margin">
+
+                        <TextView
+                            android:id="@+id/label_fecha"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/date_text"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/fecha_tutoria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:layout_marginEnd="@dimen/small_margin"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="@dimen/normal_text"
+                            tools:text="Fecha" />
+
+
+                        <TextView
+                            android:id="@+id/label_hora"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/hora_text"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/hora_tutoria"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto"
+                                android:textSize="@dimen/normal_text"
+                                tools:text="Hora" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_margin"
+                                android:fontFamily="@font/roboto"
+                                android:textSize="@dimen/normal_text"
+                                android:text="@string/guion"
+                                />
+
+                            <TextView
+                                android:id="@+id/duracion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_margin"
+                                android:fontFamily="@font/roboto"
+                                android:textSize="@dimen/normal_text"
+                                tools:text="Hora" />
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/label_notas"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hora_tutoria"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/medium_margin"
+                            android:fontFamily="@font/roboto"
+                            android:text="@string/label_notas_txt"
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/notas_tutoria"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/small_margin"
+                            android:fontFamily="@font/roboto"
+                            android:minLines="4"
+                            android:textSize="@dimen/normal_text"
+                            tools:text="Notas" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card1"
+                    android:layout_marginTop="@dimen/medium_margin"
+                    app:cardBackgroundColor="@color/light"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/small_margin">
+
+                        <TextView
+                            android:id="@+id/label_monto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/small_margin"
+                            android:fontFamily="@font/roboto"
+                            android:text="Monto Total: "
+                            android:textColor="@color/blackMate"
+                            android:textSize="@dimen/subtitle_text"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/monto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:textSize="@dimen/normal_text"
+                            android:textStyle="bold"
+                            tools:text="monto" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <Button
                     android:id="@+id/aceptar_tutoria"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/notas_tutoria"
+                    android:layout_below="@id/card3"
                     android:layout_marginTop="@dimen/big_margin"
                     android:layout_marginBottom="@dimen/small_margin"
                     android:background="@drawable/button"
@@ -182,7 +279,7 @@
 
                 <TextView
                     android:id="@+id/message_reject"
-                    android:layout_below="@id/notas_tutoria"
+                    android:layout_below="@id/card3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/medium_margin"
@@ -196,7 +293,7 @@
 
                 <LinearLayout
                     android:id="@+id/message_accept"
-                    android:layout_below="@id/notas_tutoria"
+                    android:layout_below="@id/card3"
                     android:layout_marginTop="@dimen/medium_margin"
                     android:layout_width="match_parent"
                     android:gravity="center"
@@ -227,8 +324,9 @@
 
                 </LinearLayout>
 
-
             </RelativeLayout>
         </ScrollView>
+
     </LinearLayout>
 </layout>
+

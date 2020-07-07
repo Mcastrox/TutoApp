@@ -100,21 +100,20 @@ class SolicitudActivity : AppCompatActivity() {
 
         btn_solicitar.setOnClickListener {
 
-            if (txt_notas.text.length < 20) {
-                txt_notas.setError("Debe tener al menos 20 caracteres.")
-            }
-
             if (txt_direccion.text.isNotEmpty() && sp_categoria.toString()
                     .isNotEmpty() && txt_fecha.text.isNotEmpty() &&
-                txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 20 &&
+                txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() &&
                 sp_horas.selectedItem.toString() != ""
             ) {
 
-                crearSolicitud()
-                finish()
+                if(txt_notas.text.length >= 20){
+                    crearSolicitud()
+                    finish()
+                }else {
+                    txt_notas.setError("Debe tener al menos 20 caracteres.")
+                }
 
             } else {
-
                 Toast.makeText(this, "Por favor rellene todos los campos", Toast.LENGTH_LONG).show()
 
             }

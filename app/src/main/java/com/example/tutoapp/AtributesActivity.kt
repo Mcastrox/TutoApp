@@ -397,22 +397,21 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun guardar() {
 
-        if (textDescripcion.text.length < 20) {
-            txtDescripcion.setError("La descripcion debe tener al menos 20 caracteres.")
-        }
+        if (txtDescripcion.text.isNotEmpty() && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty() && etCuota.text.isNotEmpty()) {
 
-        if (txtDescripcion.text.isNotEmpty() && txtDescripcion.text.length >= 50 && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
-
-            val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
-            referencia.child("Rol").setValue("Tutor")
-            referencia.child("nivel").setValue(txtEducacion.text.toString())
-            referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
-            referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
-            referencia.child("cuota").setValue(etCuota.text.toString())
-            referencia.child("disciplinas").setValue(listaDisciplina)
-            Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
-
-            finish()
+            if(txtDescripcion.text.length >= 50){
+                val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
+                referencia.child("Rol").setValue("Tutor")
+                referencia.child("nivel").setValue(txtEducacion.text.toString())
+                referencia.child("ocupacion").setValue(txtOcupacion.text.toString())
+                referencia.child("Descripcion").setValue(txtDescripcion.text.toString())
+                referencia.child("cuota").setValue(etCuota.text.toString())
+                referencia.child("disciplinas").setValue(listaDisciplina)
+                Toast.makeText(this, "Guardado con exito", Toast.LENGTH_LONG).show()
+                finish()
+            }else {
+                txtDescripcion.setError("La descripcion debe tener al menos 50 caracteres.")
+            }
 
         } else {
             Toast.makeText(this, "Por favor rellenar todos los campos", Toast.LENGTH_LONG).show()
