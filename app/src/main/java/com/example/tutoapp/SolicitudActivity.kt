@@ -5,6 +5,7 @@ import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputFilter
+import android.util.Log
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.isNotEmpty
@@ -38,6 +39,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var telefonoEstudiante: String
     private lateinit var tutor: Model
     private lateinit var sp_horas: Spinner
+    private lateinit var cuota_total : String
 
 
     //lazy se usa para instanciar el objeto hasta que se necesite
@@ -149,10 +151,10 @@ class SolicitudActivity : AppCompatActivity() {
 
         val categorias = initArray(tutor.listaDisciplina)
 
-        sp_horas.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayListOf<String>("1:00","2:00","3:00","4:00","5:00","6:00","7:00", "8:00"))
+        sp_horas.adapter = ArrayAdapter(this, R.layout.item_spinner, arrayListOf<String>("1:00","2:00","3:00","4:00","5:00","6:00","7:00", "8:00"))
 
         sp_categoria.adapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_item, categorias!!)
+            ArrayAdapter(this, R.layout.item_spinner, categorias!!)
 
         for (i in categorias!!.indices) {
             if (categorias[i].equals(seleccion))
@@ -163,6 +165,8 @@ class SolicitudActivity : AppCompatActivity() {
 
     private fun crearSolicitud() {
         var id = UUID.randomUUID().toString()
+
+        cuota_total = amountCalc(sp_horas.selectedItem.toString(),tutor.cuota.toDouble())
 
         var solicitud = TutoriaModel(
             id,
@@ -182,7 +186,8 @@ class SolicitudActivity : AppCompatActivity() {
             foto_tutor,
             correoEstudiante,
             telefonoEstudiante,
-            sp_horas.selectedItem.toString()
+            sp_horas.selectedItem.toString(),
+            cuota_total
         )
 
         viewModel.postUserData(solicitud, idTutor, idEstudiante)
@@ -200,6 +205,14 @@ class SolicitudActivity : AppCompatActivity() {
         return arrayString
     }
 
+    private fun amountCalc(duration: String, cuota: Double):String{
+        var amount = "$0.00"
+
+        var durationDouble = duration[0].toString().toInt() * cuota
+        amount = "%.2f".format(durationDouble)
+
+        return amount
+    }
 
     private fun selectedCategory() {
         when (intent.getStringExtra("seleccion")) {

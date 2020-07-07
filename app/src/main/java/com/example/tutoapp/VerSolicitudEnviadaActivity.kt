@@ -55,6 +55,8 @@ class VerSolicitudEnviadaActivity : AppCompatActivity() {
             horaTutoria.text = solicitud.hora
             notasTutoria.text = solicitud.nota
             status.text = solicitud.estado
+            monto.text = solicitud.cuota_total
+
 
             if (status.equals("En espera")) {
                 status.setTextColor(
