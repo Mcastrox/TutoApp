@@ -68,7 +68,7 @@ class ListAdapter(private val context: Context) : RecyclerView.Adapter<ListAdapt
                 textView2.text=tutor.lastname
                 ubicacion_solicitud.text = tutor.location
                 textView3.text=tutor.ocupacion
-                cuota.text = "%.2f".format(tutor.cuota.toDouble())
+                cuota.text = "$" + "%.2f".format(tutor.cuota.toDouble())
             }
         }
     }

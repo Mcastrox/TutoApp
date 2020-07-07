@@ -21,7 +21,7 @@ class TutorAdapter(private val mContext: Context , private val listaTutores : Li
             textView2.text=tutor.lastname
             ubicacion_solicitud.text = tutor.location
             textView3.text=tutor.ocupacion
-            cuota.text = "%.2f".format(tutor.cuota.toDouble())
+            cuota.text = "$"+"%.2f".format(tutor.cuota.toDouble())
         }
 
         if(tutor.ruta == "0"){

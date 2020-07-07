@@ -12,6 +12,7 @@ import com.example.tutoapp.adapter.TutorAdapter
 import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
 import com.example.tutoapp.models.RatingModel
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -125,7 +126,7 @@ class TutorFiltradoActivity : AppCompatActivity() {
                     }
 
 
-                    if (rol == "Tutor") {
+                    if (rol == "Tutor" && id != FirebaseAuth.getInstance().currentUser?.uid) {
                         if (e.child("disciplinas").child("${categoria}")
                                 .child("seleccionado").value == true
                         ) {
