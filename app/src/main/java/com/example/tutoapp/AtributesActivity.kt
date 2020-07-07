@@ -47,7 +47,7 @@ class AtributesActivity : AppCompatActivity() {
     private lateinit var uid: String
     private lateinit var auth: FirebaseAuth
 
-    var toolbar : Toolbar? = null
+    var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -312,7 +312,7 @@ class AtributesActivity : AppCompatActivity() {
         this.btnGuardar = findViewById(R.id.guardar_tutor)
         this.etCuota = findViewById(R.id.cuota_tutoria)
 
-        etCuota.filters = arrayOf<InputFilter>(MoneyFilter(2,2));
+        etCuota.filters = arrayOf<InputFilter>(MoneyFilter(2, 2));
 
         auth = FirebaseAuth.getInstance()
         val user: FirebaseUser? = auth.currentUser
@@ -334,7 +334,7 @@ class AtributesActivity : AppCompatActivity() {
                 val ocupacion = p0.child("ocupacion").value as String?
                 val cuota = p0.child("cuota").value as String?
 
-                if(cuota!=null){
+                if (cuota != null) {
                     val fCuota = cuota.toDouble()
                     etCuota.setText("%.2f".format(fCuota))
                 }
@@ -397,11 +397,11 @@ class AtributesActivity : AppCompatActivity() {
 
     private fun guardar() {
 
-        if (textDescripcion.text.length < 50 ){
-            txtDescripcion.setError("La descripcion debe tener al menos 50 caracteres.")
+        if (textDescripcion.text.length < 20) {
+            txtDescripcion.setError("La descripcion debe tener al menos 20 caracteres.")
         }
 
-        if(txtDescripcion.text.isNotEmpty() && txtDescripcion.text.length >= 50  && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
+        if (txtDescripcion.text.isNotEmpty() && txtDescripcion.text.length >= 50 && txtEducacion.text.isNotEmpty() && txtOcupacion.text.isNotEmpty()) {
 
             val referencia = FirebaseDatabase.getInstance().getReference("Users").child(uid)
             referencia.child("Rol").setValue("Tutor")
@@ -414,8 +414,8 @@ class AtributesActivity : AppCompatActivity() {
 
             finish()
 
-        }else {
-            Toast.makeText(this,"Por favor rellenar todos los campos",Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(this, "Por favor rellenar todos los campos", Toast.LENGTH_LONG).show()
         }
     }
 }

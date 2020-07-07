@@ -28,7 +28,7 @@ class Change_password : AppCompatActivity() {
     private lateinit var etnew_pass: EditText
     private lateinit var etconfirm_pass: EditText
 
-    var toolbar : Toolbar? = null
+    var toolbar: Toolbar? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class Change_password : AppCompatActivity() {
         var actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        modificar_info.setOnClickListener{
+        modificar_info.setOnClickListener {
             changePassword()
         }
 
@@ -56,7 +56,7 @@ class Change_password : AppCompatActivity() {
 
     private fun changePassword() {
 
-        if (etnew_pass.text.length < 6 ){
+        if (etnew_pass.text.length < 6) {
             etnew_pass.setError("La contraseña debe tener al menos 6 caracteres.")
         }
 
@@ -88,7 +88,11 @@ class Change_password : AppCompatActivity() {
                                         }
                                     }
                             } else {
-                                Toast.makeText(this, "Contraseña actual incorrecta.", Toast.LENGTH_LONG)
+                                Toast.makeText(
+                                    this,
+                                    "Contraseña actual incorrecta.",
+                                    Toast.LENGTH_LONG
+                                )
                                     .show()
                             }
                         }
@@ -97,7 +101,7 @@ class Change_password : AppCompatActivity() {
                 etconfirm_pass.setError("Las contraseñas no son iguales.")
                 etconfirm_pass.text.clear()
             }
-        }else {
+        } else {
             Toast.makeText(this, "Por favor llene todos los campos.", Toast.LENGTH_LONG).show()
         }
     }
