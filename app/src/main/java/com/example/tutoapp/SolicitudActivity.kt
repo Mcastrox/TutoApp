@@ -4,8 +4,10 @@ import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputFilter
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.isNotEmpty
 import androidx.lifecycle.ViewModelProvider
 import com.example.tutoapp.models.Disciplina
 import com.example.tutoapp.models.Model
@@ -35,7 +37,7 @@ class SolicitudActivity : AppCompatActivity() {
     private lateinit var correoEstudiante: String
     private lateinit var telefonoEstudiante: String
     private lateinit var tutor: Model
-    private lateinit var txt_hora1 : EditText
+    private lateinit var sp_horas: Spinner
 
 
     //lazy se usa para instanciar el objeto hasta que se necesite
@@ -92,42 +94,29 @@ class SolicitudActivity : AppCompatActivity() {
             ).show()
         }
 
-        txt_hora1.setOnClickListener {
-            val tp = TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                c.set(Calendar.HOUR_OF_DAY, hourOfDay)
-                c.set(Calendar.MINUTE, minute)
-                txt_hora1.setText(SimpleDateFormat("hh:mm a").format(c.time))
-            }
-            TimePickerDialog(
-                    this,
-                    tp,
-                    c.get(Calendar.HOUR_OF_DAY),
-                    c.get(Calendar.MINUTE),
-                    false
-            ).show()
-        }
 
 
         btn_solicitar.setOnClickListener {
 
-            if (txt_notas.text.length < 20 ){
+            if (txt_notas.text.length < 20) {
                 txt_notas.setError("Debe tener al menos 20 caracteres.")
             }
 
-            if(txt_direccion.text.isNotEmpty() && sp_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
-                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 20 &&
-                    txt_hora1.text.isNotEmpty()) {
+            if (txt_direccion.text.isNotEmpty() && sp_categoria.toString()
+                    .isNotEmpty() && txt_fecha.text.isNotEmpty() &&
+                txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 20 &&
+                sp_horas.selectedItem.toString() != ""
+            ) {
 
                 crearSolicitud()
                 finish()
 
-            }else{
+            } else {
 
                 Toast.makeText(this, "Por favor rellene todos los campos", Toast.LENGTH_LONG).show()
 
             }
         }
-
 
 
     }
@@ -140,8 +129,8 @@ class SolicitudActivity : AppCompatActivity() {
         nombre_estudiante = intent.getStringExtra("nombre_estudiante")
         foto_estudiante = intent.getStringExtra("foto_estudiante")
         apellido_estudiante = intent.getStringExtra("apellido_estudiante")
-        correoEstudiante=intent.getStringExtra("correo_estudiante")
-        telefonoEstudiante=intent.getStringExtra("telefono_estudiante")
+        correoEstudiante = intent.getStringExtra("correo_estudiante")
+        telefonoEstudiante = intent.getStringExtra("telefono_estudiante")
         idTutor = tutor.id
         foto_tutor = tutor.ruta
         nombre_tutor = tutor.name
@@ -153,17 +142,20 @@ class SolicitudActivity : AppCompatActivity() {
         txt_notas = findViewById(R.id.notas_tutor)
         estado = "En espera"
         btn_solicitar = findViewById(R.id.action_solicitar)
-        txt_hora1 = findViewById(R.id.txt_hora1)
-        sp_categoria = findViewById(R.id.sp_categoria) as Spinner
+        sp_horas = findViewById(R.id.sp_horas)
+        sp_categoria = findViewById(R.id.sp_categoria)
 
         selectedCategory()
 
         val categorias = initArray(tutor.listaDisciplina)
 
-        sp_categoria.adapter = ArrayAdapter(this,android.R.layout.simple_spinner_item,categorias!!)
+        sp_horas.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayListOf<String>("1:00","2:00","3:00","4:00","5:00","6:00","7:00", "8:00"))
 
-        for(i in categorias!!.indices){
-            if(categorias[i].equals(seleccion))
+        sp_categoria.adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, categorias!!)
+
+        for (i in categorias!!.indices) {
+            if (categorias[i].equals(seleccion))
                 sp_categoria.setSelection(i)
         }
 
@@ -190,7 +182,7 @@ class SolicitudActivity : AppCompatActivity() {
             foto_tutor,
             correoEstudiante,
             telefonoEstudiante,
-                txt_hora1.text.toString()
+            sp_horas.selectedItem.toString()
         )
 
         viewModel.postUserData(solicitud, idTutor, idEstudiante)
@@ -201,7 +193,7 @@ class SolicitudActivity : AppCompatActivity() {
     private fun initArray(arrayList: ArrayList<Disciplina>?): Array<String?>? {
         val arrayString = arrayList?.size?.let { arrayOfNulls<String>(it) }
         if (arrayString != null) {
-            for(i in arrayString.indices){
+            for (i in arrayString.indices) {
                 arrayString[i] = arrayList[i].name
             }
         }

@@ -41,7 +41,7 @@
     <string name="category_txt">Categoría</string>
     <string name="date_txt">Fecha</string>
     <string name="time_txt">Selecciona la hora inicial</string>
-    <string name="time_txt1">Selecciona la hora final</string>
+    <string name="time_txt1">Duración de la tutoría</string>
     <string name="notas_tutor_txt">Escríbele una nota al tutor</string>
     <string name="txt_tutor_button">Quiero ser tutor</string>
     <string name="txt_tutor_subtitle">Completa nuestro formulario presionando aquí</string>
@@ -98,6 +98,6 @@
     <string name="msg_categoria">Elige la categoría de tu interés.</string>
     <string name="msg_date">Selecciona la fecha de tutoría.</string>
     <string name="msg_hora">Escoge la hora inicial de la tutoría.</string>
-    <string name="msg_hora1">Escoge la hora final de la tutoría.</string>
+    <string name="msg_hora1">Elige la cantidad de horas que quieres que dure la tutoría.</string>
     <string name="description_ocupation">Labor o puesto de trabajo</string>
 </resources>

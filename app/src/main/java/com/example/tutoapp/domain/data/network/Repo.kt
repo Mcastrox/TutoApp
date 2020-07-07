@@ -12,48 +12,58 @@ class Repo {
     fun postUserData(tutoria: TutoriaModel, idTutor: String, idEstudiante: String): Int {
         var db = FirebaseFirestore.getInstance().collection("Usuarios")
         db.document(idTutor).collection("SolicitudesRecibidas").document(tutoria.id).set(tutoria)
-        db.document(idEstudiante).collection("SolicitudesEnviadas").document(tutoria.id).set(tutoria)
+        db.document(idEstudiante).collection("SolicitudesEnviadas").document(tutoria.id)
+            .set(tutoria)
         return 1
     }
 
-    fun updateSolicitud(idTutor: String, idEstudiante: String, idSolicitud: String, nuevoEstado: String){
+    fun updateSolicitud(
+        idTutor: String,
+        idEstudiante: String,
+        idSolicitud: String,
+        nuevoEstado: String
+    ) {
         var db = FirebaseFirestore.getInstance().collection("Usuarios")
-        db.document(idTutor).collection("SolicitudesRecibidas").document(idSolicitud).update(mapOf(
-            "estado" to nuevoEstado
-        ))
-        db.document(idEstudiante).collection("SolicitudesEnviadas").document(idSolicitud).update(mapOf(
-            "estado" to nuevoEstado
-        ))
+        db.document(idTutor).collection("SolicitudesRecibidas").document(idSolicitud).update(
+            mapOf(
+                "estado" to nuevoEstado
+            )
+        )
+        db.document(idEstudiante).collection("SolicitudesEnviadas").document(idSolicitud).update(
+            mapOf(
+                "estado" to nuevoEstado
+            )
+        )
     }
 
-    fun getUserSolicitud(idTutor: String) : LiveData<MutableList<TutoriaModel>>{
+    fun getUserSolicitud(idTutor: String): LiveData<MutableList<TutoriaModel>> {
 
         val mutableData = MutableLiveData<MutableList<TutoriaModel>>()
 
         var db = FirebaseFirestore.getInstance().collection("Usuarios")
             .document(idTutor).collection("SolicitudesRecibidas")
 
-        db.get().addOnSuccessListener { result->
-            val listData : MutableList<TutoriaModel> = mutableListOf<TutoriaModel>()
-            for(document in result){
-                val id:String ? = document.getString("id")
-                val direccion:String ? = document.getString("direccion")
-                val categoria:String ? = document.getString("categoria")
-                val fecha:String ? = document.getString("fecha")
-                val hora:String ? = document.getString("hora")
-                val nota:String ? = document.getString("nota")
-                val solicitante:String ? = document.getString("solicitante")
-                val tutorSolicitado:String ? = document.getString("tutorSolicitado")
+        db.get().addOnSuccessListener { result ->
+            val listData: MutableList<TutoriaModel> = mutableListOf<TutoriaModel>()
+            for (document in result) {
+                val id: String? = document.getString("id")
+                val direccion: String? = document.getString("direccion")
+                val categoria: String? = document.getString("categoria")
+                val fecha: String? = document.getString("fecha")
+                val hora: String? = document.getString("hora")
+                val nota: String? = document.getString("nota")
+                val solicitante: String? = document.getString("solicitante")
+                val tutorSolicitado: String? = document.getString("tutorSolicitado")
                 val estado: String? = document.getString("estado")
-                val nombre_estudiante : String ? =document.getString("nombre_estudiante")
-                val apellido_estudiante : String ? = document.getString("apellido_estudiante")
-                val nombre_tutor : String ? =document.getString("nombre_tutor")
-                val apellido_tutor : String ? = document.getString("apellido_tutor")
-                val foto_estudiante : String? =document.getString("foto_estudiante")
-                val foto_tutor : String? =document.getString("foto_tutor")
-                val correo_estudiante : String? =document.getString ("correoEstudiante")
+                val nombre_estudiante: String? = document.getString("nombre_estudiante")
+                val apellido_estudiante: String? = document.getString("apellido_estudiante")
+                val nombre_tutor: String? = document.getString("nombre_tutor")
+                val apellido_tutor: String? = document.getString("apellido_tutor")
+                val foto_estudiante: String? = document.getString("foto_estudiante")
+                val foto_tutor: String? = document.getString("foto_tutor")
+                val correo_estudiante: String? = document.getString("correoEstudiante")
                 val telefono_estudiante: String? = document.getString("telefonoEstudiante")
-                val hora1:String? = document.getString("hora1")
+                val duracion: String? = document.getString("duracion")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -72,44 +82,44 @@ class Repo {
                     foto_tutor!!,
                     correo_estudiante!!,
                     telefono_estudiante!!,
-                        hora1!!
+                    duracion!!
                 )
                 listData.add(solicitud)
             }
             mutableData.value = listData
         }
 
-        return  mutableData
+        return mutableData
     }
 
-    fun getStudentUserSolicitud(idTutor: String) : LiveData<MutableList<TutoriaModel>>{
+    fun getStudentUserSolicitud(idTutor: String): LiveData<MutableList<TutoriaModel>> {
 
         val mutableData = MutableLiveData<MutableList<TutoriaModel>>()
 
         var db = FirebaseFirestore.getInstance().collection("Usuarios")
             .document(idTutor).collection("SolicitudesEnviadas")
 
-        db.get().addOnSuccessListener { result->
-            val listData : MutableList<TutoriaModel> = mutableListOf<TutoriaModel>()
-            for(document in result){
-                val id:String ? = document.getString("id")
-                val direccion:String ? = document.getString("direccion")
-                val categoria:String ? = document.getString("categoria")
-                val fecha:String ? = document.getString("fecha")
-                val hora:String ? = document.getString("hora")
-                val nota:String ? = document.getString("nota")
-                val solicitante:String ? = document.getString("solicitante")
-                val tutorSolicitado:String ? = document.getString("tutorSolicitado")
+        db.get().addOnSuccessListener { result ->
+            val listData: MutableList<TutoriaModel> = mutableListOf<TutoriaModel>()
+            for (document in result) {
+                val id: String? = document.getString("id")
+                val direccion: String? = document.getString("direccion")
+                val categoria: String? = document.getString("categoria")
+                val fecha: String? = document.getString("fecha")
+                val hora: String? = document.getString("hora")
+                val nota: String? = document.getString("nota")
+                val solicitante: String? = document.getString("solicitante")
+                val tutorSolicitado: String? = document.getString("tutorSolicitado")
                 val estado: String? = document.getString("estado")
-                val nombre_estudiante : String ? =document.getString("nombre_estudiante")
-                val apellido_estudiante : String ? = document.getString("apellido_estudiante")
-                val nombre_tutor : String ? =document.getString("nombre_tutor")
-                val apellido_tutor : String ? = document.getString("apellido_tutor")
-                val foto_estudiante : String? =document.getString("foto_estudiante")
-                val foto_tutor : String? =document.getString("foto_tutor")
-                val correo_estudiante : String? =document.getString ("correoEstudiante")
+                val nombre_estudiante: String? = document.getString("nombre_estudiante")
+                val apellido_estudiante: String? = document.getString("apellido_estudiante")
+                val nombre_tutor: String? = document.getString("nombre_tutor")
+                val apellido_tutor: String? = document.getString("apellido_tutor")
+                val foto_estudiante: String? = document.getString("foto_estudiante")
+                val foto_tutor: String? = document.getString("foto_tutor")
+                val correo_estudiante: String? = document.getString("correoEstudiante")
                 val telefono_estudiante: String? = document.getString("telefonoEstudiante")
-                val hora1:String? = document.getString("hora1")
+                val duracion: String? = document.getString("duracion")
                 val solicitud = TutoriaModel(
                     id!!,
                     direccion!!,
@@ -128,33 +138,34 @@ class Repo {
                     foto_tutor!!,
                     correo_estudiante!!,
                     telefono_estudiante!!,
-                        hora1!!
+                    duracion!!
                 )
                 listData.add(solicitud)
             }
             mutableData.value = listData
         }
 
-        return  mutableData
+        return mutableData
     }
 
 
-    fun getUsuario (idUser: String ): LiveData<Persona>{
+    fun getUsuario(idUser: String): LiveData<Persona> {
         val ref = FirebaseDatabase.getInstance().getReference("Users").child(idUser)
         var persona = MutableLiveData<Persona>()
         val postListener = object : ValueEventListener {
             override fun onCancelled(dataSnapshot: DatabaseError) {
 
             }
+
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                var id:String = ""
-                var name:String = ""
-                var correo:String = ""
-                var direccion:String = ""
-                var lastName:String = ""
-                var telefono:String = ""
-                var urlImage:String = ""
+                var id: String = ""
+                var name: String = ""
+                var correo: String = ""
+                var direccion: String = ""
+                var lastName: String = ""
+                var telefono: String = ""
+                var urlImage: String = ""
 
                 if (dataSnapshot.child("ID").value != null) {
                     id = dataSnapshot.child("ID").value as String

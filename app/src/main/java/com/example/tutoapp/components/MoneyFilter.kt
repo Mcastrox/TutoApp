@@ -8,7 +8,7 @@ import java.util.regex.Pattern
 class MoneyFilter(digitsBeforeZero:Int, digitsAfterZero:Int) : InputFilter {
 
     private var digitsBeforeZero = digitsBeforeZero
-    private var mPattern: Pattern = Pattern.compile("[0-9]{0," + (digitsBeforeZero) + "}+((\\.[0-9]{0," + (digitsAfterZero-1) + "})?)||(\\.)?")
+    private var mPattern: Pattern = Pattern.compile("[0-9]{0," + (digitsBeforeZero-1) + "}+((\\.[0-9]{0," + (digitsAfterZero-1) + "})?)||(\\.)?")
 
     override fun filter(
         source: CharSequence?,

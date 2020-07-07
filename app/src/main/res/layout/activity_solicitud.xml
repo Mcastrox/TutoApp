@@ -185,8 +185,8 @@
                 android:textColor="@color/soft_grey" />
 
 
-            <EditText
-                android:id="@+id/txt_hora1"
+            <Spinner
+                android:id="@+id/sp_horas"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -194,7 +194,6 @@
                 android:ems="10"
                 android:textSize="@dimen/normal_text"
                 android:fontFamily="@font/roboto"
-                android:focusable="false"
                 android:inputType="time"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp" />
