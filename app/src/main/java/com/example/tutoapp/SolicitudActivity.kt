@@ -111,11 +111,11 @@ class SolicitudActivity : AppCompatActivity() {
         btn_solicitar.setOnClickListener {
 
             if (txt_notas.text.length < 20 ){
-                txt_notas.setError("Debe tener al menos 50 caracteres.")
+                txt_notas.setError("Debe tener al menos 20 caracteres.")
             }
 
             if(txt_direccion.text.isNotEmpty() && sp_categoria.toString().isNotEmpty() && txt_fecha.text.isNotEmpty() &&
-                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 50 &&
+                    txt_hora.text.isNotEmpty() && txt_notas.text.isNotEmpty() && txt_notas.text.length >= 20 &&
                     txt_hora1.text.isNotEmpty()) {
 
                 crearSolicitud()
