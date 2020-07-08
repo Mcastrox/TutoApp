@@ -310,7 +310,7 @@
 
                         </LinearLayout>
 
-                        <com.example.tutoapp.components.ExpandableHeightGridView
+                        <com.pdm.tutoapp.components.ExpandableHeightGridView
                             android:id="@+id/gv_disciplina"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

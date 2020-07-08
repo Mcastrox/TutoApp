@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.tutoapp">
+    package="com.pdm.tutoapp">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".VerSolicitudEnviadaActivity"
-            android:parentActivityName=".SolicitudEnviada" />
+            android:name="com.pdm.tutoapp.VerSolicitudEnviadaActivity"
+            android:parentActivityName="com.pdm.tutoapp.SolicitudEnviada" />
         <activity
-            android:name=".CentralActivity"
+            android:name="com.pdm.tutoapp.CentralActivity"
             android:theme="@style/SplashTheme2"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -26,51 +26,51 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Change_password"
-            android:parentActivityName=".PerfilFragment" />
+            android:name="com.pdm.tutoapp.Change_password"
+            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.pdm.tutoapp.MainActivity"
             android:theme="@style/SplashTheme" />
         <activity
-            android:name=".TutorFiltradoActivity"
-            android:parentActivityName=".SearchFragment" />
+            android:name="com.pdm.tutoapp.TutorFiltradoActivity"
+            android:parentActivityName="com.pdm.tutoapp.SearchFragment" />
         <activity
-            android:name=".SearchFragment"
+            android:name="com.pdm.tutoapp.SearchFragment"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".VerSolicitudActivity"
-            android:parentActivityName=".TutoriasActivity" />
-        <activity android:name=".TutoriasActivity" />
+            android:name="com.pdm.tutoapp.VerSolicitudActivity"
+            android:parentActivityName="com.pdm.tutoapp.TutoriasActivity" />
+        <activity android:name="com.pdm.tutoapp.TutoriasActivity" />
         <activity
-            android:name=".SolicitudActivity"
-            android:parentActivityName=".SearchFragment" >
+            android:name="com.pdm.tutoapp.SolicitudActivity"
+            android:parentActivityName="com.pdm.tutoapp.SearchFragment" >
         </activity>
         <activity
-            android:name=".PseleccionadoActivity"
-            android:parentActivityName=".SearchFragment" />
+            android:name="com.pdm.tutoapp.PseleccionadoActivity"
+            android:parentActivityName="com.pdm.tutoapp.SearchFragment" />
         <activity
-            android:name=".TutorActivity"
-            android:parentActivityName=".PerfilFragment" />
+            android:name="com.pdm.tutoapp.TutorActivity"
+            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
         <activity
-            android:name=".ProfileActivity"
-            android:parentActivityName=".PerfilFragment" />
+            android:name="com.pdm.tutoapp.ProfileActivity"
+            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
         <activity
-            android:name=".AtributesActivity"
-            android:parentActivityName=".TutoriasActivity" />
+            android:name="com.pdm.tutoapp.AtributesActivity"
+            android:parentActivityName="com.pdm.tutoapp.TutoriasActivity" />
         <activity
-            android:name=".Forgotpass_Activity"
-            android:parentActivityName=".Change_password" />
+            android:name="com.pdm.tutoapp.Forgotpass_Activity"
+            android:parentActivityName="com.pdm.tutoapp.Change_password" />
         <activity
-            android:name=".PerfilFragment"
+            android:name="com.pdm.tutoapp.PerfilFragment"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Login_Activity"
+            android:name="com.pdm.tutoapp.Login_Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".Register_Activity"
+            android:name="com.pdm.tutoapp.Register_Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SolicitudEnviada"
+            android:name="com.pdm.tutoapp.SolicitudEnviada"
             tools:ignore="Instantiatable" />
 
 
