@@ -86,12 +86,6 @@ class VerSolicitudActivity : AppCompatActivity() {
                 //add modal
                 openDIalog(telefonoEstudiante,idTutor,idEstudiante,idSolicitud)
 
-                // sendWhatsApp(telefonoTutor)
-                // viewModel.updateEstadoSolicitud(idTutor,idEstudiante,idSolicitud,estadoSolicitud[0])
-                // Toast.makeText(this@VerSolicitudActivity, "Has aceptado la solicitud de ${solicitud.nombre_estudiante}", Toast.LENGTH_LONG).show()
-
-                // onBackPressed()
-
                 rechazarTutoria.visibility = View.GONE
                 aceptarTutoria.visibility = View.GONE
                 messageAccept.visibility = View.VISIBLE

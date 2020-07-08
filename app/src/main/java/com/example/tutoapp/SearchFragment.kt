@@ -70,7 +70,6 @@ class SearchFragment : Fragment() {
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-        var me = this // variable para guardar el contexto actual
         val ref = FirebaseDatabase.getInstance().getReference("Users") // referencia a la bd
 
 

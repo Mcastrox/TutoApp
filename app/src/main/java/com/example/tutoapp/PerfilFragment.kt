@@ -65,7 +65,7 @@ class PerfilFragment : Fragment() {
         }
         binding.logOut.setOnClickListener {
 
-            Toast.makeText(activity!!,"Loggin Out... ", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity!!,"Cerrando Sesión... ", Toast.LENGTH_SHORT).show()
             logOut()
             if(auth.currentUser==null){
 

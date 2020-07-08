@@ -83,7 +83,6 @@ class ListAdapter(private val context: Context) : RecyclerView.Adapter<ListAdapt
                     val resultList = mutableListOf<Model>()
                     for(item in tutorList){
                         val tutorName = item.name+" "+item.lastname
-                        Log.d("ListenerFocus",tutorName)
                         if(tutorName.toLowerCase().contains(searchString.toLowerCase())){
                             resultList.add(item)
                         }

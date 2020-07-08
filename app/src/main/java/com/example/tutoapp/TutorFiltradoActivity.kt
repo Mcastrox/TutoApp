@@ -117,8 +117,6 @@ class TutorFiltradoActivity : AppCompatActivity() {
 
                     if (e.child("ratings").exists()) {
                         val count : Long = e.child("ratings").childrenCount -1
-                        Log.d("ToyArto",count.toString())
-
                         for (item in 0..count ) {
                             val value = e.child("ratings").child("$item").child("value").value as String
                             ratings.add( RatingModel( value))
