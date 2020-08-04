@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".CentralActivity">
 
-    <LinearLayout
-        android:id="@+id/fragmentContainer"
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigation"
-        android:orientation="vertical" />
+        android:layout_above="@+id/bottomNavigation"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

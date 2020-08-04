@@ -31,10 +31,9 @@ private lateinit var seleccionada : String
         binding.apply {
             arte.setOnClickListener {
                 seleccionada="0"
-
-               /* val intent = Intent(activity,TutorFiltradoActivity::class.java)
+                val intent = Intent(activity,TutorFiltradoActivity::class.java)
                 intent.putExtra("seleccion", seleccionada)
-                startActivity(intent)*/
+                startActivity(intent)
             }
             idiomas.setOnClickListener {
                 seleccionada="1"
