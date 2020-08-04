@@ -1,4 +1,4 @@
-package com.pdm.tutoapp
+package com.pdm.tutoapp.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import com.pdm.tutoapp.adapter.SolicitudEnviadaAdapter
 import com.pdm.tutoapp.databinding.FragmentSolicitudEnviadaBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.pdm.tutoapp.R
+import com.pdm.tutoapp.VerSolicitudEnviadaActivity
 import com.pdm.tutoapp.viewmodel.TutorViewModel
 
 class SolicitudEnviada : Fragment() {
@@ -29,7 +31,8 @@ class SolicitudEnviada : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                           savedInstanceState: Bundle?) : View?  {
 
-        val binding = DataBindingUtil.inflate<FragmentSolicitudEnviadaBinding>(inflater,R.layout.fragment_solicitud_enviada,container,false)
+        val binding = DataBindingUtil.inflate<FragmentSolicitudEnviadaBinding>(inflater,
+            R.layout.fragment_solicitud_enviada,container,false)
 
         observerData(binding)
         return binding.root

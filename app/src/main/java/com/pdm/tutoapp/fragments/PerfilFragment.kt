@@ -1,4 +1,4 @@
-package com.pdm.tutoapp
+package com.pdm.tutoapp.fragments
 
 
 import android.content.Intent
@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.pdm.tutoapp.*
 import com.squareup.picasso.Picasso
 
 /**
@@ -43,25 +44,26 @@ class PerfilFragment : Fragment() {
 
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentPerfilBinding>(inflater,R.layout.fragment_perfil,container,false)
+        val binding = DataBindingUtil.inflate<FragmentPerfilBinding>(inflater,
+            R.layout.fragment_perfil,container,false)
 
         bindingView(binding)
         initialize()
 
         binding.miPerfil.setOnClickListener {
-            startActivity(Intent(activity,ProfileActivity::class.java))
+            startActivity(Intent(activity, ProfileActivity::class.java))
         }
         binding.misTutorias.setOnClickListener {
 
             if(rol== "Estudiante"){
-                startActivity(Intent(activity,TutorActivity::class.java))
+                startActivity(Intent(activity, TutorActivity::class.java))
             }
             if (rol== "Tutor") {
-                startActivity(Intent(activity,TutoriasActivity::class.java))
+                startActivity(Intent(activity, TutoriasActivity::class.java))
             }
         }
         binding.changePassword.setOnClickListener {
-            startActivity(Intent(activity,Change_password::class.java))
+            startActivity(Intent(activity, Change_password::class.java))
         }
         binding.logOut.setOnClickListener {
 

@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.pdm.tutoapp.VerSolicitudEnviadaActivity"
-            android:parentActivityName="com.pdm.tutoapp.SolicitudEnviada" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.SolicitudEnviada" />
         <activity
             android:name="com.pdm.tutoapp.CentralActivity"
             android:theme="@style/SplashTheme2"
@@ -27,15 +27,15 @@
         </activity>
         <activity
             android:name="com.pdm.tutoapp.Change_password"
-            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.PerfilFragment" />
         <activity
             android:name="com.pdm.tutoapp.MainActivity"
             android:theme="@style/SplashTheme" />
         <activity
             android:name="com.pdm.tutoapp.TutorFiltradoActivity"
-            android:parentActivityName="com.pdm.tutoapp.SearchFragment" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.SearchFragment" />
         <activity
-            android:name="com.pdm.tutoapp.SearchFragment"
+            android:name="com.pdm.tutoapp.fragments.SearchFragment"
             tools:ignore="Instantiatable" />
         <activity
             android:name="com.pdm.tutoapp.VerSolicitudActivity"
@@ -43,17 +43,17 @@
         <activity android:name="com.pdm.tutoapp.TutoriasActivity" />
         <activity
             android:name="com.pdm.tutoapp.SolicitudActivity"
-            android:parentActivityName="com.pdm.tutoapp.SearchFragment" >
+            android:parentActivityName="com.pdm.tutoapp.fragments.SearchFragment" >
         </activity>
         <activity
             android:name="com.pdm.tutoapp.PseleccionadoActivity"
-            android:parentActivityName="com.pdm.tutoapp.SearchFragment" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.SearchFragment" />
         <activity
             android:name="com.pdm.tutoapp.TutorActivity"
-            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.PerfilFragment" />
         <activity
             android:name="com.pdm.tutoapp.ProfileActivity"
-            android:parentActivityName="com.pdm.tutoapp.PerfilFragment" />
+            android:parentActivityName="com.pdm.tutoapp.fragments.PerfilFragment" />
         <activity
             android:name="com.pdm.tutoapp.AtributesActivity"
             android:parentActivityName="com.pdm.tutoapp.TutoriasActivity" />
@@ -61,7 +61,7 @@
             android:name="com.pdm.tutoapp.Forgotpass_Activity"
             android:parentActivityName="com.pdm.tutoapp.Change_password" />
         <activity
-            android:name="com.pdm.tutoapp.PerfilFragment"
+            android:name="com.pdm.tutoapp.fragments.PerfilFragment"
             tools:ignore="Instantiatable" />
         <activity
             android:name="com.pdm.tutoapp.Login_Activity"
@@ -70,7 +70,7 @@
             android:name="com.pdm.tutoapp.Register_Activity"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.pdm.tutoapp.SolicitudEnviada"
+            android:name="com.pdm.tutoapp.fragments.SolicitudEnviada"
             tools:ignore="Instantiatable" />
 
 

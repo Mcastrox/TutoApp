@@ -90,7 +90,6 @@ class Register_Activity : AppCompatActivity() {
                         userBD.child("Name").setValue(name)
                         userBD.child("correo").setValue(email)
                         userBD.child("lastName").setValue(lastName)
-                        userBD.child("pass").setValue(pass)
                         userBD.child("telefono").setValue(tel)
                         userBD.child("direccion").setValue(direccion)
                         userBD.child("Rol").setValue("Estudiante")

@@ -6,6 +6,10 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.pdm.tutoapp.fragments.HomeFragment
+import com.pdm.tutoapp.fragments.PerfilFragment
+import com.pdm.tutoapp.fragments.SearchFragment
+import com.pdm.tutoapp.fragments.SolicitudEnviada
 import kotlinx.android.synthetic.main.activity_central.*
 
 class CentralActivity : AppCompatActivity() {
@@ -32,7 +36,8 @@ class CentralActivity : AppCompatActivity() {
                 }
 
                 R.id.request -> {
-                    selectedFragment = SolicitudEnviada()
+                    selectedFragment =
+                        SolicitudEnviada()
                     replaceFragment(selectedFragment as SolicitudEnviada)
                     return@OnNavigationItemSelectedListener true
                 }
@@ -45,10 +50,10 @@ class CentralActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        logUserVerify()
         setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_central)
-        logUserVerify()
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         var selectedItemId = savedInstanceState?.getInt("ID")
