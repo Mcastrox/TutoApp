@@ -2,6 +2,7 @@ package com.pdm.tutoapp.fragments
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,13 +32,15 @@ class SearchFragment : Fragment() {
 
     private lateinit var toolbar: Toolbar
     private var listaTutores = mutableListOf<Model>()
+    private var seleccion = ""
     private lateinit var adapter: ListAdapter
     private lateinit var list: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        adapter = ListAdapter(activity!!)
+        adapter = ListAdapter(requireActivity())
         adapter.setDataList(listaTutores)
     }
 
@@ -58,7 +61,10 @@ class SearchFragment : Fragment() {
     fun search(binding: FragmentSearchBinding) {
         toolbar = binding.toolbar
         list = binding.list
-        list.layoutManager = LinearLayoutManager(activity!!)
+        list.layoutManager = LinearLayoutManager(requireActivity())
+
+        //Extraer la seleccion del navArgument
+        seleccion = SearchFragmentArgs.fromBundle(requireArguments()).seleccion
 
         toolbar?.setTitle(R.string.ToolBarTitle)
         (activity as AppCompatActivity?)!!.setSupportActionBar(toolbar)
@@ -160,28 +166,29 @@ class SearchFragment : Fragment() {
                     }
 
                     if (rol == "Tutor" && id != FirebaseAuth.getInstance().currentUser?.uid) {
-                        listaTutores.add(
-                            Model(
-                                id,
-                                name,
-                                lastName,
-                                email,
-                                cellphone,
-                                nivel,
-                                ocupation,
-                                direccion,
-                                R.drawable.ic_art,
-                                ruta,
-                                descripcion,
-                                listaDisciplina,
-                                ratings,
-                                cuota
+                        if (e.child("disciplinas").child("${seleccion}").child("seleccionado").value == true || seleccion == "all") {
+                            listaTutores.add(
+                                Model(
+                                    id,
+                                    name,
+                                    lastName,
+                                    email,
+                                    cellphone,
+                                    nivel,
+                                    ocupation,
+                                    direccion,
+                                    R.drawable.ic_art,
+                                    ruta,
+                                    descripcion,
+                                    listaDisciplina,
+                                    ratings,
+                                    cuota
+                                )
                             )
-                        )
+                        }
                     }
 
                 }
-
 
 
                 list.adapter = adapter

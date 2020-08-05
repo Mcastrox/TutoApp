@@ -32,9 +32,6 @@
             android:name="com.pdm.tutoapp.MainActivity"
             android:theme="@style/SplashTheme" />
         <activity
-            android:name="com.pdm.tutoapp.TutorFiltradoActivity"
-            android:parentActivityName="com.pdm.tutoapp.fragments.SearchFragment" />
-        <activity
             android:name="com.pdm.tutoapp.fragments.SearchFragment"
             tools:ignore="Instantiatable" />
         <activity
